@@ -1,0 +1,21 @@
+
+Now let's work with some actual data from real studies. This is a clever example from the work of Wade Hampton Frost about tuberculosis mortality. And what we see here is an impression, just taking from his words, "Looking at the 1930 curve," it looked like "an individual encounters his greatest risk of death from tuberculosis between the ages of 50 and 60. But this is not really so."And the reasons it's not really so is because of these concepts we've studied today about age and period effects. What's happening in this graph is, the surveys done in 1930, 1910, and 1880 plotted the different rates of tuberculosis mortality for different ages in those different years of the surveys. But in actuality, what was really happening was plotting the data a different way.
+
+11The slide on the left is what we just saw, the surveys done in the different years. But in fact, if we look at the plots of the experience of each cohort--in other words, the cohorts from 1900, 1910, 1890, 1880, and 1870--we see something very different. The people making up the 1930 age group, 30 to 60, had in their earlier life passed through greater mortality risk.
+
+So now we have a very different interpretation, because we see that the experience of tuberculosis mortality was different for the different cohorts. There's still an age effect. But what we're seeing really strongly here is a cohort effect. So hopefully the juxtaposition of these plots of actual data from the same study help you to see how you can be misled by an examination that doesn't take into account all of the various things going on in the population--in this case, the changes in the different cohorts that were occurring.
+
+
+
+To summarize the key points of this talk today, the age, period, and cohort effects are common in most epidemiologic studies. 
+
+You should always be on the alert for them. As epidemiologists, we need to think carefully about how we present data--that is, which line should be connecting which data points, because they can reveal different patterns, as we've seen a couple of times today.
+
+The type of effect that is present may have different implications for the intervention. For example, a strong age effect may suggest targeting a specific age group for intervention.
+
+But a strong cohort effect may suggest targeting a specific birth cohort, a group of people born in a different year. And finally, a strong period effect may explain the positive or negative impact of a policy or historical event and influence future policy-making.
+
+These examples are laid out much more fully in your textbook. But hopefully this overview help you to understand the details presented in the text.
+
+
+

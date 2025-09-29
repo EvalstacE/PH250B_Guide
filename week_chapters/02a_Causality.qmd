@@ -1,0 +1,74 @@
+
+## Individual vs Population Causal Effects
+
+individual causal effects can't be estimated with real data, because we never know the counterfactual outcome for a single person. But at the population level, we can sometimes estimate causal effects under certain assumptions. Just one more thing to note is that, moving forward, when you
+
+
+## Individual Causal Effects
+
+For any individual: 
+
+- If they were exposed, what would have been the outcome if we could turn back time, keeping all else identical, and removed that exposure? 
+
+- If they had not been exposed, what would have been the outcome if we could turn back time, keeping all else identical, and exposed them? 
+
+"Individual causal effects are defined as a contrast of the values of counterfactual outcomes, but only one of those values is observed.”
+
+That's why, in general, individual causal effects cannot be identified or measured (cannot be estimated validly)
+
+
+
+## Population-level Causel Effects
+
+the proportion of subjects that would have developed the outcome Y had all subjects in the population of interest received the exposure, A. Soit's the proportion of people let's, say, in column Y A equals 1 that passed away if everyone had received a heart transplant.
+
+Soif we count this up, there are 10 Y equals 1 in this column and 20 total individuals in this column. So10 over 20 is 0.5. And if we do that for the second coming here, we get the same number, 10 over 20. And then we can take 0.5 minus 0.5, which is 0, and that is our **causal risk difference.** So in other words, there is no difference at the population level in the proportion of subjects who died if everyone had a heart transplant or if everyone did not have a heart transplant. There's no causal effect.
+
+
+
+
+So we said we can't estimate individual causal effects. But what about population causal effects? 
+
+**The short answer is sometimes, and usually under multiple assumptions.**
+
+So just to back up for a second, as we discussed, we only have one of these columns in real life. And so how can we make something out of nothing?
+
+Here are some different kinds of causal effects. So this first one here is what we actually calculate it in the last slide. It's a causal risk difference. Take a moment for yourself, and see if you recognize the second two types of causal effects here. So hopefully, you've seen that this is very similar to the causal risk difference. This is a **causal risk ratio** or **causal relative risk.** It's the same except, instead of subtracting these two, we divide them. And here, at the bottom, we have a **causal odds ratio.**
+
+
+
+## Probability notation that indicates association 
+
+association = dependence? 
+
+Exposure and outcome are associated (dependent?) if: 
+P(Y = 1| A =1) != P(Y=1|A=0)
+
+Exposure and outcome are not associated (independent?) if: 
+P(Y = 1| A =1) == P(Y=1|A=0)
+
+-- computed among people who actually had exposure A = 1 OR A = 0
+
+The exposure and the outcome are associated if this probability of Y equals 1 conditional on A equals 1 is not the same as the probability conditional on A equals 0. These are probabilities that are calculated among people who actually hadexposure, A equals 1 or A equals 0. That's in our observed data from the real world.
+
+
+## association vs counterfactual / causal statements
+
+Causal effect if: 
+P(Y_a=1 == 1) != P(Y__a=0 == 1)
+-- computed using all people under the counterfactual scenarios in which everyone received A = 1 OR everyone received A = 0
+
+The causal effect uses these counterfactual statements. Sothe probability that the potential outcome under exposure is 1 is not the same as the probability that the counterfactual under no exposure is 1. Sothese statements are computed among all people under each counterfactual scenario, who receives A equals 1 and A equals 0. Soeveryone getting A equals 1 or everyone is getting A equals 0. So that is the key difference between an association statement and a counterfactual statement.
+
+And as we have discussed, obviously, it's impossible to know what the potential outcome would have been for everyone under two different scenarios at the exact same point in time. Sothis is really theoretical. This isn't something that we can estimate with real data, but we can approximate it. And we'll come back to that.
+
+
+
+## Association is NOT causation
+
+OK, so just to reiterate, because this is a really keypoint, association is not causation. Here, I show how that is depicted mathematically. When our measure of association is equal to our causal effect, then neither bias or confounding are present. When either is present, then these two qualities are not equal, and that, unfortunately, is almost always the case.
+
+So to summarize, when it comes to associations, they're usually not what we're interested in as epidemiologists. But unfortunately, because we don't have information on counterfactual scenarios, it's usually what we have to estimate. Association does not equal causation, and that's because usually there is some amount of bias or confounding in our data that prevent us from making causal statements with it. Sosaying smoking is associated with lung cancer is a very different thing from saying smoking causes lung cancer. Causation is what we're actually interested in. And how do we make causal statements? Well, we can use study designs and analytic methods that we'll learn throughout this course to remove confounding or bias. And when that happens, we see those equations from the previous slide become equal to each other--the conditional probabilities for association and the counterfactual statements. And we're going to delve into this more in the next video.
+
+
+

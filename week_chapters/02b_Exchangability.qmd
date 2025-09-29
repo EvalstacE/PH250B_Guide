@@ -1,0 +1,27 @@
+
+## Exchangeability
+
+key assumption required to make causal inferences.
+
+So that's just another way of saying that whichever group receives the treatment versus the placebo or control is irrelevant for the measure of disease of interest among the exposed and among the unexposed. In other words, we could exchange one group to the other, and the only difference between them would be their treatment assignment.
+
+
+-- which group gets the treatment is irrelevant for the measure of disease / outcome among the exposed AND that for the unexposed
+
+-- this is called exchangeability. In other owrds, you could exchange one group for the other and the only difference is their treatment assignment 
+
+-- randomization?
+
+So because we use randomization, the probability that y equals 1, conditional on A equaling 1, is the same when group one gets the treatment and group two gets the placebo as when group two gets the treatment and group one gets the placebo.
+
+
+Well, the concept of exchangeability is getting at the fact that when we have perfect randomization, on average, the people in each group are basically the same as each other, or as good as exchangeable. And because the only difference between them is their treatment assignment, it's almost as if they're serving as this full diamond here, where everyone in the population received the treatment compared to when no one in the population received the treatment, or everyone gets the control. The only difference between these diamonds is the treatment assignment itself.
+
+Soin a perfect RCT, the observed risk or randomized trial, the observed risk is equal to the counterfactual risk. Sothe probability statement for this portion here--the white portion of this association diamond--is P of Y equals 1, given that A equals 1. And this one here is P of Y equals 1 given that A equals 0. And then we can write out the counterfactual statements over here--P of Y sub 0 equals 1, and P of Y sub 1 equals 1. Sowe can estimate the causal effects from our data in a perfect randomized controlled trial because these quantities are true. These pieces of the overall diamond are approximating these two diamonds from the observed data. So that means that in this case, the associational measures of association equal the causal measures of association. It's really hardto do a perfect randomized controlled trial, but a lot of times, we can get very close to it, which means that we are very close to being able to make causal inferences about our data.
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+
+## Uniformity of events and lossess within each interval 
+
+- applies to the Actuarial Method and density method
+- the life table approach assumes that events and lossess (withdrawals / deaths) are approximately uniform during each interval
+- if risk changes rapidly within an interval, then estimates that average risk over the interval will not be informative or appropriate
+- you can adjust the interval size in order to be able to make this assumptions
+
+## Independence of censoring and survival 
+
+- applies to all methods of calculating cumulative incidence
+- censored individuals have the same probability of the event after censoring those remaining under observation. In other words, censoring is independent of survival 
+- Example: if patients withdraw from a study because they are sicker than those who do not withdraw, over time, the remaining study population would have patients with decreasing risk of illness, causing incidence to be underestimated
+- this assumption is difficult to make when the diseas shares strong risk factors with diseases associated with mortality
+
+
+## Lack of secular trends
+
+- this assumptions applies to all methods of calculating cumulative incidence
+- there are no secular trends in individual characteristiscs, exposures, or interventions during follow-up that affect the disease
+- birth cohort and period effects can produce secular trends that bias incidence rate estimates
+- example: it would not be appropriate to estimate survival from diagnosis of all patients with insulin-dependent diabetes from 1915 through 1935 because this group would include: 
+
+  - patientss diagnosed before the introduction of insulin, who had a much lower chance of survival 
+  - patients diagnosed after the introduction of insulin, who had a much higher chance of survival
+  - it would be more appropriate to calculate incidence rates separately for those time periods
+  
+## Closed population 
+
+- applies to all methods that use the product-limit formula 
+
+- this is because the incidence proportion is only defined for closed populations
+
+- in practice, this assumption is often ignored
+
+- this formula can be used to translate incidence rates from open populations into incidence proportions for closed populations. For exmaple, this is appropirate in a cohort study in which an open population is a subset of a closed population 
+
+## No competing risks
+
+- applies to all methods that use the product-limit formula
+
+- a competing risk is a risk due to a cause other than the disease under study. For example, in a study of breast cancer risk, a competing risk might be death or withdrawal due to ovarian cancer
+
+- when there are competing risks, the product limit formual does not hold because: 
+  - competing risks may remove additional people between disease onset times, so the population at risk at time 't' may be smaller than the number of surviving individuals at time 't-1' 
+  
+  - population size is not constant in the interval 
+  
+- this assumption is made almost universally, but often is not valid
+
+- more advanced statistical methods exist for incidence and survival data that better account for competing risks
+
+
+## The number of events at each event time is small in proportion to the number at risk at that time
+
+- applies to the density method because it is required for both the product-limit formula and the exponential formula 
+
+- 'small' means that the incidence rate is less than 0.10 
+
+- this assumption is required to substitute in the exponent into the produce limit formula 
+
+
+  

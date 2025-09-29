@@ -1,0 +1,86 @@
+
+## 1
+A study examined mortality among homeless shelter residents in New York City from 1987 to 1994. There are 15 deaths observed among women aged 25-34, with 728 person-years of observation. Among men aged 25-34, 31 deaths were observed, with 1988 person-years of observation.
+
+What relative measure of association is appropriate to assess mortality among women aged 25-34 compared to men aged 25-34?
+
+
+![contingency table](04a_1.png)
+
+
+
+Incidence density ratio (a.k.a., rate ratio)
+
+IDR = (15/728) / (31/1988) = 1.32
+
+
+Among 25-34 years olds residing in New York City homeless shelters, the rate of death among women was 1.32 times that among men.
+
+
+Calculate and interpret the absolute measure of association comparing mortality among women aged 25-34 compared to men of the same age.
+
+Incidence density / rate ratio difference
+
+IDD = (15/728) - (31/1988) = 0.0050 deaths per person year = 0.0050 * 1000 = 5.0 deaths per 1,000 person years
+
+Among 25-34 years olds residing in New York City homeless shelters between there were 5 more deaths per 1,000 person years among women compared to men.
+
+
+## 2
+
+The following data are from the San Francisco Men’s Health Study, a study in 1984 investigating the epidemiology and national history of AIDS. The data below were acquired by surveying existing cases of HIV.
+
+![contingency table](04a_2.png)
+
+What relative measure of association is appropriate for these data?
+
+Prevalence ratio
+
+Using the White population as the reference group, complete the above table by calculating the relative measure you identified in 2a.
+
+Interpret the relative measure you calculated for the Asian population.
+
+The prevalence of an HIV+ diagnosis among Asian men is 0.75 times that among White men in 1984. Put differently, the prevalence of HIV among Asian men is 25% lower than among White men.
+
+
+## 3
+
+The San Francisco Men’s Health study proceeded to screen additional men and follow the seronegative (HIV-) men enrolled at baseline for 30 months. At the end of 30 months, each man returned to the clinic and was tested again for HIV infection. Of 414 White men seronegative at baseline, 18 tested positive for HIV at the 30-month follow-up. OF the 15 Black men seronegative at baseline, 8 tested positive for HIV at the follow-up.
+
+![contingency table](04a_3.png)
+
+What specific absolute measure of association is appropriate for these data?
+
+Cumulative incidence difference (a.k.a, risk difference)
+
+Calculate the absolute measure of association that you identified in 3b. Interpret the estimate.
+
+CID = CI_black - CI_white
+CID = (8/15) - (18-414) = 0.49
+
+There were 49 excess cases of HIV per 100 people among Black study participants compared to White study participants over the 30-month follow-up.
+
+What specific relative measure of association is appropriate for these data?
+
+Cumulative incidence ratio (a.k.a., risk ratio)
+(Odds ratio is also possible for these data)
+
+Calculate the relative measure of association that you identified in 3d. Interpret the estimate.
+
+CIR = CI_black / CI_white
+CIR = (8/15) / (18/414) = 12.27
+
+Now calculate the relative measure of association as if 6 Black men had seroconverted (as opposed to the 8 black men in 3e). Comparing this new estimate to the estimate from 3e, what can you conclude about studies with small subgroup sizes?
+
+CIR = (6/15) / (18/414) = 9.20
+
+The measure of association calculated from small sample sizes is unstable. As a result, the effect estimates may change significantly with a small absolute change in the cell values.
+
+
+
+
+
+
+
+
+

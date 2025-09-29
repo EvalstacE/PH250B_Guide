@@ -1,0 +1,53 @@
+
+## 1
+
+Your colleague insists that the only appropriate measure of association in a case-control study is an odds ratio. Please explain why this is not true.
+
+While traditionally epidemiologists have estimated odds ratios in case-control studies, the choice of odds ratios was made out of mathematical convenience -- because these studies sampled based on disease status. In reality, the true quantity of interest is usually a risk ratio or risk difference. Today, epidemiologists are taught to view case-control studies as taking place within a cohort, even if the cohort is theoretical. Depending on how controls are sampled, the relative risk can be validly estimated in some case-control studies (but not all).
+
+## 2
+
+The incidence of attention deficit disorder is 2 per 1000. A case-control study collected the following data about the association between lead exposure and attention deficit disorder (disease).
+
+![contingency table](04b_2.png)
+
+
+Does the odds ratio approximate the relative risk in this study?
+
+The incidence is 2 per 1000. Typically a disease with incidence < 5% (or 5
+per 100) is considered rare. In this case, the OR should approximate the RR.
+
+Calculate and interpret the odds ratio.
+
+OR = (aXd) / (bXc) 
+OR = (34 X 1500) / (10 X 1200) = 4.25
+
+The odds of attention deficit disorder for those exposed to lead is 4.25 times the odds of attention deficit disorder for those not exposed to lead.
+
+Calculate and interpret the APe%.
+
+APe% = [(OR - 1) / OR] X 100
+= [(4.25 - 1) / 4.25] x 100% = 76.5%
+
+Assuming a causal relationship between lead exposure and attention deficit disorder, 76.5% of attention deficit disorder among those exposed to lead could be prevented by eliminating lead exposure.
+
+Calculate and interpret the APt%. Assume the probability of exposure to lead is 0.05.
+
+APt% = 
+
+[(4.25 x 0.05) + 0.05] / [(4.25 x 0.05) - 0.05 +1]  + 1] x 100 = 
+
+(0.263/1.163) x 100 = 22.6%
+
+Assuming a causal relationship between lead exposure and attention deficit disorder, 22.6% of all attention deficit disorder cases in the total population are attributable to lead exposure.
+
+
+
+
+
+
+
+
+
+
+

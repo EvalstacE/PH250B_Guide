@@ -1,0 +1,51 @@
+
+## Directed Acyclic Graphs (DAGs)
+
+I'll be drawing heavily from a few chapters in this book, Causal Inference in Statistics. The first author of this book is Judea Pearl, pictured here on the right, and he's really the father of this set of graphical techniques for representing statistics visually.
+
+
+The tools that I'm going to present in this video really stem from graph theory. Graph theory is a mathematical language that can convey statistical relationships in the data. It allows you to explore causal relationships using a set of operations on graphs that are really similar toarithmetic operations that we would perform on numbers or variables. A graph is defined as a collection of vertices or nodes and edges. SoI'll show you a picture of what that looks like shortly. We can express statistical independence and alsodependence visually using directed acyclic graphs, a certain type of graph. I'm also going to be talking about structural causal models, which allow us to predict patterns of interdependence in data based solely on the structure of a DAG, ordirected acyclic graph. And we'll talk about how to make causal models that represent the mechanism by which we believe our data was generated in our study.
+
+We're going to focus on a special type of graph called the directed acyclic graph. And moving forward, I'm going to refer to this as a DAG. When a directed path exists from a node to itself, we can call that path cyclic. Sograph (b) at the bottom right is a cyclic graph. We can see that if we start at X and then flow to Y, to Z, we end up back at X. On the other hand, when a directed path has no cycles, it's called acyclic. Sothe graph (a) on the bottom of the slide, if we start at X, there's no way we can get back to X following the variables in the graph. In epidemiology, we use directed acyclic graphs because they allow us to visually represent statistical relationships that we believe exist in our data. But later onin this course, you'll be drawing your own DAGs, and you need to make sure that they're truly DAGs, meaning that they're acyclic.
+
+
+## Structural Causal Models (SCM)
+
+It's a model that describes how nature assigns values to the variables of interest that we include in our DAG.
+
+Every structural causal model is associated with the graphical causal model. And the nodes in the graphical model represent variables in the structural causal model, one node for each variable. And the edges in the graphical model represent functions in the structural causal model.
+
+
+## Endogenous and Exogenous Variables
+
+Endogenous variables are variables that are internal to our model. In epidemiology, this usually means that we measure these variables or that we intend to measure these variables. And every endogenous variable is a descendant of at least one exogenous variable.
+
+An exogenous variable is a variable external to our model. We don't measure these variables usually because we can't directly measure them, or we didn't have the resources to measure them in our study. Exogenous variables cannot be descendants of other variables in our model. And we typically denote these exogenous variables by capital U to indicate that they're unmeasured.
+
+
+## Why use DAGs if SCMs are more complete? 
+
+In epidemiology, usually the knowledge we have about causal relationships is qualitative rather than quantitative. This means that we have a sense of what causes another thing, but we don't know the exact level of effects for certain causes.
+
+
+For example, we know that smoking causes lung cancer, but we can't say how many cigarettes smoked per person over the course of their life is needed to cause lung cancer. There's no one number, and it's definitely multifactorial when we think about the DAG for smoking and lung cancer. 
+
+DAGs are very effective at representing qualitative relationships, while structural causal models can represent either qualitative or quantitative relationships. But they're not more useful than DAGs when we only have qualitative information, which is usually the case in epidemiology.
+
+
+So once again in our class, our focus is not really on whether the DAG is right. But rather, how do we analyze this DAG, and assess the risk of bias with this DAG? It's important to quickly mention that when we draw a DAG, all common causes of low-carb diet and obesity must be included in the DAG. The DAG implies that only the variables for each node affects the relationship between a low-carb diet and obesity. In other words, if there's another variable and we haven't included it in this DAG, we're implying that it does not affect the relationship between diet and obesity.
+
+
+A more realistic DAG would include U'sfor all ofthe potential unmeasured variables. And there could potentially be a U going into almost all ofthese nodes. And later in the course, we'll come back to how to use this kind of DAG to determine which variables might be confounders, and how to detect selection bias and other kinds of bias using a DAG.
+
+
+So to summarize, we can use a structural causal model to predict patterns of interdependencies in our data, based solely on the structures of a DAG. We're going to learn how to make causal models that represent the mechanism by which data in our studies was generated. These methods allow you to explore causal relationships using a set of operations on graphs that are similar to arithmetic operations. And then later in the course, we'll use DAGs to answer these questions--which variables are potential confounders in my study, and is selection bias present in my study?
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+## 1
+
+Mortality from liver cirrhosis declined in all adult age groups in the early 1920s due to decreased alcohol consumption resulting from U.S. Prohibition laws. This is an example of what? 
+
+  - period effect
+  - age effect
+  - cohort effect
+  - period effect and cohort effect
+  - age effect and period effect
+  
+
+Option A (period effect) is the right answer. However, in previous exams credit was also given for options E and D. Note that there is definitely a period effect since the decline in mortality affected ALL age groups. There could be a residual cohort effect as well if mortality rates for these birth cohorts remained lower. Although an age effect is difficult to conclude from the information given, it could be argued that since the mortality only affected adult age groups, there was an inherent age effect.
+
+
+##2 
+
+The three lines in the graph below represent rates of a hypothetical disease in different birth cohorts. What time-scale effect(s) appear(s) to be operating in this example? 
+
+![period and cohort effect](03b_period_cohort.png)
+
+**Period AND Cohort Effect**
+
+![period and cohort effect](03b_period_cohort2.png)
+
+For each successive cohort the rate of disease is higher; for example, those born in 1960 have a higher rate of disease than those born in 1920. The period effect can be seen in the dip mirrored in each line. This dip occurs from 1990 to 2010 and affects all cohorts and ages.
+
+There is no age effect because the rate does not change with age irrespective of birth cohort and calendar time. Also, we know the dip can’t be an age effect because the changes occur at different ages in each birth cohort.
+
+
+
+## 3
+
+What effect is taking place in the scenarios below? 
+
+--------------------
+
+An epidemiologist analyzes retrospective data on pancreatic cancer in a Norwegian population born between 1920 and 1960. She finds that the individuals born during World War II had a reduced incidence of pancreatic cancer. 
+
+**Cohort effect**
+This is not a period effect because only those people born during WWII had a reduced incidence. An example of a period effect would be if during WWII there was a reduction in the incidence of pancreatic cancer, regardless of age or birth cohort.
+
+
+--------------------
+
+A study follows a cohort of nurses aged 20-40 years old for 30 years and records incident cases of osteoarthritis. The cumulative incidence is calculated for each year of the study, and investigators find that the incidence increases each year.
+
+
+**Age effect**
+We know this is an age effect rather than a cohort effect because the increased risk occurs for nurses from a range of birth cohorts observed throughout the study as they all get older.
+Based on this information, we can’t be sure whether or not there is also a cohort and/or period effect.
+
+--------------------
+
+A study of Native Americans found that the rate of type II diabetes was higher during the 1960s across a range of ages than during the rest of the 20th century.
+
+**Period effect**
+Diabetes incidence peaked at a specific point in time, affecting people of all ages and birth cohorts.
+

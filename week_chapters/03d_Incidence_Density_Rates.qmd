@@ -1,0 +1,118 @@
+
+## Key Points
+
+incidence rates capture the pace at which these events occur in the population at risk; 
+
+you can calculate incidence rates using either individual-level or aggregated data. 
+
+Incident rates can be calculated for closed or open populations; 
+
+study participants can be followed for different amounts of time. 
+
+it's important to assess the assumptions made when calculating incidence rates to determine whether they're appropriate in a given study setting. When the assumptions are violated, incidence rates will be biased.
+
+
+## Incidence rate review
+
+- can be calculated for both closed or open populations 
+
+- participants can be followed for different amounts of time 
+
+- does not distinguish between people who never developed the disease or just did not develop the disease during the time of study
+
+- numerator: number of new cases of disease that occur during study period 
+
+- denominator: person-time **at risk** during follow-up period
+
+- units: time^-1
+
+- Range: 0 to infinity and beyond
+
+- Interpretation: the rate at which disease events occur in the population at risk at any given point in time 
+
+- The instantaneous rate for each individual cannot be calculated dirctly, but we can average incidence rates over a period and use that as a proxy for an individual's rate
+
+- Synonyms: Epidemiologists use the terms **'incidence density'** and **'incidence rate'** interchangeably 
+
+
+## Asumptions
+
+#### independence of censoring and survival
+
+  -- if patients withdraw from a study because they are sicker than those who do not withdraw, over time, the remaining study population would be mostly patients with lower risk of illness, causing incidence to be underestimated
+  
+  -- this assumption is difficult to make when the disease shares strong risk factors with diseases associated with mortality
+
+
+#### lack of secular trends
+  -- no secular trends in individual characteristics, exposures, or interventions during follow-up that affect the disease
+  -- no changes in the population over time
+  -- birth cohort and period effects can produce secular trends that bias incident rate estimates
+
+Example: 
+As an example, it would not be appropriate to estimate survival from diagnosis of all patients with insulin-dependent diabetes from 1915 through 1935, because this group would include patients who were diagnosed before the introduction of insulin who had a much lower chance of survival, along with patients diagnosed after the introduction of insulin who had a much higher chance of survival. So instead it would be more appropriate to calculate incidence rates separately for those time periods.
+
+
+#### risk of the event remains approximately constant over time during the interval of interest
+
+-- the risk of an individual living five units of time within the interval is equivalent to that of five individuals living one unit each
+
+-- exposures with cumulative impacts (like smoking) require adjusted approaches
+
+-- e.g. 1 smoker followed for 30 years won't be the same as 30 smokers followed for 1 year 
+
+-- to weaken the assumption: calculate incidence within shorter time intervals
+
+
+
+
+## Choosing unit of time for incidence rates
+
+- incidence rates can be expressed with different units of time
+
+- the following are all equivalent: 
+-- 0.024 per person-day
+-- 2.4 per 100 person-days
+-- 8.76 per person-years
+
+- Person-years are commonly used when the disease is rare
+
+- other units may be more appropriate when the disease is more common 
+
+
+## How to calculate person-time
+
+
+- if you have **individual-level** data and each person's exact time contribution is known: 
+
+  -- Person-time = sum of all the individual times for each person 
+  
+  -- incidence rate = Number of Events / Total Person-Time
+  
+
+- if you have **aggregated** data: 
+
+ -- assumes population is in a steady state
+ -- Person-time = number of people in our population times the time of observation of the population. For example, if we had 1,000 people observed for two years, that would be 1,000 times 2 (2,000)
+ 
+ -- if population is NOT in a steady state: 
+ -- need to take the midpoint population 
+ -- E.g.: at the beginning of one year, we had 1,000 people. At the end of that year, we had 800 people. So midpoint between 1,000 and 800 (900) is used - then that is multiplied by the total time the population is observed again. 
+ 
+ 
+ -- incidence rate = Number of events / average population during follow-up period 
+ --- this assumes a constant incidence rate during the follow-up period
+ 
+
+##### Incidence calculated from individual and aggregate data provide the same estimate but only if withdrawls/additions occur uniformly over time
+
+
+ 
+
+
+
+
+
+
+
+

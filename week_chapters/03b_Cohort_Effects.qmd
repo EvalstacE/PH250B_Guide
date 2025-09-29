@@ -1,0 +1,13 @@
+
+## Cohort Effects
+
+Cohort effects are the change in the measure of disease that occur according to the year of birth, irrespective of age and calendar time. These can be thought of as an interaction between age and calendar time.
+
+cohort effects are not necessarily only related to the time of birth. And by time of birth, I mean year of birth--1960, 1970, 1980, and so forth. For example, individuals in different birth cohorts--and by birth cohorts, I mean the year or the year group in which person a is born--they might have had different diets that occurred over time that affected those groups differently and therefore pose different health risks over their lifetimes. For example, someone born in 1950 and living for 80 years experiences a different diet than someone born in 1990 and lives for 50 years.
+
+The prevalence is strongly affected by the person's year of birth.
+
+age and cohort effects can be intertwined with each other
+
+
+

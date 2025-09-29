@@ -1,0 +1,25 @@
+
+
+## Risk vs. Rates
+
+Risk: the probability that a disease-free individual develops a disease within a specific time period, conditional on that individual not dying from any other disease during the period
+
+  - has interpretation on the individual level
+  - useful for assessing prognosis of a patient, selecting a treatment strategy, making personal decisions about health behavior
+  
+  - refers to a specific period of time
+  
+
+Rate: the average potential for a change in disease status per unit of person-time follow-up among disease-free individuals 
+
+  - has no difrect interpretation on the individual level
+  - useful for assessing etiologic hypotheses for acute diseases
+  - includes the unit of time as part of its definition 
+  
+
+
+
+Risk is the probability that a disease-free person or individual develops a disease in a specific time period conditional on that person not dying from any other disease during the period.It's interpreted at the individual levels. This is very key. And it's useful for making prognosis of a patient in a clinical setting, for example, and selecting a treatment strategy, making a personal decision about changing health behavior. And its referenced to a specific point in time. 
+
+Rate is the average potential for a change in disease status per unit of person time follow up among disease-free individuals.So risk is referring to a specific period of time, but the units do not have time, whereas a rate includes time as part of the measure. And it has no interpretation at the individual level. But it is useful for assessing the rate of disease onset. And so it's helpful for etiologic hypotheses, especially for acute diseases with short durations. 
+  

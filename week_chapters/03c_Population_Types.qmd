@@ -1,0 +1,39 @@
+
+## Closed vs. Open Populations
+
+- Depends on the time scale used to define a population 
+
+- Population classification informs the method used to calcuate incidence
+
+- Example: all people who ever used a specific drug
+
+-- if time scale is when a person started to when they stopped: closed population 
+
+-- if time scale is the calendar time: open population because new drug users may enter/leave over time
+
+
+#### Closed: a population in which there are no entries during the follow-up period and no losses to follow-up ("fixed")
+
+#### Open: a population in which the person time experiene can accrue from a changing roster of individuals. Individuals can enter, exit, re-enter during the follow-up period ("dynamic")
+
+Can enter via: 
+-- birth
+-- migration in 
+
+Can exit via: 
+-- death
+-- migration out
+-- termination of study
+-- change in eligibility 
+
+## Steady State Population: A type of Open Population 
+
+-- the number of people entering and exiting is balanced within a set period of time across age, sex, and other factors affecting disease risk / outcome of interest
+
+
+
+
+Basically, we can think of human populations as mean of two types, closed and open. And what we're trying to demonstrate here in the figures is that in a closed population, you'll see that there are no entries during the follow-up period, and there are no losses to follow-up. That is, this is called a fixed population. So you see that everybody who's in there stays in there until they have disease. 
+
+Whereas in an open population, this is a population in which the person time experience of the individuals can accrue from a changing roster of individuals, so the individuals can enter during the follow-up period. Sometimes this open population is referred to as a dynamic population, and it's the most common type we see in practice in epidemiology.
+

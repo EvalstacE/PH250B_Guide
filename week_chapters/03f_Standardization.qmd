@@ -1,0 +1,6 @@
+
+## Standardization 
+
+First let's recap standardization in general. We typically start an analysis with crude rates from different populations. And if we want to make comparisons of these rates between populations, we have to be really careful about the distribution of different covariate or confounders or other variables such as age between these populations.
+
+For example, if the age of two populations is very different, we might not be able to make direct comparisons of crude rates between these populations, *because age is typically associated with disease. This is true not just for age, but really any variable associated with our outcome or disease of interest. One way to be able to make comparisons between populations is to calculate standardized or adjusted rates. So these are rates that have essentially just been transformed statistically to allow us to make these direct comparisons.

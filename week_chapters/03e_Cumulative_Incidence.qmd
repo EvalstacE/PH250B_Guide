@@ -1,0 +1,207 @@
+
+## Key Points
+
+Cumulative incidence is a population-level concept; risk is an individual-level concept
+
+There are three ways to calculate cumulative incidence from individual-level data: 
+
+  - **Simple cumulative method** : appropriate for short time frames and closed populations with no withdrawals 
+  
+  - **Actuarial method** : appropriate for open populations with withdrawals when information on disease / withdrawal is available within intervals
+  
+  - **Kaplain-Meier method** : appropriate for open populations with withdrawals when the exact time of disease / withdrawal is available 
+  
+If you want to convert incdience density/rate to a **cumulative incidence** , then you need to use the **density method**. 
+
+
+
+
+## Cumulative incidence review
+
+- numerator: number of incidence (new) cases of disease
+
+- denominator: population at risk during follow-up period 
+
+- units: none / unitless
+
+- range: 0-1
+
+- interpretation: it is the proportion of a closed population at risk that becomes diseased within a given period of time 
+
+
+
+## Risk vs. Cumulative Incidence
+
+Cumulative incidence is a population-level concept; risk is an individual-level concept
+
+**Risk**: the probability that a disease-free individual develops a disease within a specific time period, conditional on that individual not dying from any other disease during the period 
+
+**Cumulative incidence** : proportion of subjects who develop the disease during the observation period 
+
+
+## Methods for Calculating Cumulative Incidence
+
+
+### Simple Cumulative Method
+
+- appropriate for short time frames (e.g. food-borne illness outbreaks)
+
+- often called the **"attack rate"** 
+
+
+
+- CI_(t0,t) = I / N'_0
+-- I : number of incidence cases within the follow-up period 
+-- N' : number of people at risk at the beginning of follow-up 
+
+-- assumes there are no withdrawals (all participants are followed for the entire follow-up period)
+
+
+
+-- if the population is closed and there is no attrition (withdrawal/loss to follow-up) during follow-up period, the cumulative incidence is equivalent to the risk 
+
+  -- R_(t0,t) == CI_(t0,t) == I / N'_0
+
+
+### Actuarial Method 
+
+- appropriate for incomplete follow-up
+
+intuitively, this method involves: 
+
+  - break the follow-up time into smaller time intervals
+  
+  - treat the population as a closed cohort within that time interval (even if the study population was open)
+  
+  - estimate the risk in each interval, assuming any withdrawals occurred halfway through the interval 
+  
+  -- for this reason, interval length should be relatively short
+  
+  -- the interval risk is a conditional probability: it conditions on whether a person was at risk (alive and not censored) at the event time 
+
+
+  - calculate the **cumulative incidence** that accumulated over all intervals 
+  
+  
+#### Choice of interval length 
+
+- choice of interval length is based on the extent to which incidence changes over time 
+
+- the goal is for events and withdrawals to occur at an even rate throughout the interval 
+
+- intervals do not have to be the same duration 
+
+Example: 
+
+  -- study of survival after heart attack
+  
+  -- short intervals could be used soon after symptom onset when the probability of death is high and changes quickly 
+  
+  -- longer intervals can be used later after symptom onset 
+  
+  
+
+#### Actuarial method steps 
+
+**Step 1:** 
+
+calculate the population at risk at the beginning of each interval 
+
+**Step 2:**
+
+count the number of incident cases within each interval 
+
+**Step 3:**
+
+count the number of withdrawals within each interval 
+
+**Step 4:**
+
+calculate the risk within each interval, using the formula: 
+
+  -- R_j = I_j / [N'_0j - (W_j/2)]
+  
+  -- the reason we divide W_j by 2 is that we assume the withdrawals are occurring evenly in the interval. So the probability of the withdrawal occurring at the beginning is equally likely to withdrawal at the end of the interval.
+  
+**Step 5:**
+
+calculate the survival within each interval using the formula: 
+
+  -- S_j = 1 - R_j
+  
+Well, when we think about the risk of developing the disease, it's really the opposite concept of the risk of surviving. So we can say that, if you survived, it means you didn't get the disease. SoS sub j is the interval survival, and that's equal to 1 minus the interval risk of R sub j, because R sub j is a probability that spans 0 to 1. *To calculate the interval survival, we just subtract 1 minus the interval risk, and that's pretty straightforward.
+
+
+**Step 6:** 
+
+calculate the cumulative incidence for the entire follow-up period using the product limit formula. 
+
+  -- formula just means: 
+  -- multiply all survival intervals together, then subtract that from 1
+
+
+  
+
+
+### Kaplan-Meir Method
+
+
+- appropriate for incomplete follow-up
+- can be used with an open population
+- intuitively, the method involves: 
+  
+  - break the follow-up time into small time intervals
+  
+  - calculate the risk at the time that each **disease event** occurs (do not consider withdrawals)
+      - the interval risk is a conditional probability: it conditions on whether a person was at risk (alive and not censored) at the event time
+  
+  - calculate the **cumulative incidence** that accumulated over all intervals 
+
+
+
+
+
+## Density Method
+
+- used to convert rates to cumulative incidence
+- appropriate for incomplete follow-up
+- can be used with an open population
+- assumes rare disease
+- intuitively, this method involves: 
+    
+  - break the follow-up time into small time intervals
+  
+  - calculate the incidence density in each interval 
+  
+  - convert the incidence density to an estimate of risk within each interval using a formula that links risks and rates
+  
+  - calculate the cumulative incidence that accumulated over all intervals
+  
+  - **when the disease is common, the density method using the exponential formula will NOT approximate the cumulative incidence** and is not appropriate to use.
+  
+
+So we can use the density method if we have rates, and we want to convert them to cumulative incidence. And we can use this method when we have incomplete follow up and we have an open population. The formula that we're going to show you, though, **does assume that the disease is rare.** So this is something to keep in mind.
+
+Here is an intuitive breakdown of what the steps entail. Just like in the last two methods, we're going to break up the follow-up period into smaller time intervals. We'll calculate the incidence density within each interval. We will then convert the incidence density to an estimate of risk within each interval using a formula that links risks and rates. And then we'll calculate the cumulative incidence over all those intervals.
+
+1 minus the exponent of the negative sum of our interval risk,
+
+
+**insert formula photo**
+
+First, I want to show you this formula that links cumulative incidence to the incidence density or the rate. Soif R stands for risk and ID stands for incidence density, here, what we have is that the risk in an interval j is equal to the incidence density in that interval times delta t. So that's the duration of follow up time.
+
+So if we multiply this through incident cases over person time at risk--that's our definition of incidence density--multiply that times follow-up time. And we cancel out the time units. And what we get back is incident cases over persons at risk. Sowhat we see at the top here, the first line is a rate, because our denominator is person time multiplied by time. And then a second line is a risk because it's a probability. We're dividing people who develop the disease by people who are at risk. And it's unitless.
+
+
+And as we've discussed, we can calculate the survival, which is 1 minus the risk. And sosurvival at interval j is equal to 1 minus the incidence density interval j times delta t sub j from the last step. Sowe've just plugged in R sub j from the first step into R the second step.
+
+
+
+
+
+
+
+
+
+

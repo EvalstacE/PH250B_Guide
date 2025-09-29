@@ -1,0 +1,15 @@
+You want to compare cancer mortality rates in the United States between 1980 and 1940. You know that cancer is associated with age and that the age distribution of the U.S. population has changed between 1940 and 1980. Which rates would be best to compare: crude or age-standardized? Why?
+
+Age-standardized. The percent of people over 65 has increased from 1940 to 1980, so examining the crude rates would make it appear that the cancer mortality rate has increased when the increase in crude rates is really largely attributable to the change in the age distribution in the population. Age-standardized rates would adjust for the difference between the age distributions, making the rates comparable.
+
+
+crude mortality rate for a population: 
+total number of deaths / total population
+
+age-specific mortality rates: 
+number of deaths in age group / population in age group
+
+age-adjusted mortality rate for a population: 
+use standard population count for age group
+multiply that by the age-specific mortality rate (observed) = expected deaths per age group 
+age-adjusted mortality rate = total number of expected deaths / total standard population count

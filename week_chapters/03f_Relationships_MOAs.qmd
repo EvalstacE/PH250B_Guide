@@ -1,0 +1,117 @@
+## Relationships among various measures of association
+
+So to summarize the relationships between the measures of disease, cumulative incidence and incidents are related by this formula where the cumulative incidence is equal to 1 minus e raised to the power negative incidence density times delta time. 
+
+So think about to yourself what happens as delta time changes or what happens as negative incidence density changes to the cumulative incidence? 
+
+The prevalence and incidence density can be thought of in two situations. One, under steady state. And one under steady state when disease is rare. 
+
+So under a steady state it's a little more complicated. But p over 1 minus p prevalence over 1 minus prevalence is equal to the incidence density times the density, which can be rewritten as the prevalence equals the incidence density times the density divided by the quantity and the incidence density times the density plus 1.
+
+And under steady state where the disease is rare, the prevalence because of the simplification we discussed earlier, can equal the incidence density times the duration. 
+
+So as the duration gets longer, the prevalence gets higher.
+
+And then finally, hazard is the instantaneous potential for change in disease status per unit of time at time t. 
+
+And it can't be directly calculated because it is defined for an 9infinitely small time interval.
+
+
+### Cumulative Incidence and Incidence Rates
+
+So the cumulative incidence and the incidence rate can be thought of sort of in graphical terms.
+
+the population starts at a certain point, at time 0. And then as disease occurs, the disease free population smoothly reduces.
+
+incidence rate as the slope
+
+cumulative incidence as 1 - the point on the incidence curve divided by the y intercept of that line
+
+### Prevalence and incidence
+
+when the population is in a steady state, the point prevalence odds approximate the incidence density times the duration of disease 
+
+we can simplify this formula **if the disease is rare** 
+
+
+So why does the population need to be in a steady state? That's because in a steady state the incident cases--the inflow of cases to the population equal the recovery cases or the outflow. So the incidence rate, I, is times the susceptible population N sub s is the inflow. Whereas, the outflow or the departure of patience from the population would be the recovery rate times the disease, the population not at risk.So under steady state conditions, the incidence times the susceptible population will equal the recovery rate times the not at risk population. We can express the prevalence odds as the number with disease divided by the number susceptible. And that can be rewritten as the incidence times 1 over r. And since 1 over r equals duration, we can rewrite it is p over 1 minus p equals the incidence density times the duration, which is an algebraic re-arrangement.
+
+
+The big idea
+
+We’re asking: how are prevalence (the proportion of people with a disease at a given point in time), incidence (the rate of new cases), and duration (how long people typically stay diseased before recovery or death) connected?
+
+The short answer is:
+
+In a steady state population, prevalence is basically “how fast new cases flow in” × “how long they stay in the pool.”
+
+Think of a bathtub:
+
+Incidence = the faucet (new cases pouring in).
+
+Duration = how long water stays in before draining (disease course).
+
+Prevalence = how much water is in the tub at any given moment.
+
+If the faucet keeps pouring at a steady rate, and the drain is working steadily, then the amount of water in the tub will reach a balance. That’s the steady state.
+
+For the formula to hold neatly, we need the bathtub to have stable conditions:
+
+People are getting the disease at about the same rate they’re leaving it (through recovery or death).
+
+The population size and risk structure aren’t rapidly changing.
+
+That’s what “steady state” means — the inflow equals the outflow, so the prevalence level is stable and predictable.
+
+
+Where “duration” comes in
+
+Duration matters because:
+
+If a disease lasts a long time (slow drain), even a low incidence will build up a big pool of cases → higher prevalence.
+
+If a disease is short (fast drain), even a high incidence may not translate into high prevalence, because cases exit quickly.
+
+So prevalence reflects both how often new cases occur and how long they stick around.
+
+The “rare disease” simplification
+
+When a disease is rare, the proportion of people with it is so small that we can ignore some of the algebraic corrections (like subtracting the diseased from the population at risk). That’s why you’ll sometimes see the simplified version:
+
+Prevalence ≈ Incidence × Duration
+
+This approximation works well when the disease is uncommon.
+
+Practical examples
+
+Common cold: high incidence (lots of new cases), but very short duration (a week or two). Prevalence at any given time is modest.
+
+Diabetes: lower incidence than colds, but very long duration (lifelong if not cured). Prevalence is high.
+
+Ebola outbreak: high incidence in a short burst, but also short duration (either death or recovery quickly). Prevalence at a given time may spike but doesn’t stay high.
+
+
+How many new cases per unit time × how long they stay = how many are in the system right now.
+
+
+
+
+
+
+## Hazard vs Incidence
+
+Hazard: the instantaneous potential for chance in disease status per unit of time at time t relative to the size of the candidate populaitn (disease-free) at a given time
+
+- also called the **"instantaneous conditional incidence"** or the **"force of morbidity/mortality"**
+
+- how is hazard difference from incidence? 
+
+  - Hazard is an instantaneous rate
+  - Incidence density is an average rate over a period of time
+  
+- Hazard cannot be directly calculated because it is defined for an infinitely small time interval 
+
+- Statistical models can be used to estimate the hazard function over time
+
+- It is frequently used in cohort studies where the outcome is survival time or time to event
+
