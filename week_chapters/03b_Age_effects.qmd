@@ -3,5 +3,5 @@
 
 age effects are defined as the change in the measure of disease according to age, irrespective of birth, cohort, and calendar time.
 
-4For age effects, for almost all conditions, a person's age is associated with risk. So this doesn't necessarily mean that risk goes up with age. For some conditions, risk will go down with age. But if there's a relationship between age and the rate or prevalence of disease, we refer to that as an age effect.
+For age effects, for almost all conditions, a person's age is associated with risk. So this doesn't necessarily mean that risk goes up with age. For some conditions, risk will go down with age. But if there's a relationship between age and the rate or prevalence of disease, we refer to that as an age effect.
 

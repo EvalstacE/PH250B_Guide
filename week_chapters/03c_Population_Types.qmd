@@ -3,7 +3,7 @@
 
 - Depends on the time scale used to define a population 
 
-- Population classification informs the method used to calcuate incidence
+- Population classification informs the method used to calculate incidence
 
 - Example: all people who ever used a specific drug
 
