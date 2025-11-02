@@ -1,0 +1,194 @@
+## Key Points
+
+The defining feature of all cohort studies is that they track people forward in time from exposure to outcome. 
+
+A cohort study moves in one direction, although gathering data may not. 
+
+In most cohort studies, there is some loss to follow-up and some competing risks. 
+
+As a result, to calculate cumulative incidence, we must use the Actuarial, Kaplan Meier, or Density methods.
+
+We can calculate incidence density directly. 
+
+Most cohort studies define a numerical summary of exposure history that is expected to determine the risk of disease. 
+
+  + The precise definition of the summary of exposure will affect measures of association as well as interpretation of the study. 
+  
+When exposure is time-varying, summary of exposure can be classified by: 
+
+  + (1) Considering any time not related to the exposure as unexposed time, or, 
+  
+  + (2) Omitting from the study the experience of exposed subjects that is not at risk of exposure effects
+  
+An incorrect definition of the induction period can lead to misclassification bias. 
+
+
+## Types of Cohort Studies
+
+The 'types' of cohort studies differ in when exposure and outcome data are collected, but individuals in any type move in one direction: forward in time from exposure to outcome. 
+
+![Cohort Study Types](../www/05_images/cohort_study_types.png)
+
+### Prospective vs. Retrospective
+
+**Example:** study whether assisted reproductive technologies are associated with multiple births (e.g. twins)
+
+**Prospective:** Track (a) women exposed to these technologies and (b) a similar group who conceived naturally. Monitor the frequency of multiple births among both groups. 
+
+**Retrospective:** Use existing medical records and go back in time several years to identify women exposed and not exposed to these technologies. Then track them forward through records to note the birth outcomes. 
+
+![Prospective vs Retrospective](../www/05_images/pros_retro_studies.png)
+
+**Example:** study whether assisted reproductive technologies are associated with multiple births (e.g. twins) AND with ovarian cancer later in life.
+
+**Ambidirectional:** Look back through records for women who had multiple births and start to follow these women into the future for incidence of ovarian cancer. 
+
+![Ambidirectional](../www/05_images/ambi_studies.png)
+
+
+
+## Types of Populations
+
+### Closed population
+
+  + There are no losses to follow-up
+  + No migration into the population
+  + No competing risks
+  + No change in exposure status over time
+  
+### Open population
+
+  + Migration in and out of the population may occur
+  + Loss to follow-up may occur
+  + Competing risks may occur
+  + Exposure status may change over time
+  
+  
+## What measures of disease can be estimated in a cohort study? 
+
+### Depends on the type of population (open vs. closed)
+
+
+Incidence density can always be calculated directly in cohort studies no matter the population type.
+
+Occurrence times and prevalence cannot be estimated directly in open populations. 
+
+
+Actuarial, Kaplan Meier, or Density methods must be used to validly calculate cumulative incidence in open populations. 
+
+
+This is the case in nearly all epidemiologic studies with the exception of efficacy trials with short follow-up periods:
+ 
+
+**In a closed population:**
+If there is no loss to follow-up and no competing risks, we can directly estimate: 
+
+  + Cumulative incidence
+  + Incidence density
+  + Occurrence times
+  + Prevalence
+  
+
+**In an open population:**
+When there IS loss to follow-up and/or competing risks, we do not know the final outcome status of some individuals in the study population, so: 
+
+  + Cumulative incidence:
+  
+    + Must use the Actuarial, Kaplan Meier, or Density methods
+    
+  + Incidence density:
+  
+    + Can still be calculated directly
+  
+  + Occurrence times:
+  
+    + cannot be estimated directly
+  
+  + Prevalence
+    
+    + cannot be estimated directly
+    
+    
+  
+### Advantages of estimating incidence density in cohort studies
+
++ The denominator is **person-time** instead of **individuals** which allows for a more flexible classifation of exposed and unexposed groups
+
++ A single person can contribute person-time to multiple exposure groups in a single cohort study
+
++ An individual whose exposure experience changes with time can contribute person-time to either exposed or unexposed group
+
+
+
+## Exposure Classification in Cohort Studies
+
++ Changes in exposre status at different points in follow-up can affect how we estimate measures of dieases
+
++ The sequence of exposure and timing of exposure relative to age or disease onset could be important
+
++ Most epidemiologic studies assume that it is a **numerical summary of exposure history** that determines the risk of disease, for example: 
+
+  + Current level of exposure
+  + Averae exposure
+  + Cumulative exposure
+  + Maximum exposure
+  
++ Often, exposure is **lagged** so that only exposure up to a certain time point before the onset of the outcome or disease is classified as **"exposed"** 
+
++ For chronic disease, the time when exposure occurs may differ from the time when exposure have an effect
+
+
+### Chronic exposures in cohort studies
+
++ Accumulation of exposure experience may be a complex function of the intensity of the exposure and time
+
+**Example:** smoking and lung cancer
+
++ Exposure could be defined by "pack-years," the number of cigarette packs smoked per year
+
+  + Composite of both duration and intensity of smoking
+  
+  + 20 pack-years = 
+    + Half a pack a day for 40 years
+    + 1 pack a day for 20 years
+    + 2 packs a day for 10 years
+    
+  + Weakness of composite measure: can conceal biolgoical effects associated with intensity AND/OR duration 
+  
+  + This does not incorporate other time + intensity factors that may be important, such as: age of smoking initiation, age of smoking cessation, timing of exosure relative to disease
+  
+  
+### Unexposed Time for Exposed Subjects
+
++ In most cohort studies, individuals can be unexposed and exposed at different points during the follow-up period
+
+**So, how should exposure be classified in the analysis?**
+
+(1) Consider any time not related to the exposure as unexposed time
+
+  + Ignores possible threshold effects
+  + Ignores exposrue accumulation or induction period
+  
+(2) Omit form the study the experience of exposed subjects that is not at risk of exposure effects
+
+  + Requires a larger sample size 
+
++ Improper definition of the **induction period** may lead to misclassification (bias)
+
+
+### Defining the induction period
+
++ When we decide what time to include as exposed for an individual in the denominator of a rate, we are implicitly using a definition fo the **induction period.** 
+
+**Example:** Brief exposure and chronic disease: Is radiation emitted from an atomic bomb associated with cancer risk? 
+
+  + Exposure is nearly instantaneous, but the risk of disease does not increase immediately after exposure (i.e. induction period for cancer can be quite long)
+  
+  + In this example, if we define follow-up time immediately after exposure as "exposed," this implies a short induction period (which doesn't make biolgoical sense for cancer incidence)
+  
+  + The rate will be difference with a short induction period than with a long induction period, so **the choice of which time period to include in the denominator is very important.**
+  
+  + If, instead, we assume that the minimum time it takes for cancer to develop after radition exposure is at least 3 years, then any individual who develops cancer within that 3-year window after the exposure would be included in the **unexposed** group. 
+  
+  
+![Induction Period Bias](../www/05_images/induction_period_bias.png)
