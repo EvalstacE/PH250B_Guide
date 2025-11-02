@@ -1,0 +1,42 @@
+
+## Key Points
+
+**Selection bias can occur in any type of study**
+
+  + Good study design practices can minimize selection bias in most studies
+  
+  + Case-control studies are particularly prone to selection bias and warrant a careful assessment of selection bias in the design phase
+
+
+
+**Information bias can result from the way exposure, confounders, or outcomes are measured in any type of study**
+
+  + Careful study design and detailed training and study protocols can help reduce information bias
+  
+  + Misclassification is the result of information bias
+  
+  + Non-differential misclassification biases results toward the null 
+  
+  + Differential misclassification biases results in an unknown direction
+  
+  
+**Generalizability and Validity**
+
+Generally, for a given etiologic research question about whether an exposure causes a disease, it is best to first conduct studies that maximize **internal validity** to establish the direction and size of effects 
+
+  + Then, subsequent studies can be done to assess whether these effects hold true in other populations 
+  
+Some studies, such as **impact evaluations,** evaluating the impact of a specific program conducted in a specific population at a specific time, do not aim to study etiolgoy, but rather are focussed on interences about that population 
+
+  + In this case, it is often important to design studies to balance both internal and external validity 
+  
+  
+**Using DAGs to Diagnose Bias**
+
+DAGs are a powerful tool to help diagnose selection and information bias in a study 
+
+To diagnose selection bias, identify whether a selection factor is a collider of the exposure-outcome that is conditioned on in a DAG 
+
+There are many DAG configurations that depict information bias
+
+DAGs are ideally used during the study deisgn phase to help identify, address, and minimize potential bias

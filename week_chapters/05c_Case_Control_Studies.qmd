@@ -1,0 +1,42 @@
+
+## Key Points
+
+Following the three principles for case-control studies outlines by *Wacholder et al.* helps to minimize selection bias, confounding, and information bias
+
+We can use a combination of study design and data analysis techniques to meet these principles, including: 
+
+  + Careful selection of controls
+  
+  + Matching
+  
+  + Stratification 
+  
+  + Multivariate statistical models 
+  
+  + Validation studies
+  
+  
+**There are many potential types of controls**
+
+  + each type of control has different limitations and advantages
+  
+  + typically we are restricted in the set of potential types of controls we can use, depending on our exposure and disease of interest 
+  
+  + when selecting controls, we should try to adhere to the three principles for case-control studies as they apply to our research question
+  
+  
+**Case-control study designs estimate different measures of association**
+
+![case control MOA](../www/06_images/case_control_MOA.png)
+
+
+**Various case-control design features exist to:**
+
+  + reduce the cost of conducting the study
+  
+  + increase the statistical efficiency (e.g., reduce the width of 95% CI)
+  
+  + Control for unmeasured confounders
+  
+  
+  

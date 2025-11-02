@@ -1,0 +1,29 @@
+
+## Key Points
+
+Cross-sectional studies can be used to generate hypotheses and validly estimate prevalence
+
+They can assess many exposures and outcomes at one time
+
+It can be difficult to establish the time ordering of exposure and outcome in cross-sectional studies
+
+Cross-sectional studies can be subject to **length-biased sampling**
+
+
+The **STROBE Reporting Checklist** is recommended when publishing results of a cross-sectional study 
+
+The article by *Vandenbrouke et al. 2007* provides detailed examples of how to use the STROBE checklist 
+
+Epidemiological studies in war-time setting face unique threats to validity and it's very difficult to conduct a study with ideal conditions 
+
+
+### Ecological Studies
+
+Desipite the drawbacks of ecological studies, there are certain types of data and research topics for which they are advantageous 
+
+Ecological studies can compare rates between groups, between time periods, or both 
+
+Ecological study analyses can adjust for confounders and effect modifiers
+
+In all ecological studies, we must be careful to make appropriate inferences (e.g. "ecological fallacy") and minimize bias to the extent possible 
+
