@@ -1,6 +1,23 @@
 
 ## Key Points
 
+### Three Principles: 
+
+**(1) Study-Base Principle:**
+
+  + cases and controls should be "representative of the same base experience" in order to minimize selection bias
+  
+
+**(2) Deconfounding Principle:**
+
+  + the measures of association should NOT be distorted by confounding, unmeasured confounders should be minimized in the study design (e.g. stratification, matching)
+  
+  
+**(3) Comparable Accuracy Principle:**
+
+  + the degree of accuracy in measuring the exposure of interest for the cases should be equivalent to the degree of accuracy for the controls 
+
+
 Following the three principles for case-control studies outlines by *Wacholder et al.* helps to minimize selection bias, confounding, and information bias
 
 We can use a combination of study design and data analysis techniques to meet these principles, including: 
@@ -27,7 +44,7 @@ We can use a combination of study design and data analysis techniques to meet th
   
 **Case-control study designs estimate different measures of association**
 
-![case control MOA](../www/06_images/case_control_MOA.png)
+![case control MOA](../www/05_images/case_control_MOA.png)
 
 
 **Various case-control design features exist to:**
@@ -39,4 +56,24 @@ We can use a combination of study design and data analysis techniques to meet th
   + Control for unmeasured confounders
   
   
+--------------------------------
+
+## Primary vs Secondary Study Base
+
+### Primary Study Base:
+
+**Advantages:** 
+
+  + we can be more confident that the controls come from the population that gave rise to the cases
   
+  + we can be more confident that exposure in controls estimates the distribution of exposure in the general population 
+  
+**Disadvantages:**
+
+  + we must consider whether all cases have been identified
+  
+  + **Controls:** controls from this population may be less motivated to participate, it may be expensive to track down and interview controsl from such a wide poulation base, and differential misclassification of exposure via recall bias may be more of a concern (*note: potential for recall bias is an issue with secondary study bases as well*)
+
+
+
+### Secondary Study Base:

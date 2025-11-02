@@ -13,4 +13,4 @@ The **CONSORT Checklist** was designed to help improve the quality and consisten
   
 The **GRADE Tool** is used to evaluate the quality of RCTs in systematic reviews
 
-  + GRADE critieria also exist for observational studies
+  + GRADE criteria also exist for observational studies

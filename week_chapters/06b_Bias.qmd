@@ -1,6 +1,10 @@
 
 ## Key Points
 
+
+![Validity vs Precision](../www/06_images/validity_precision.png)
+
+
 **Selection bias can occur in any type of study**
 
   + Good study design practices can minimize selection bias in most studies
