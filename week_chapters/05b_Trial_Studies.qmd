@@ -1,0 +1,546 @@
+
+## Key Points
+
+### Trial Designs
+
+Choice of which type of trial to use depends on the following: 
+
+  + Whether efficacy or effectiveness are of interest
+  
+  + Whether single interventions vs. combinations of interventions are of interest
+  
+  + Whether prior trials have been done to investigate the safety of an intervention
+  
+  + Whether it is possible to blind participants / investigators 
+  
+  + The nature of the intervention (group vs. individual)
+  
+  + Whether participate preference is of interest
+  
+  + Whether indirect effects or spillover effects are of interest
+  
+  + The risks posed to individulas pariticpating in the study
+
+
+#### Equivalence trials:
+
+Null hypothesis for equivalence trials: **the treatments ARE DIFFERENT** i.e. they yield different outcomes 
+
+Alternative hypothesis: there is **NO DIFFERENCE** in outcomes between treatments, i.e. the difference is "clinically insignificant" 
+
+  + definition of "clinically insignificant" is a matter of debate
+  
+Sample size is generally larger than that for superiority trials 
+
+Rigor in equivalence trial design, conduct and analysis especially important to avoid bias away from the null / toward a finding of "no difference"
+
+Finding of no differnece **still requires demonstration of efficacy**
+
+  + This must come from outside the trial or from additional placebo arm(s)
+
+Useful for:
+
+  + to demonstrate a **"clinically insignificant"** difference between two treatments
+  
+  + testing new therapies when there is already a good standard therapy 
+
+
+
+
+#### Cluster randomized trials:
+
+Useful for: 
+
+  + interventions that require community-level implementation, or, 
+  
+  + interventions that have community-wide effects (e.g. infectious disease interventions)
+  
+Cluster randomized trials almost always require a larger sample size than individually randomized trials
+
+Special analytic methods must be used to analyze clustered data
+
+
+
+
+
+### Randomized Trials and Bias: 
+
+Though randomized trials are the best design for minimizing both measured and unmeasured confounding, they are still stubject to a range of different types of biases. 
+
+Biases can be reduced by: 
+
++ Using eligibility criteria and randomization procedures that do not intrudce selection bias
+
++ Blinding participatns, researchers, and analysts
+
++ Allocation concealment
+
++ Pre-specifying and adhering to the study protocol 
+
++ Appropriate handling of withdrawals from the study
+
+
+
+--------------------------------
+
+
+## Types of Randomized Trials
+
+The table below shows us how we can categorize the wide range of randomized trials that are in use today. **Some trial designs depend on aspects of interventions that they evaluate, some RCTs focus on how participants are exposed to intervention, some are designed based on the number of participants.**
+
+These different types are **not necessarily mutually exclusive,** so you could have, for example, a Phase III, sequential, double-blind, adaptive randomized trial.
+
+![RCT Categorization](../www/05_images/rct_categories.png)
+
+
+---------------------------------------
+
+## Efficacy vs. Effectiveness Trials
+
+**Efficacy Trial:** measures whether (and how) an intervention can work under *optimal circumstances* 
+
+  + designed to achieve high intervention uptake, high compliance, minimal loss to follow-up 
+  
+  + May have more strict eligibility criteria to ensure ideal conditions
+  
+  
+**Effectiveness Trial:** evaluates an intervention with proven efficacy when it is offered to a more diverse group of people under *ordinary clinical circumstances* 
+
+  + designed to determine not only whether the intervention achieved specific outcomes, but also the consequences of its use (good or bad)
+  
+  + Meant to mimic **real world conditions**
+
+
+
+--------------------------------------------
+
+## Superiority vs. Equivalence Trials
+
+
+**Superiority Trial:** intended to determine if a new treatment **is better than placebo** or existing treatment (i.e "active control")
+
+**Equivalence Trial:** intended to determine that a new intervention or treatment **is no worse than** active control (existing treatment)
+
+  + We can never assess absolute equivalence
+  
+  + We can only assess no difference **within a prescribed margin**
+  
+**Non-inferiority Trial:** intended to determine that a new treatment or intervention is **not substantially worse** than active controls
+
+  + similar to but distinct from an equivalence trial
+
+
+--------------------------------------------
+
+## New Drug Trials: Phase 1, 2, 3, 4
+
+
+Once a Phase 3 trial is complete, the FDA and the U.S. can approve the drug for marketing, and doctors can begin to prescribe it. 
+
+Out of all phases, Phase 3 is the only true "trial" as it is both randomized and controlled. 
+
+
+![Drug Trial Phases](../www/05_images/drug_phase_trials.png)
+
+
+
+------------------------------------
+
+
+## Parallel vs Factorial Trials
+
+**Parallel Arm Trial:** each group of participants is exposed only to one of the study interventions
+
+  + very frequently used 
+  
+
+**Factorial Trial:** paricipants receive combinations of interventions and single interventions
+
+  + **Example:**
+    
+    + Low-dose aspirin only
+    + Vitamin E only
+    + Both low-dose aspirin AND Vitamin E
+    + Placebo (none)
+
+
+----------------------------------------
+
+
+## Crossover Trials
+
++ Each participant, in **both intervention AND control**, receives all interventions at different time frames of the study 
+
++ Usually used for chronic or repeated outcomes
+
++ The effects of th eintervention should have rapid onset and short duration 
+
++ The condition or disease should be stable
+
++ Need to avoid: 
+
+  + **"Carry-Over Effects":** the effect of one intervention lingers into the period of the next intervention
+  
+  + **"Period Effects":** changes in disease due to the time (such as season) or disease progression
+  
+  
+----------------------------------------
+
+
+## N-of-1 Trials
+
++ These can be though of as a form of a crossover trial
+
++ Each participant receives the experimental arm for a period of time and then the control / comparison arm during a different period of time
+
++ There can be many such periods of time in these studies (e.g. **XCCCXXCCXX**)
+
++ The participant does not know which intervention is occuring during each period
+
++ Helpful when it is not clear whether a treatment will be effective for a patient
+
+  + E.g.: **rare disease for which no trials have been done** for a particular treatment 
+  
++ Effectively controls for non-time varying confounders at the individual-level 
+
++ **Results are applicable to the individual and are NOT generalizable**
+
+
+----------------------------------------
+
+
+## Sequential Trials
+
+
++ Has a **parallel design**
+
++ Number of participants is NOT specified before the trial begins
+
++ Contrast is with the more "traditional" fixed size trial in which the number of participants is determined based on *a priori* sample size calculations
+
++ **Participants are recruited until the question is answered** (or it becomes clear that there is no possibility to detect a difference between the arms)
+
++ Usually the principal outcome occurs (or not) shortly after the study begins
+
++ This type of trial allows for early termination based on evidence of benefit, harm, or equivalence
+
+
+
+
+----------------------------------------
+
+
+## Cluster-Randomized Trials
+
++ **Groups of people,** rather than individuals, are randomized to intervention and control groups
+
++ Differ from individual randomized trials in: 
+
+  + Unit of randomizations
+  + Method of analysis
+  + Inference and generalizability 
+  
+
++ nature of intervention requires community level implementation 
+
+  + e.g.: community-wide sanitation, media campaigns, school programs 
+  
++ Must aim to avoid contamination between individuals in different treatment clusters
+
+  + e.g. behavioral studies
+  
+  + resentment from control group in non-blinded trials 
+  
++ Increased administrative efficiency and lower cost
+
++ Allows for estimation of within AND between cluster variation 
+
++ Infectious disease interventions have community-level impacts on disease transmission
+
+  + Allows for estimation of direct AND indirect effects (**"spillover effects"**)
+  
+  
+**Common applications of cluster-randomized trials:**
+
++ Community intervention trials
+
+  + water filtration and infant health
+  
++ Family practice research 
+
+  + provider screening techniques and patient cholesterol 
+  
++ Interventions against infectious disease
+
+  + malaria and use of mosquito nets
+  
++ Trials in developing country settings
+
+  + Vitamin A supplements and pregnancy-related mortality 
+  
+  
+### Requirements for Cluster-Randomized Data Analysis
+
++ a larger sample size 
+
++ special analytic methods for clustered data
+
+  + people within clusters tend to be more similar to each other than people across different clusters
+  
+  + i.e. within-cluster variation is typically less than between-cluster variation
+  
+  + outcomes for individuals in the same cluster are correlated, so they are dependent / not independent
+  
+  + standard statistical methods assume that outcomes are independent and will underestimate the variation and standard errors
+  
+  + the extent of the within-cluster dependency can be determined by using the **"intracluster correlation coefficent (rho)"**
+  
+    + a small rho value implies that within cluster variance is much greater than between clusters
+    
+    + a large rho value implies that within cluster variance is similar to that between clusters
+    
+    + the magnitude of the rho value influences sample size calculations
+    
+
++ We can obtain estimates of rho from **prior studies** 
+
+  + small studies (<40 clusters) ahve more error in rho estimates 
+  
+  + the value of rho in prior studies depends on covariates and stratification used in the model to estimate it 
+  
++ We can estimate rho in pilot data
+
++ We can perform a sensitivity analysis to explore the impact of different rho values on the same sample size
+
+
+    
+    
+    
+    
+**A hypothetical study with four clusters and what different values of rho would tell us:**
+
+![clusters and rho values](../www/05_images/clusters_rho_values.png)
+
+
+### Design Effect and Effective Sample Sizes: Cluster-Randomized Trials
+
+**The design effect** is the variance inflation due to clustering 
+
++ **= 1 + ((average cluster size - 1) / rho)**
+
+The effective sample size 
+
++ **= sample size / design effect**
+
+The larger the deisgn effect, the smaller the effective sample size compared to the actual sample size 
+
+For example, a design effect of 2 means: 
+
+  + the variance is twice as large as you would expect if there had been no clustering 
+  
+  + you would need twice the sample size to have the same statistical power as you would have if there had been no clustering
+  
+  
+#### Practical Implications of the Design Effect
+
++ investigators using cluster randomized trails must complete statistical power calculations in advance that use estimates of the rho and design effect to obtain the proper sample size 
+
+  + in most cases, adding more clusters is more important than adding more people per cluster 
+  
++ Statistical analysis methods must appropriately account for clustering in data from cluster randomized trials, otherwise standard errors and confidence intervals will be artificially too narrow, suggesting results are more precise than they truly are
+
+
+
+----------------------------------------
+
+
+## Trials that Accout for Non-Randomized Individuals' Preferences
+
+
+### Zelen's Design: 
+
++ eligible individuals are randomized before they consent
+
++ evaluations **the effect of offering** the intervention to eligible individuals 
+
++ **Limitations:** 
+  
+  + cannot be blinded
+  + may have low statistical power if one arm is much more popular than the other
+  
+  
+### Comprehensive Cohort Design: 
+
++ individuals who consent to randomization are randomly allocated to intervention groups
+
++ individuals who want to participate but do not consent to randomization choose the intervention they prefer
+
++ convenient when participants have strong preferences and might not consent to randomization 
+
++ **Limitations:** 
+
+  + the non-randomized arm is a prospective cohort, so analyses must account for potential confounding
+  
+  
+### Wennberg's Design: 
+
++ individuals who agree to be randomized are randomly allocated to participate in: 
+
+  + an RCT in which they are randomly assigned to inervention groups
+  
+  + a prospective cohort in which they choose which intervention they prefer
+
++ **Limitations:** 
+
+  + the non-randomized arm is a prospective cohort, so analyses must account for potential confounding
+  
+
+
+----------------------------------------
+
+
+## Double-Randomized Trials 
+
++ also called "two-stage randomized trials"
+
++ first randomize clusters to intervention or control 
+
++ then randomize individuals in the intervention cluster to intervention or control 
+
++ appropriate for interventions that may indirectly affect non-recipients (e.g. through reduced disease transmission (like vaccines))
+
+
+----------------------------------------
+
+
+## Adaptive Randomized Trials 
+
++ Trial in which characteristics of the study itself, such as the proportion assigned to active intervention versus control, change during the trial in repsonse to data being collected 
+
++ Subjects are randomly assigned to Arm 1 or Arm 2
+
++ Interim analysis is performed: 
+
+  + If there is sufficient evidence that one intervention is superior or that is virtually impossible that hte interventions will differ from each other at the end of the trial, the trial is terminated early 
+  
+  + If there is evidence of an effect in Arm 2, adopt a "play-the-winner rule" that adjusts the probabilities of assignment to favor Arm 2
+  
++ Can help minimize risk for study participants and provide more rapid results
+
+
+
+----------------------------------------
+
+
+## Superiority vs. Equivalence Trials
+
+
+### Superiority Trials
+
++ intended to determine if a new treatment is different from (or better than) placebo or existing treatment (active control)
+
++ **NULL:** there is no difference between treatments 
+
++ **ALTERNATIVE:** the new treatment is different from (two-sided) or better than (one-sided) placebo or active control
+
++ **POTENTIAL BIAS:** incomplete follow-up, low compliance, co-interventions tend to bias results toward the null
+
+### Equivalence Trials
+
++ intended to determine that the new treatment is no worse than the active control
+
+  + we can never assess absolute equivalence
+  
+  + we can only assess no difference within a prescribed margin (up to debate)
+
++ **NULL:** the difference between treatments is greater than "X"
+
++ **ALTERNATIVE:** the difference between treatments is less than "X"
+
++ (the reverse of superiority trials)
+
++ **POTENTIAL BIAS:** incomplete follow-up, low compliance, co-interventions tend to bias results away from the null / toward the alternative: no difference between the groups
+
+
+### Why do equivalence trial? 
+
++ existing effective treatment 
+
++ Placebo-controlled trial would be unethical
+  
+  + e.g. life-threatening illness
+  
++ New treatment is not substantially better than the exisiting treatment 
+
+  + may have fewer side effects, greater convenience, lower cost, higher quality of life, or provide an alternative or second-line therapy option
+  
+  
+### Equivalence Margin
+
++ if confidence interval lies entirely within the equivalence margin, then it's considered "equivalent"
+
++ if confidence interval lies entirely outside the margin, then one drug is determined as "superior" 
+
++ if confidence interval crosses the margin, then results are considered "inconclusive" 
+
+**How to set the equivalence margin:**
+  
+  + superiority trials set sample size to detect a "clinically significant" difference 
+  
+  + Equivalence trials set sample size to establish "clinically insignificant" difference
+  
+  + "Clinically insignificant" is determined by information outside of the trial 
+  
+  + May be a source of great controversy: has a large impact on sample size
+  
+  
+### Challenges in Equivalence Trial Design: 
+
++ changing the cutoff from clinically "significant" to "insignificant" often leads to a 50% reduction int he size of the confidence intervals 
+
+  + this can increase the sample size 4 times
+  
++ Necessity of a gold standard for exisitng therapy (active control) 
+
+  + may not exist if multiple treatments exist
+  
++ Necessity to establish equipotent doses of new treatment and active control
+
+  + requires prior testing of multiple doses of each drug
+  
+  + difficult to know if smaller prior study has not been conducted 
+  
++ Best condition for new therapy may not match previous research for active control 
+
+  + testing of new therapy as a second line treatment
+  
+  
+  
+### Bias in Equivalence Trials 
+
+**Incomplete follow-up and Low compliance:**
+
+  + may limit observed response and therefore bias results toward no difference 
+
+  
+**Co-interventions:**
+
+  + may create 'ceiling' in response and therefore bias results toward no difference
+  
+**Measurement error:**
+
+  + increases variability and the size of the confidence interval
+  
+  + increases the likelihood of inconclusive results
+  
+**Un-blinding**
+
+  + may bias results in an unknown direction
+  
+  + blinding particularly important in equivalence trials 
+  
+  
+  
+
+
+  
