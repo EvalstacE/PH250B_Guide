@@ -1,0 +1,33 @@
+# Univariable and Bivariable Analyses
+
+What are two advantages of multiple regression techniques, as compared to stratification-based methods? 
+
+- Multiple regression makes adjustment for continuous variables simpler. 
+
+- Stratification-based methods can result in data sparseness when strata are too numerous. (Note: Regression lets you borrow information from the data you have to make guesses about the data you don’t have, but it does not solve the problem of sparse data.) 
+
+- In stratification-based methods, though you can adjust for multiple covariates simultaneously, you can analyze the association between the outcome and only one predictor variable at a time. 
+
+
+You conduct a cohort study of childhood asthma following 2,000 children born in Southern California. You are interested in examining whether children whose mothers were exposed to smoke from wildfires during pregnancy are more likely to develop asthma by age 5. Of the initial cohort, 825 mothers were exposed to fires and 1175 were not; 12% of the cohort was lost to follow-up non-differentially by exposure. Among those retained in the study, 59 exposed children and 70 unexposed children were diagnosed with asthma by age 5. 
+
+
+-- 825/2000 mothers exposed
+-- 1175/2000 mothers not exposed
+-- 12% non-differential by exposure loss to follow up
+
+
+-- 825 - (825*.12)   = 726
+-- 1175 - (1175*.12) = 1034
+
+-- 59/726 D|E           == 0.08126722
+-- (726-59)/726 ND|E    == 0.9187328
+-- 70/1034 D|U          == 0.06769826
+-- (1034-70)/1034 ND|NE == 0.9323017
+
+All with asthma: 
+-- (59+70) / (726+1034) == 0.07329545
+
+Attributable risk, aka cumulative incidence difference, aka risk difference:
+
+RD = 0.08126722 - 0.06769826 = 0.01356896

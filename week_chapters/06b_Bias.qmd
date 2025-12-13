@@ -2,38 +2,98 @@
 ## Key Points
 
 
-![Validity vs Precision](../www/06_images/validity_precision.png)
-
-
-**Selection bias can occur in any type of study**
-
-  + Good study design practices can minimize selection bias in most studies
-  
-  + Case-control studies are particularly prone to selection bias and warrant a careful assessment of selection bias in the design phase
-
-
-
-**Information bias can result from the way exposure, confounders, or outcomes are measured in any type of study**
-
-  + Careful study design and detailed training and study protocols can help reduce information bias
-  
-  + Misclassification is the result of information bias
-  
-  + Non-differential misclassification biases results toward the null 
-  
-  + Differential misclassification biases results in an unknown direction
-  
-  
-**Generalizability and Validity**
+**Generalizability and Validity (Accuracy)**
 
 Generally, for a given etiologic research question about whether an exposure causes a disease, it is best to first conduct studies that maximize **internal validity** to establish the direction and size of effects 
 
   + Then, subsequent studies can be done to assess whether these effects hold true in other populations 
   
-Some studies, such as **impact evaluations,** evaluating the impact of a specific program conducted in a specific population at a specific time, do not aim to study etiolgoy, but rather are focussed on interences about that population 
+Some studies, such as **impact evaluations,** evaluating the impact of a specific program conducted in a specific population at a specific time, do not aim to study etiology, but rather are focused on inferences about that population 
 
   + In this case, it is often important to design studies to balance both internal and external validity 
   
+
+::: {#fig-elephants layout-ncol=2}
+
+
+![Generalizability](../www/06_images/generalizability.png){.lightbox}
+
+
+![Validity vs Precision](../www/06_images/validity_precision.png){.lightbox}
+
+
+:::
+
+
+
+## Selection Bias
+
+**Selection bias can occur in any type of study**
+
++ Good study design practices can minimize selection bias in most studies
+  
++ Case-control studies are particularly prone to selection bias and warrant a careful assessment of selection bias in the design phase
+
+
+
+
+## Information Bias
+
+**Information bias can result from the way exposure, confounders, or outcomes are measured in any type of study:** Occurs when subjects are misclassified with respect to either exposure or outcome.
+
+  
+### Misclassification is the result of information bias
+  
++ *Non-differential* misclassification biases results toward the null 
+
++ *Differential* misclassification biases results in an unknown direction
+
++ Can result from interviewer bias and/or recall bias
+  
++ **Tools to reduce bias:** 
+
+  + Careful study design
+  
+  + Detailed training and study protocols
+  
+  + Improve accuracy of collected data by using: 
+  
+    + multiple measures of exposure and disease
+    
+    + most accurate information sources as possible
+    
+    + medical records and lab tests to validate exposure or outcome
+    
+
+
+
+### Interviewer Bias
+
+
+    
+### Recall Bias
+  
++ Exposed subjects are more or less likely to report subsequent diseases
+
++ Cases more or less likely to report previous exposures
+
++ **Tools to reduce bias:**
+
+  + Select diseased control group
+  
+  + Rely on biological or preexisting records for study data
+  
+  + Design questionnaire so exposure data is complete and accurate
+  
+  + Ask subjects about prior knowledge of study hypothesis after interview
+  
+  + Use self-administered or ACASI questionnaire
+  
+  
+  
+  
+  
+
   
 **Using DAGs to Diagnose Bias**
 
