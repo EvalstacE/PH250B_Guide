@@ -1,0 +1,136 @@
+
+# Sample Size and Power
+
+
+
+## The Big Picture: Why do we calculate sample size?
+
+
+In the planning stage, we face a "Goldilocks" problem: 
+
+  * Too Small: You might miss a real difference between groups because your study can't distinguish the signal from the noise (random variation).
+  
+  * Too Large: You waste money, time, and expose more participants than necessary to an intervention (ethical concerns).
+  
+  
+  
+### The "Sample Size Samba" 
+
+Remember that in reality, this is an iterative process (a "samba") between the scientific ideal and the budget/logistical reality. 
+
+You calculate, check the budget, adjust the MDE or power, and calculate again
+  
+  
+### The Goal: We want a sample size just large enough to distinguish a true difference from random variation
+
+
+
+## The Four Pillars of Power Calculations
+
+**Definition of Power:** The probability of correctly rejecting the null hypothesis when it is false
+
+
+### 1. Hypotheses
+
+You must specify what you are testing:
+
+  * Null Hypothesis ($H_0$): There is no difference between groups (e.g., Risk Difference = 0).
+  
+  * Alternative Hypothesis ($H_a$): There is a difference (e.g., Risk Difference $\neq$ 0).
+  
+  
+### 2. Error Rates and Power
+
+We deal with two types of errors because we are looking at a sample, not a census.
+
+  * **Type 1 Error (alpha - $\alpha$ )** : The False Positive. Rejecting the null when it is actually true.
+  
+    * Standard: Usually set to 0.05 (5%).
+    
+  * **Type 2 Error (beta - $\beta$ )** :  The False Negative. Failing to reject the null when it is actually false (missing a real effect).
+  
+    * Standard: We usually aim for Power ($1 - \beta$) of 80%
+    
+    
+If I decrease my Type I error rate (e.g., from 0.05 to 0.01) what happens to the required sample size?
+
+  * It increases. Being more "strict" requires more evidence
+    
+
+### 3. Minimum Detectable Effect (MDE)
+
+This is the smallest difference between groups that you want to be able to detect.
+
+  * example: If the baseline illness rate is 3.4%, do you want to detect a jump to 3.5% (tiny effect) or 4.4% (larger effect)?
+  
+  * key concept: Smaller effects are harder to find. To detect a smaller MDE, you need a larger sample size
+  
+  
+If I want to detect a smaller difference (smaller MDE), what happens to sample size?
+
+  * It increases. It is harder to find a needle in a haystack than a crowbar.
+  
+  
+### 4. Variability ( $\sigma$ or SD )
+
+How much "noise" is in your data?
+
+  * key concept: The more variable the outcome (higher Standard Deviation), the harder it is to see the signal. Higher variability requires a larger sample size
+  
+  
+If my data is highly variable (high SD), what happens to sample size?
+
+  * It increases. You need more data to see through the noise
+  
+  
+  
+
+## Visualizing Power (The "Two Curves" Concept)
+
+
+visualize two bell curves: the Null Distribution (centered at 0 effect) and the Alternative Distribution (centered at the effect size you hope to find).
+
+
+How do we increase Power (the area under the Alternative curve)?
+
+  * **Increase the Effect Size:**  Move the two curves further apart. It is easier to tell them apart.
+  
+  * **Increase Sample Size:** This shrinks the Standard Error. Visually, this makes the bell curves "skinnier" and taller, so they overlap less.
+  
+  * **Increase Alpha:** Moving the critical value to the left increases power, but increases the risk of a False Positive.
+  
+  
+  
+## The Twist: Cluster Randomized Trials (CRTs)
+
+
+This is a major focus of PHW250B. In many public health interventions (like the Bangladesh WASH study), we randomize villages or compounds, not individuals
+
+
+  * **The Problem:** Independence In standard statistics, we assume every person is independent.In clusters, people within the same village are more similar to each other (correlated). This correlation provides less information than if they were independent
+
+  * **The Solution:** The Design Effect (Deff) To calculate sample size for clusters, we calculate the sample size for individuals and then inflate it using the Design Effect
+  
+$$Deff = 1 + (m - 1)\rho$$ 
+
+  * $m$: Average cluster size (number of people per cluster).
+  
+  * $\rho$ (Rho): Intraclass Correlation Coefficient (ICC). A measure of how correlated people are within a cluster
+  
+    * If $\rho = 0$: No correlation (same as individual RCT).
+    
+    * If $\rho = 1$: Everyone in the cluster is the same (Effective sample size = number of clusters)
+
+
+
+#### Key Concept: 
+
+Power in clustered designs is driven primarily by the number of clusters ($k$), NOT the number of people per cluster ($m$). Once you reach a certain cluster size (Rule of thumb: $m > 1/\rho$), adding more people to the cluster adds very little power
+
+
+In a cluster trial, is it better to double the number of clusters or double the number of people per cluster?
+
+  * Double the number of clusters. This adds more power
+
+
+

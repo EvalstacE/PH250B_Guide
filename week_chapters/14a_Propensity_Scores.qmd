@@ -1,0 +1,162 @@
+
+# Propensity Scores
+
+The predicted probability ("propensity") of exposure in a particular individual based on a set of characteristics.
+
+In simpler terms, it is a single number that summarizes all the covariate information about a person into the likelihood that they would have received the intervention, regardless of whether they actually did.
+
+
+
+## Why use propensity score? 
+
+1.  To handle time-dependent confounding: Standard multivariable models are biased in the presence of time-dependent confounding
+
+2. To mimic randomization in observational studies: This is the primary focus of the lecture. When evaluating an existing intervention where you cannot randomize (e.g., a government vaccination program), propensity scores allow you to identify a comparison group of untreated individuals who are "exchangeable" (very similar) to those who were treated.
+
+
+
+### Study with time-dependent confounding
+
+* adjusting for a time-dependent confounder changes the quantity that we estimate because ti is on the causal path from the exposure to the outcome
+
+* if we don't adjust for a time-dependent confounder, our estimate will be confounded. 
+
+* a **time-dependent confounder** is a variable that: 
+
+  * is affected by *prior* exposure
+  * predicts *subsequent* exposure
+  * associated with or causes the outcome
+
+### You want to mimic randomization in an observations study 
+
+* (often one that evaluates an existing intervention)
+
+* use propensity scores to identify who can be enrolled as a comparison group, attempting to mimic randomization by finding untreated individuals who are ideally *exchangeable* with those who were treated.
+
+
+
+## The 4 Steps of Propensity Score Matching
+
+### Step 1: Obtain pre-intervention data You need data on the population before the intervention occurred.
+
+  * Goal: Obtain data on variables that are potential confounders.
+  
+  * Note: We use pre-intervention data because if the intervention affects the covariates, they cannot be used as valid factors for selection.
+  
+### Step 2: Estimate the probability of treatment
+
+  * We model the probability of being treated ($A=1$) conditional on a set of characteristics (confounders $W$)
+  
+  * Method: Typically, logistic regression is used.
+  
+  * Crucial Distinction: In this step, the "outcome" of your regression model is the exposure/treatment (A), not the health outcome (Y)
+  
+  * Formula: 
+  
+  $$\ln\left(\frac{Pr(A|W=w)}{1-Pr(A|W=w)}\right) = \beta_{0}+\beta_{1}W_{1}+\beta_{2}W_{2}$$
+  
+### Step 3: Calculate the Propensity Score for each individual
+
+  * Use the regression model fit to estimate the probability for every individual (or cluster/school) in the dataset.
+  
+  * Calculation: You plug the individual's covariates ($W$) into the model to get a probability between 0 and 1. 
+  
+  * Key Concept: We calculate this probability for everyone, including those who did not receive the treatment
+  
+  
+  
+### Step 4: Match treated and untreated individuals
+
+  * Match each treated individual with an untreated individual who has a similar propensity score
+  
+  * The Result: This identifies a subset of untreated individuals to serve as the control group.
+  
+  * Intuition: If a treated school had a propensity score of 0.89 and an untreated school had a score of 0.88, they are matched because they had a similar likelihood of receiving the program based on their characteristics
+  
+  
+  
+
+## Key Concepts
+
+
+### 1. Interpretation of Results
+
+The interpretation of a measure of association (like Risk Difference) in a propensity score matched study is different from a standard analysis.
+
+  * Target Population: It estimates the average association for the treated population (i.e., if all $A=1$ were matched to an $A=0$)
+  
+  * Counterfactual Notation: 
+  
+    * Standard Risk Difference (RD): $E[Y_{1}] - E[Y_{0}]$
+    
+    * Propensity Matched RD: $E[Y_{1}|A=1] - E[Y_{0}|A=1]$
+    
+    * Meaning: You are estimating the difference in outcomes specifically for the group that received the intervention, rather than the total population.
+    
+    
+### 2. Relationship to Other Methods
+
+**IPTW:** Propensity scores are also used in Inverse Probability of Treatment Weighting (IPTW). In IPTW, the propensity score is used to create weights ( $1/PS$ ) for exposed, $1/(1-PS)$ for unexposed) rather than for matching
+    
+    
+**Standardization:** IPTW (which uses propensity scores) is related to standardization. The weights in IPTW function similarly to population counts in standardization, but IPTW allows adjustment for multiple confounders simultaneously  
+
+
+### 3. Limitations ("Garbage In, Garbage Out")
+
+Propensity score matching cannot fix bad data.
+
+* It cannot account for unmeasured confounding
+
+* The model used to estimate the propensity score must still include confounders that meet the **backdoor criterion**
+
+#### Backdoor criterion: 
+
+The backdoor criterion is a graphical rule used in causal inference to determine which variables you must "control for" (or adjust) in a study to separate a true causal effect from misleading correlations.
+
+It is based on Directed Acyclic Graphs (DAGs)—visual maps of how variables influence each other. The criterion helps you identify a set of variables that, when held constant, blocks all "backdoor paths" (non-causal paths) between your treatment and your outcome, leaving only the direct causal path open.
+
+Why It Matters
+In observational data, correlation does not equal causation because of confounders—hidden common causes that influence both the treatment and the outcome.
+
+Without Backdoor Adjustment: You might think a drug cures a disease, but really, younger people were just more likely to take the drug and also more likely to recover naturally. Age is a "backdoor" allowing a spurious correlation.
+
+With Backdoor Adjustment: By applying the criterion, you mathematically simulate a randomized controlled trial (intervention) using observational data.
+
+
+##### The Two Rules of the Backdoor Criterion
+
+A set of variables ($Z$) satisfies the backdoor criterion relative to a treatment ($X$) and outcome ($Y$) if:
+
+  * 1. No Descendants: No variable in $Z$ is a descendant of the treatment $X$ (you cannot control for variables that are caused by the treatment, like mediators).
+  
+  * 2. Block All Backdoor Paths: The set $Z$ blocks every path between $X$ and $Y$ that contains an arrow pointing into $X$ (e.g., $X \leftarrow C \rightarrow Y$).
+  
+  
+  
+**Simple Example: Imagine you want to know if Ice Cream Sales ($X$) cause Crime ($Y$) ** ...
+
+  * Observation: Sales and crime both go up at the same time.
+  
+  * The Backdoor Path: There is a third variable, Heat ($Z$). Heat causes people to buy ice cream ($Z \rightarrow X$) and heat makes people irritable/aggressive ($Z \rightarrow Y$). This creates a path: $X \leftarrow Z \rightarrow Y$.
+  
+  * Applying the Criterion:
+  
+    * Is $Z$ (Heat) caused by $X$ (Ice Cream)? No. (Rule 1 passed).
+    
+    * Does conditioning on $Z$ block the path? Yes. If we look only at days with the same temperature, the correlation between ice cream and crime disappears. (Rule 2 passed).
+    
+  * Conclusion: By adjusting for Heat, you close the "backdoor" and correctly find zero causal link between ice cream and crime.
+
+  
+
+
+
+**Backdoor vs. Frontdoor**
+
+Sometimes you cannot close the backdoor because the confounder is unobserved (you didn't measure it). In those cases, you might use the Frontdoor Criterion, which relies on the mechanism after the treatment (a mediator) rather than common causes before it.
+
+  * Backdoor: Blocks the common cause ($X \leftarrow C \rightarrow Y$).
+  
+  * Frontdoor: Uses the intermediate step ($X \rightarrow M \rightarrow Y$) to isolate the effect when $C$ is unknown.
+
