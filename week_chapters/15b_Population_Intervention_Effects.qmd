@@ -1,0 +1,130 @@
+
+# Population_Intervention_Effects
+
+Population intervention effects are causal effects that compare the observed population risk (or outcome) to the risk under a specific, realistic counterfactual intervention scenario
+
+Population intervention effects are a critical tool because they move us away from theoretical "all-or-nothing" comparisons toward policy-relevant questions.
+
+
+### The Motivation (Why do we need this?)
+
+Traditional measures like the Risk Difference (RD) usually compare a scenario where 100% of the population is treated ($R_e$) versus 0% treated ($R_u$).
+
+The Problem: In the real world, it is rarely feasible to treat everyone (100%) or no one (0%). Therefore, $R_e$ and $R_u$ are often unrealistic scenarios.
+
+The Solution: We need a parameter that lets us define customized, realistic scenarios (e.g., "What if we increased vaccination from the current 40% to 80%?")
+
+
+#### The Comparison: Instead of 100% vs. 0%, we compare:
+
+  1. Observed Scenario ($R_0$): The risk under current, real-world conditions (e.g., 40% coverage)
+  
+  2. Ideal/Realistic Scenario ($R_I$): The risk under a hypothetical but achievable intervention target (e.g., 80% coverage)
+  
+
+
+**Formula:** $$\text{Population Intervention Effect} = R_I - R_0$$
+
+
+*Note: It can also be calculated as a ratio* 
+
+
+**Magnitude Note:**
+
+The Population Intervention Effect will typically be smaller than the Risk Difference because the contrast (e.g., 40% vs. 80%) is narrower than the full contrast (0% vs. 100%).
+
+
+
+
+## Comparison with Other Parameters
+
+
+| Parameter | Formula | Comparison | Realism & Usage |
+|:---|:---|:---|:---|
+| **Risk Difference (RD)** | $R_e - R_u$ | **100% Exposed** ($R_e$) vs. **0% Exposed** ($R_u$) | [cite_start]**Least Realistic:** It assumes perfect implementation (100% coverage), which is rarely achievable[cite: 2096, 2136]. |
+| **Pop. Attributable Fraction (PAF)** | $(R_t - R_u) / R_t$ | **Observed** ($R_t$) vs. **0% Exposed** ($R_u$) | [cite_start]**Intermediate:** More realistic than RD because it uses the current exposure level ($R_t$), but still compares against an unrealistic 0% exposed counterfactual[cite: 1991, 2141]. |
+| **Pop. Intervention Effect** | $R_I - R_0$ | **Ideal Target** ($R_I$) vs. **Observed** ($R_0$) | **Most Realistic:** Directly answers the policy question: "How much impact would we see if we reached our target coverage?" (e.g., 40% vs 80%) [cite_start][cite: 2064, 2143]. |
+
+
+
+
+
+
+## Calculation Method: G-Computation
+
+
+We use G-computation to estimate these effects. There are 5 key steps: 
+
+
+1. **Model:** 
+
+Estimate the association between the exposure and outcome using a regression model, adjusting for confounders
+
+
+2. **Predict Counterfactuals:** 
+
+Use the model coefficients to predict outcomes for every individual in the dataset under two specific scenarios:
+
+  * Counterfactual Scenario 1 ($R_I$): Set exposure to the "Ideal" level (e.g., everyone who meets specific criteria gets treated)
+  
+  * Counterfactual Scenario 2 ($R_0$): Set exposure to the "Observed" level (often just the original data)
+  
+  
+3. **Estimate Population Risk:**
+
+Calculate the average of these predicted probabilities/outcomes for the entire population under Scenario 1 and Scenario 2
+
+4. **Calculate Effect:**
+
+Take the difference (or ratio) of the two population averages ($R_I - R_0$)
+
+
+5. **Inference:**
+
+Use bootstrapping to obtain 95% confidence intervals (because standard errors are difficult to calculate analytically here)
+
+
+
+
+## Key Take-aways
+
+
+Definition & Interpretation: Be able to define a population intervention effect. It allows us to define customized counterfactual scenarios tailored to a specific research question.
+
+
+Exam Tip: Be ready to interpret a result. 
+
+"The result ($R_I - R_0$) estimates the reduction in disease incidence if the program had reached its target coverage (80%) compared to the observed coverage (40%)"
+
+
+Why choose it? Be prepared to explain why you would use this over RD or PAF. The keywords are "realistic" and "policy-relevant." It avoids unrealistic assumptions like 100% compliance
+
+
+Examples: Recognize scenarios where this applies: 
+
+  * Example: HIV PrEP campaigns reaching 85% of targets vs. current levels
+  
+  * Example: Comparing neighborhoods with high vs. low density of alcohol outlets
+  
+  
+Methodology: Remember that G-computation is the tool used for estimation and that bootstrapping is required for confidence intervals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

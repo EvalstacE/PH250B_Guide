@@ -1,0 +1,149 @@
+
+# Spillover Effects
+
+In standard epidemiology, we typically assume that one individual's outcome is independent of another's (Stable Unit Treatment Value Assumption, or SUTVA). However, in infectious diseases or social network behaviors, this assumption often fails
+
+
+A **spillover effect** occurs when an intervention affects individuals who were not targeted by the intervention but are connected to recipients via social, geographic, or other networks
+
+
+Synonyms to recognize: Herd immunity, indirect effects, externalities, contagion effects, diffusion
+
+
+You must understand the implications of ignoring spillovers. 
+
+If an intervention spills over to the control group (often called "contamination" in cluster-randomized trials), the control group's outcomes become more similar to the intervention group. 
+
+**This leads to bias towards the null (underestimating the true effect)**
+
+
+## Four Key Spillover Parameters & Calculations
+
+
+$Y$: Outcome
+
+$X$: Cluster treatment assignment ($1 =$ treated cluster, $0 =$ control cluster)
+
+$T$: Individual treatment assignment ($1 =$ treated person, $0 =$ untreated person)
+
+
+
+### Within-Cluster Spillover Effect
+
+This is the most common parameter in cluster-randomized trials (CRTs). It measures the effect on untreated people inside a treated cluster compared to people in a control cluster.
+
+**Scenario:** Comparing untreated individuals in a treated village (who benefit indirectly) vs. untreated individuals in a control village
+
+**Calculation:**
+
+$$E[Y | X=1, T=0] - E[Y | X=0, T=0]$$
+
+**Critical Assumption:** "Partial Interference"
+
+  * spillovers occur *within clusters* but not between clusters
+
+
+
+### Spillover Conditional on Distance
+
+This parameter is used when effects extend beyond cluster boundaries (e.g., mosquitoes flying from a treated village to a nearby untreated one)
+
+
+**Scenario:** Comparing untreated individuals living within a specific distance ($d$) of a treated cluster vs. untreated individuals within distance ($d$) of a control cluster
+
+**Calculation:**
+
+$$E[Y | X=1, T=0, D=d] - E[Y | X=0, T=0, D=d]$$
+
+### Spillover Conditional on Treatment Density
+
+This looks at how the concentration of treatment around a person affects them.
+
+
+**Scenario:** Comparing outcomes for untreated individuals in an area with high treatment coverage (e.g., 90%) vs. untreated individuals in an area with lower or zero coverage
+
+
+**Calculation:**
+
+$$E[Y | T=0, P=p+\delta] - E[Y | T=0, P=p]$$
+
+Where $P$ is treatment density (proportion treated) and $\delta$ is the change in density (e.g., comparing 0% vs 50%)
+
+
+
+### Network Spillover Effect
+
+This applies to social networks (e.g., friends of people in a smoking cessation program)
+
+Notation Change: Here, $T$ refers to the connection status (connected to treated vs. connected to control), and $C=1$ indicates the person is an "alter" (a connected friend) rather than the primary participant
+
+
+**Calculation:**
+
+
+$$E[Y | T=1, C=1] - E[Y | T=0, C=1]$$
+
+Comparing an alter connected to a treated ego vs. an alter connected to a control ego.
+
+
+
+
+-----------------------------
+
+
+## Key Take-aways
+
+You should know which designs allow us to estimate these effects validly.
+
+
+Double-Randomized Trials (Two-Stage Randomization): This is the gold standard for estimating within-cluster spillovers
+
+  * Stage 1: Randomize clusters to Treatment or Control
+  
+  * Stage 2: Randomize individuals within the treatment clusters to receive the intervention or not
+  
+  * Why? It balances confounders between treated and untreated people within the same cluster, allowing for valid estimation of direct and spillover effects
+  
+  
+  
+  
+Define the Counterfactuals: Be able to translate a word problem (e.g., "untreated neighbors of treated households") into the $E[Y|...]$ notation.
+
+Identify Bias: If a problem states that "control villages were close to intervention villages," recognize this as contamination leading to bias towards the null
+
+
+Select the Design: If asked how to rigorously measure the indirect effect of a vaccine within a village, identify the Double-Randomized Trial as the ideal design
+
+
+Interpret the Result: Explain that spillover effects capture the "real-world" impact and cost-effectiveness better than simple direct effects because they account for population-level transmission dynamics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

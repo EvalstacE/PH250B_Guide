@@ -1,0 +1,223 @@
+# Systematic Review and Meta-analysis
+
+
+## Systematic Reviews
+
+A systematic review is a rigorous, reproducible method to identify, evaluate, and synthesize all available evidence on a specific research question. Unlike a narrative review, which is subjective and relies on an expert's selection of studies, a systematic review follows a strict protocol to minimize bias
+
+
+### Key characteristics: 
+
+
+  * **Protocol-Driven:**  It starts with a written protocol defining the research question, search strategy, inclusion/exclusion criteria, and risk of bias assessment.
+
+
+  * **Reproducible:**  Another researcher should be able to follow your protocol and find the same studies.
+
+
+  * **Comprehensive:** Aims to find all relevant studies, typically searching multiple databases (PubMed, Embase, Cochrane, etc.).
+
+
+  * **Objective:** Inclusion decisions are based on pre-defined criteria, often involving two independent reviewers to reduce subjectivity.
+  
+  
+### Systematic Review Steps:
+
+#### 1. Write Protocol: 
+
+Define the study question (often using PICOS: Population, Intervention, Comparison, Outcome, Study design).
+
+
+#### 2. Search Literature: 
+
+Execute comprehensive search queries in databases.
+
+
+#### 3. Screening: 
+
+Review titles, abstracts, and full texts against eligibility criteria.
+
+
+#### 4. Abstract Data: 
+
+Extract relevant data (estimates, sample sizes, etc.) from included studies.
+
+
+#### 5. Assess Risk of Bias: 
+
+Evaluate the quality of individual studies (e.g., confounding, blinding, attrition).
+
+
+#### 6. Summarize Evidence: 
+
+Qualitatively describe findings; if data allows, proceed to quantitative synthesis (meta-analysis).
+
+
+#### 7. Reporting: 
+Use the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) checklist and flow diagram.
+
+
+
+----------------------
+
+
+
+
+
+## Meta-Analyses
+
+A meta-analysis is a statistical technique often used within a systematic review to quantitatively combine results from multiple independent studies into a single pooled estimate.
+
+
+Why conduct one?
+
+  * **Increase Power/Precision:** Pooling sample sizes leads to tighter confidence intervals and greater ability to detect effects.
+
+  * **Synthesize Evidence:** It provides a summary answer when individual studies might be conflicting or too small.
+
+
+
+
+## Meta-Analysis Steps
+
+#### 1. Write systematic review protocol 
+
+#### 2. Search the literature
+
+#### 3. Review titles, abstracts, and full texts
+
+#### 4. Abstract data from included studies
+
+#### 5. Assess risk of bias
+
+#### 6. Assess heterogeneity of measures of association
+
+**Examine forest plot for heterogeneity:**
+  
+  * each study is one row in the plot
+  
+  * this plot shows the combined effect estimate, but this is estimated after this initial assessment
+  
+  * the dashed line corresponds to the pooled estimate
+  
+  * the solid line corresponds to the null
+  
+  * most effect estimates are to the left of the null and have a similar value, suggesting litte heterogeneity 
+  
+  
+![](images/forestplot1.png)
+
+
+  * individual studies' MOAs may differ for a number of reasons: different population characteristics (age, sex, race); year(s) of study; location; participants' symptoms / clinical characteristics; different variables treated as confounders; study design; sample sizes; statistical analyses
+  
+  
+**Test for heterogeneity using a Q-statistic (type of chi-square test)**
+
+It is a weighted sum of squared differences between individual study effects ($MoA_i$) and the summary effect ($MoA_s$).
+
+  * Null  ($H_0$): no heterogeneity among original studies
+  
+  * Formula: $Q = \sum w_i (MoA_i - MoA_s)^2$
+  
+  
+  
+**Interpretation:**  
+
+A significant p-value (typically p < 0.20 or 0.10, not 0.05) indicates significant heterogeneity. 
+
+If $p < 0.2$, reject $H_0$.
+  
+  
+  
+**Test for heterogeneity using $I^2$ Statistic:**
+
+$I^2$ Statistic: Describes the percentage of variation across studies due to heterogeneity rather than chance
+
+Formula: $I^2 = \frac{Q - df}{Q} \times 100$ 
+
+  * (where $df = k-1$ studies) 
+
+**Interpretation:**  $I^2 > 50\%$ suggests substantial heterogeneity
+
+  
+  
+  
+  
+
+
+#### 7. Obtain pooled measure of association and Conduct any subgroup analyses
+
+You calculate a weighted average: $MoA_s = \frac{\sum (w_i \times MoA_i)}{\sum w_i}$
+
+The definition of the weight ($w_i$) depends on your model choice:
+
+**Fixed Effects Model:**
+
+  * Assumption: All studies estimate a common, underlying effect. Differences are due only to sampling error
+  
+  * Inference: Applies only to the specific studies in the meta-analysis
+  
+  * Use when: There is little evidence of heterogeneity ($I^2 < 50\%$)
+  
+  * Weights: Typically inverse variance ($w_i = 1/v_i$)
+  
+  
+**Random Effects Model:** 
+
+  * Assumption: The true effect size varies across studies. Studies are a random sample of a larger population of studies
+  
+  * Inference: Generalizes to a hypothetical population of similar studies
+  
+  * Use when: There is significant heterogeneity ($I^2 > 50\%$) or you wish to generalize broadly
+  
+  * Weights: Inverse variance plus between-study variance ($w_i^* = 1/(v_i + \tau^2)$) 
+  
+    * Note: This results in wider confidence intervals and more conservative estimates than fixed effects
+
+  
+  
+  
+  
+  
+#### 8. Assess publication bias
+
+
+Visual Check: Look at a **Funnel Plot**
+
+  * X-axis: Treatment effect (e.g., Log OR)
+  
+  * Y-axis: Precision (e.g., Standard Error or Sample Size)
+  
+  * Interpretation: In the absence of bias, it should look like a symmetric inverted funnel
+  
+  * **"File Drawer Problem"** 
+  
+    * Asymmetry, specifically a "bite" missing from the bottom corner (small, non-significant studies), suggests publication bias—meaning negative/null studies were likely never published
+    
+    
+
+![](images/funnelplot1.png)
+
+
+## Key Take-Aways: 
+
+Forest Plots: Be able to identify individual study weights (box size), point estimates, confidence intervals, and the pooled estimate (diamond). Know that crossing the null line (1.0 for ratios, 0 for differences) means non-significance
+
+
+Model Selection Logic:
+
+  * High Heterogeneity ($I^2 > 50\%$, significant Q): Use Random Effects (or do not pool)
+  
+  * Low Heterogeneity: Fixed Effects is acceptable
+
+
+
+Weighting: Understand that larger studies (smaller variance) get more weight. Random effects models produce more equal weights between small and large studies compared to fixed effects
+
+
+Subgroup Analysis: Understand this is used to explore sources of heterogeneity (e.g., blinded vs. unblinded trials). 
+
+**Caution: Do not test for statistical significance between subgroups; only compare magnitudes**
+
+
+
