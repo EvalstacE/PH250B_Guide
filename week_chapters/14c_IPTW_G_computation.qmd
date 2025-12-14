@@ -1,0 +1,106 @@
+
+# Inverse Probability of Treatment Weighting (IPTW) and G-Computation
+
+
+Both IPTW and G-Computation are modern methods from the causal inference literature used to handle confounding, particularly time-dependent confounding. While multivariable regression is biased in the presence of time-dependent confounding, these methods can provide unbiased estimates if assumptions are met.
+
+They both separate the step of adjusting for confounding from the step of estimating the parameter, allowing for the estimation of flexible parameters (like population intervention models)
+
+
+
+*  multivariable regression is biased when time-dependent confounding exists
+
+* Time-dependent confounders are variables that are affected by prior exposure and predict subsequent exposure. Adjusting for them in standard regression creates bias because they are on the causal pathway
+
+* These methods estimate the effect if the entire population were treated vs. if the entire population were untreated
+
+* Note that this contrasts with propensity score matching, which estimates the effect on the treated population (those who were matched)
+
+
+* These methods do not fix bias from poor study design or unmeasured confounding
+
+  * IPTW relies on a correct treatment model (propensity score)
+  
+  * G-computation relies on a correct outcome model
+
+
+* **Double Robust Estimation:** Know that this method combines both. It gives an unbiased estimate if either the treatment model or the outcome model is correct
+
+* **Confidence Intervals:** There are no simple formulas for standard errors for these methods. You must use bootstrapping (resampling the data many times) to estimate confidence intervals
+
+
+
+
+## Inverse Probability of Treatment Weighting (IPTW)
+
+
+Purpose: IPTW aims to mimic a randomized trial using observational data by creating a "pseudo-population" where the exposure is independent of confounders
+
+* conceptually related to standardization
+
+  * In standardization, we apply specific population counts (weights) to strata. In IPTW, we use the inverse probability of treatment as the weight to balance the population
+  
+  
+
+
+### The Process (Steps):
+
+
+  1. **Estimate the Propensity Score:** Calculate the probability of being treated/exposed ($A=1$) given a set of covariates ($W$) for each individual, typically using logistic regression
+  
+  2. **Define Weights:** Create weights based on the inverse of the propensity score ($PS$)
+  
+    * Exposed: Weight = $1 / PS$
+    
+    * Unexposed: Weight = $1 / (1 - PS)$
+    
+  3. **Apply Weights:** Apply these weights to the data. This creates a "pseudo-population" where the distribution of confounders is balanced between exposed and unexposed groups
+  
+    * Visual: Up-weighting underrepresented groups (e.g., older unexposed people) makes the treated and untreated groups look similar
+    
+  4. **Calculate Measure of Association:** Calculate the mean of the outcome in the weighted population. You can calculate Risk Differences (RD) or Risk Ratios (RR) using this weighted data
+  
+  
+**Interpretation:** The result estimates the average association if everyone in the population had the treatment compared to if no one had the treatment
+
+
+
+
+
+
+
+
+## G-Computation
+
+Purpose: G-computation estimates the association by using a regression model to predict "counterfactual" outcomes for every individual under different treatment scenarios
+
+
+### The Process (Steps):
+
+
+
+  1. **Outcome Regression:** Fit a regression model (e.g., logistic, linear) for the outcome ($Y$) adjusting for exposure ($A$) and confounders ($W$)
+  
+  2. **Predict Counterfactuals:** Use the coefficients from that model to predict the outcome for every individual in the dataset under two specific scenarios
+  
+    * Set exposure to "Exposed" ($A=1$) for everyone (regardless of what they actually did).
+    
+    * Set exposure to "Unexposed" ($A=0$) for everyone.
+    
+  3. **Estimate Marginal Risk:** Calculate the mean of these predicted outcomes for the entire population under the "everyone exposed" scenario and the "everyone unexposed" scenario
+  
+    
+  4. **Calculate Measure of Association:** Compare these means (e.g., divide them for a Risk Ratio or subtract for a Risk Difference)
+  
+  
+**Interpretation:** Like IPTW, the result represents the ratio or difference in the average outcome if everyone had the treatment compared to if no one had the treatment
+
+
+
+
+
+
+
+
+
+
