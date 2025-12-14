@@ -1,0 +1,127 @@
+
+# Replication, Transparency, and Reproducibility
+
+The field is currently facing a "reproducibility crisis," where many published findings across disciplines (psychology, economics, basic science) cannot be replicated by other researchers.
+
+
+## Main threats to reproducibility: 
+
+
+#### Failure to Control for Bias: 
+
+Systematic errors in design or analysis (e.g., unmeasured confounding in observational studies, improper randomization or lack of blinding in trials) lead to non-reproducible results
+
+
+#### Low Statistical Power:
+
+Small sample sizes increase the risk of Type II errors (failing to detect a true effect). Published findings from underpowered studies are often incorrect and difficult to reproduce
+
+
+#### Poor Quality Control:
+
+Errors during data collection (e.g., poor survey design) or analysis (e.g., coding errors) contribute to bias and misclassification
+
+
+#### P-Hacking:
+
+This occurs when investigators repeatedly adjust their statistical models after seeing the data to obtain a desirable p-value (e.g., < 0.05)
+
+  * Key: The resulting p-value is confounded by the number of tests run and does not represent the true probability of a Type I error
+  
+  
+#### Publication Bias: 
+
+Journals prefer publishing "positive" or statistically significant findings. Null or "negative" findings are often not published (the "file drawer problem"), making the published literature a biased representation of reality
+
+
+
+#### Confirmation Bias: 
+
+Researchers naturally look for patterns that confirm their expectations. They are more likely to scrutinize results that contradict their expectations while letting errors in "expected" results go unnoticed
+
+
+
+
+![](images/transparency_tools_table.png)
+
+
+
+---------------
+
+
+
+
+## Positive Predictive Value
+
+The probability that a research finding is actually true depends on three factors
+
+
+### 1. Pre-study probability ($R$): 
+
+The ratio of "true relationships" to "no relationships" in the field ($R/(R+1)$)
+
+
+### 2. Statistical Power:
+
+($1 - \beta$): The probability of finding a true relationship
+ 
+ 
+### 3. Level of Statistical Significance ( $\alpha$ ):
+
+The probability of claiming a relationship when none exists (Type I error)
+
+
+### Positive Predictive Value Formula: 
+
+
+$$PPV = \frac{(1 - \beta)R}{R - \beta R + \alpha}$$
+
+
+
+
+
+* **Small sample size (low power):**  Lower PPV (less likely to be true)
+
+* **Small effect sizes:**  Lower PPV
+
+* **Greater flexibility in analysis (bias):**  Lower PPV
+
+* **"Hotter" fields (more teams testing):**  Lower PPV for any single isolated finding
+
+
+
+
+## Key Take-aways: 
+
+
+Map Threats to Solutions: Be able to match a specific problem (e.g., "p-hacking") to its specific solution (e.g., "pre-analysis plan").
+
+
+Define "Spillover" correctly: Don't confuse it with reproducibility. (Note: Spillover is a separate topic in this module, referring to effects on non-targeted individuals ).
+
+
+Understand the "Why": Why is a registered report better than standard publication? (Answer: It removes the incentive to produce only positive results, thus reducing publication bias )
+
+
+**Ioannidis' Main Argument:** 
+
+Understand why he argues most findings are false: 
+
+* It is a mathematical consequence of testing many hypotheses with: 
+
+    * low prior probability (low $R$), 
+    
+    * low power, and 
+    
+    * high bias
+
+
+
+
+
+
+
+
+
+
+
