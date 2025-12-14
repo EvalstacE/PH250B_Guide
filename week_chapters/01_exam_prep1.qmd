@@ -40,15 +40,39 @@ You will likely be asked to:
   
   
   
+**Tip:**  Look for crossing lines. If the survival curves cross, the hazard rate of one group is not consistently higher or lower than the other.
+
+  * Example Answer: *"No. Cox regression relies on the proportional hazards assumption—that the hazard ratio is constant over time. This is demonstrably false here because the curves cross; therefore, the assumption is violated."*
+  
+  
+  
+  
+  
+  
   
 ![](images/coxtable1.png)  
   
   
 ##### Calculate and interpret the hazard ratio for Group 2
 
+  * Formula: $HR = e^{\beta}$
+  
+  * Calculation: $e^{0.859} \approx 2.36$
+  
   * HR = e^0.859 = 2.361 
   
   * Group 2 (history of CHD) has 2.36 times the hazard of dying of Group 1 (no history of CHD), adjusting for age. 
+  
+  
+##### TIPS: 
+
+**Answer format:**  *Group [X] has [HR] times the hazard of [outcome] compared to Group [Y], adjusting for [covariates]* 
+
+* Use the word "Hazard" or "Rate".
+
+* Do NOT use the word "Risk" (Risk is cumulative; Hazard is instantaneous)
+
+* Do NOT say "adjusting for treatment" if treatment is your main exposure; you adjust for confounders (like age)
   
   
 ##### What type of analysis uses Cox proportional hazards models? What do these types of models “control” for, or take into account, that logistic regression for example doesn’t address? 
@@ -99,6 +123,20 @@ You will likely be asked to:
 ![](images/coxtable3.png)
   
 ##### Calculate a measure of association for the treatment among women over 35
+
+
+This is an example when we need to calculate an HR when an interaction term is present. 
+
+
+  * You cannot just take $e^{\beta_1}$. You must add the interaction coefficient because the woman is both treated and over 35.
+  
+  * Formula: $HR = \frac{e^{(\beta_1 + \beta_2 + \beta_3)}}{e^{\beta_2}} = e^{(\beta_1 + \beta_3)}$
+  
+    * You sum the coefficients for the exposure ($\beta_1$) and the interaction ($\beta_3$) , then exponentiate that
+    
+  * Calculation: If $\beta_1 = 1.43$ and $\beta_3 = -0.86$ , then:
+  
+    * $HR = e^{(1.43 - 0.86)} = e^{0.57} \approx 1.77$
 
 
 ![](images/coxtable3_solution.png)
