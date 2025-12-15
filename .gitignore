@@ -8,12 +8,30 @@
 
 # User-specific files
 .Ruserdata
+.Rproj.user/
 
 # Example code in package build process
 *-Ex.R
+**/_extensions/
+*.utf8.md
+*.knit.md
+*_cache/
+cache/
+docs/
+*_book/
+
+
+# RStudio Connect
+rsconnect/
 
 # Output files from R CMD build
 /*.tar.gz
+*.tar.gz
+*.Rcheck/
+*-Ex.R
+vignettes/*.html
+vignettes/*.pdf
+
 
 # Output files from R CMD check
 /*.Rcheck/
@@ -31,6 +49,7 @@ vignettes/*.pdf
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
+site_libs/
 
 # Temporary files created by R markdown
 *.utf8.md
@@ -39,13 +58,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# pkgdown site
-docs/
-
 # translation temp files
 po/*~
-
-# RStudio Connect folder
-rsconnect/
-
 /.quarto/
+
+
