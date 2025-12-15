@@ -1,0 +1,88 @@
+
+# Negative Controls
+
+A negative control is a technique inspired by lab science to detect unanticipated or unmeasured confounding and bias
+
+
+The Core Logic: You set up a comparison where you expect a null result (no association) based on your causal hypothesis.
+
+The Test: If you find an association where there shouldn't be one, it indicates that your study design has bias or confounding
+
+Key Requirement: The negative control must share the same sources of bias as the primary relationship you are studying. If it has different biases, it won't be a valid test
+
+
+## Three Types of Negative Controls
+
+### 1 - Negative Control Outcome
+
+Definition: An outcome that is NOT causally affected by the exposure of interest but shares the same potential confounders.
+
+Example: In a study of water/sanitation interventions (Exposure) on Diarrhea (Outcome), a negative control outcome could be bruises/scrapes.
+
+Reasoning: Improved sanitation shouldn't prevent bruises. If you see an association between the intervention and bruises, it suggests reporter bias (e.g., people in the intervention group generally reporting better health) or selection bias.
+
+
+### 2 - Negative Control Exposure
+
+Definition: An exposure that does NOT cause the outcome of interest but shares similar characteristics or biases with the real exposure.
+
+Example: In a study of Corticosteroids (Exposure) on Asthma symptoms (Outcome), a negative control exposure could be a very low dose of the drug.
+
+Reasoning: The low dose is biologically too weak to help asthma. If symptoms improve on the low dose, it suggests recall bias or a placebo effect.
+
+
+### 3 - Negative Control Time Period
+
+Definition: A time period when the exposure cannot causally affect the outcome.
+
+Example: In a study of Influenza Vaccination (Exposure) on Mortality (Outcome), look at the period after immunization but before flu season.
+
+Reasoning: The vaccine can't prevent flu death before the flu virus is circulating. If mortality drops in the vaccinated group during this "pre-season," it suggests the vaccinated group is just healthier overall (healthy worker/vaccinee bias).
+
+
+----------------------
+
+
+
+## Using DAGs to Validate Negative Controls
+
+
+You must be able to visualize the "ideal structure" of a negative control outcome in a DAG
+
+The Structure: The Negative Control Outcome ($N$) should have the same incoming arrows from confounders ($U$ and $L$) as the true Outcome ($Y$), but **NO arrow from the Exposure** ($A$)
+
+
+$U \rightarrow N$ and $L \rightarrow N$ (just like $U \rightarrow Y$ and $L \rightarrow Y$)
+
+Crucial Missing Link: $A \rightarrow N$ does not exist.
+
+
+**If asked to draw a DAG for a negative control, ensure $N$ connects to the confounders but not the exposure.**
+
+
+
+
+## Calculations: Interpreting the Result
+
+The "calculation" here is often just running the same regression analysis you planned for your main study, but swapping variables
+
+The "Null" Check: You calculate the Measure of Association (OR, RR, etc.) for the negative control.
+
+Interpretation:
+
+Null Result (e.g., RR $\approx$ 1.0): Good news. It supports the validity of your main study (no obvious bias detected).
+
+Non-Null Result (e.g., RR $\ne$ 1.0): Bad news. It suggests bias or confounding is present in your study design1.
+
+
+### Limitations
+
+
+Blunt Tool: If the negative control finds bias, it does not tell you what the bias is or how to fix it. It just sounds the alarm.
+
+Hard to Find: For some research questions, it is impossible to find a valid negative control outcome that shares the same confounders but isn't caused by the exposure
+
+
+
+
+

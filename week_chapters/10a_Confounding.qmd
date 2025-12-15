@@ -1,0 +1,105 @@
+# Confounding
+
+
+## The Three "Traditional" Criteria for Confounding
+
+  * **Association with Exposure:** The variable must be associated with the exposure (causally or non-causally) in the source population
+  
+  * **Association with Outcome:** The variable must be an independent cause or predictor of the disease (outcome) among the unexposed.
+  
+  * **Not an Intermediate:** The variable cannot be on the causal pathway between exposure and disease (it cannot be a mediator)
+  
+  
+**Random Association:** In small studies or randomized trials, confounding can occur purely due to random chance imbalances, even if the variable isn't a "true" cause.
+
+**Surrogates:** You can control for a variable (like Education) that is a surrogate for a hard-to-measure true confounder (like SES)
+
+**Intermediates:** Occasionally, you do control for an intermediate if you are trying to estimate the "Direct Effect" rather than the "Total Effect," though this requires caution.
+
+
+
+
+## Calculations: Identifying Confounding by "Non-Collapsibility"
+
+The primary quantitative skill is comparing the **Crude measure** of association to the **Adjusted (or Stratified)** measure.
+
+### The Logic: 
+
+If the association differs "significantly" (magnitude and/or direction) after you stratify or adjust for a variable, that variable is a confounder.
+
+### The Check:
+
+  * Calculate the Crude Estimate (e.g., OR or RR from the total table).
+  
+  * Calculate the Stratum-Specific Estimates (e.g., OR for males, OR for females)
+  
+  * Compare: If the stratum-specific estimates are similar to each other (homogeneity) but different from the crude, confounding is present
+  
+  
+## Classifying the Direction of Confounding
+
+
+**Positive Confounding:** The Crude estimate is further from the null (1.0) than the Adjusted estimate. It overestimates the effect. for example: 
+
+  * TRUE RR: 2.0
+  
+  * Crude RR: 3.5
+
+**Negative Confounding:** The Crude estimate is closer to the null (1.0) than the Adjusted estimate. It underestimates the effect
+
+  * TRUE RR: 2.0
+  
+  * Crude RR: 1.0
+  
+
+**Qualitative Confounding:** The direction of the association flips (crossover). It changes from harmful to protective or vice versa
+
+  * TRUE RR: 2.0
+  
+  * Crude RR: 0.7 (protective)
+  
+
+
+
+
+## Using DAGs to Detect Confounding
+
+The "Backdoor Criterion" is the modern method for identifying confounders. It is often more robust than the traditional 3 criteria
+
+The Goal: You want to block all "Backdoor Paths" (paths from Exposure to Outcome that are not the causal path)
+
+
+### How to select variables for adjustment using a DAG:
+
+**Block Backdoor Paths:** Adjust for variables that close non-causal paths 
+
+(e.g., Common Causes: $Exposure \leftarrow Confounder \rightarrow Outcome$)
+
+
+**Avoid Colliders:** Do NOT adjust for a collider 
+
+(a node where two arrowheads meet, like $A \rightarrow Z \leftarrow B$).
+
+Critical Concept: 
+
+A collider naturally blocks a path. If you adjust for (condition on) a collider, you open the path and introduce selection bias (sometimes called "collider bias")
+
+
+**Avoid Descendants:** Do not adjust for variables caused by the exposure (descendants).
+
+
+
+
+## Collinearity (a practical limitation)
+
+Be aware of Collinearity. If a confounder is perfectly correlated with the exposure (e.g., every person with high pollution exposure lives near a freeway, and no one with low pollution lives near a freeway), you cannot adjust for it. There is no variation left in the data to separate the effects (this violates the "positivity" assumption
+
+
+
+
+
+
+
+
+
+
