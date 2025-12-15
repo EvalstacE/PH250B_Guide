@@ -1,0 +1,113 @@
+
+# Introduction to Matching
+
+
+
+## 1. Introduction to Matching
+
+
+### What is Matching?
+Matching is the selection of a reference series (e.g., controls in a case-control study or unexposed in a cohort study) that is nearly identical to the index series with respect to one or more potential confounders.
+
+
+* **Goal:** To improve the quality of the **counterfactual** by making study groups more comparable.
+
+
+### Why Match?
+Beyond reducing confounding, matching is used to:
+
+1.  **Increase Statistical Efficiency (Precision):** Prevents situations where confounder distributions are dramatically different between groups (e.g., all cases are old, all controls are young).
+
+2.  **Increase Statistical Power:** Particularly in small case-control studies, ensuring sufficient controls in important subgroups.
+
+3.  **Feasibility:** Practical reasons during enrollment (e.g., selecting the "next birth" as a control in a hospital study).
+
+
+
+### Types of Matching
+
+
+* **Individual (Pair) Matching:** Matching specific subjects based on characteristics (e.g., for every 25-year-old male case, find a 25-year-old male control).
+
+
+* **Frequency Matching:** Matching the *distribution* of characteristics (e.g., if 30% of cases are women, ensure 30% of controls are women).
+
+
+* **Distance Matching:** Using algorithms (like propensity scores) to find the "closest" match based on multiple variables in multidimensional space.
+
+
+
+
+### Matching in Different Study Designs
+
+| Study Design | Method | Purpose/Effect |
+| :--- | :--- | :--- |
+| **Cohort** | Match Exposed to Unexposed | **Removes confounding** in the design phase. Analysis does not require special adjustment for the matched factor. |
+| **Case-Control** | Match Cases to Controls | **Does NOT remove confounding** (can introduce selection bias). *Must* use a matched analysis (stratification) to fix this. Primarily done to improve efficiency. |
+| **Trials** | Block Randomization | Matches participants by block (e.g., geography) before randomizing. Increases efficiency. |
+
+
+
+
+### Disadvantages of Matching
+
+* **Cost/Complexity:** Can make sampling difficult.
+
+* **Exclusion:** If no match is found for a case, that case might be excluded (reduces N).
+
+* **Reduced Flexibility:** You **cannot estimate the association** of the matched variable with the outcome (e.g., if you match on age, you can't study age as a risk factor).
+
+* **Overmatching:** Improper matching can obscure the effect of interest (discussed in future lectures).
+
+
+
+
+
+
+
+## 2. Numerical Examples of Matching
+
+### A. Matching in a Cohort Study
+
+In a cohort study, matching manipulates the **exposure** distribution .
+
+* **Scenario:** A crude analysis of a population shows a Risk Ratio (RR) of 33 due to strong confounding by gender (90% of exposed are men, 10% of unexposed are men).
+
+* **The Match:** We design the study to select unexposed subjects such that their gender distribution **matches** the exposed group (e.g., taking a 10% sample of exposed men and ensuring the unexposed sample is also 90% male).
+
+* **Result:** The new Crude RR becomes 10, which matches the stratum-specific RRs.
+
+* **Takeaway:** Matching on a confounder in a cohort study **removes confounding**. You do *not* need to adjust for the matched variable in the analysis.
+
+
+
+
+
+
+### B. Matching in a Case-Control Study
+
+In a case-control study, matching manipulates the **disease** (case/control) distribution.
+
+* **Scenario:** We match controls to cases based on gender.
+
+* **The Problem:** By forcing the controls to look like the cases regarding gender (a confounder associated with exposure), we inadvertently make the controls look more like the cases regarding the *exposure* as well. This biases the crude association toward the null.
+
+* **Result:** A crude analysis of the matched data yields an Odds Ratio (OR) of 5.0, which is biased (lower than the true OR of 10).
+
+* **The Fix:** You **must stratify** (perform a matched analysis) to obtain the correct estimate. When stratified by the matching factor, the OR returns to 10.
+
+* **Takeaway:** Matching in a case-control study does **not** remove confounding; it actually introduces a selection bias that must be corrected by stratifying on the matched variable in the analysis.
+
+
+
+
+
+### "Breaking the Match"
+
+* **Cohort Studies:** If you ignore the matching (break the match) in the analysis, the point estimate remains valid, though variance estimates (CIs) may be incorrect.
+
+* **Case-Control Studies:** If you ignore the matching in the analysis, you will produce a **biased estimate**. You generally **cannot** break the match in case-control studies.
+
+
+
+

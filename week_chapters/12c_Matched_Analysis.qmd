@@ -1,0 +1,108 @@
+
+# Analaysis of Matched Data 
+
+
+
+## Overview: Approaches to Analysis
+
+The method of analysis depends on the *type* of matching used in the study design.
+
+* **Frequency Matching:** Analyzed using standard stratified analysis methods.
+
+* **Pair Matching:** Requires special methods that account for the dependent nature of the data (pairs).
+
+
+
+
+## 1. Analyzing Frequency Matched Data
+
+When data is frequency matched (e.g., ensuring 50% females in both cases and controls), you use **typical stratification methods**.
+
+* **Method:** Stratify by the matching variable (e.g., sex).
+
+* **Calculation:** Use the standard weighted average formulas (like Mantel-Haenszel) to calculate the adjusted Odds Ratio (OR) or Risk Ratio (RR).
+
+* **Control:** You *must* control for the matching factor in the analysis to remove the selection bias introduced by matching (specifically in case-control studies).
+
+
+
+
+
+## 2. Analyzing Pair Matched Data
+
+In pair matching, the unit of analysis is the **pair**, not the individual. There are only two observations per stratum (one case, one control).
+
+### The Matched-Pair 2x2 Table
+
+Unlike the standard 2x2 table, this table counts **pairs**, not individuals.
+
+| | **Control Exposed** | **Control Unexposed** |
+| :--- | :---: | :---: |
+| **Case Exposed** | $a$ (Concordant) | $b$ (Discordant) |
+| **Case Unexposed** | $c$ (Discordant) | $d$ (Concordant) |
+
+
+* **Concordant Pairs ($a, d$):** Both case and control have the *same* exposure status. These provide **no information** about the relationship between exposure and disease.
+
+* **Discordant Pairs ($b, c$):** Case and control have *different* exposure status. This is where the information lies.
+
+
+
+### A. Case-Control Studies: Matched Odds Ratio
+In a matched case-control study, the Odds Ratio is calculated using **only the discordant pairs**.
+
+$$ OR_{matched} = \frac{b}{c} $$
+
+* **$b$:** Pairs where Case is Exposed, Control is Unexposed.
+
+* **$c$:** Pairs where Case is Unexposed, Control is Exposed.
+
+* **Intuition:** If exposure causes disease, we expect more pairs where the Case is the one exposed ($b$) than pairs where the Control is the one exposed ($c$).
+
+
+
+
+### B. Cohort Studies: Matched Risk Ratio
+
+In a matched cohort study, the layout and formula are different because groups are defined by exposure, not outcome.
+
+$$ RR_{matched} = \frac{\text{Proportion of Exposed with Disease}}{\text{Proportion of Unexposed with Disease}} $$
+
+Formula using pair counts (where $A, B, C, D$ refer to different pair configurations in a cohort layout):
+
+$$ RR = \frac{A + B}{A + C} $$
+
+
+*(Note: Refer to the specific lecture slide for the cohort table layout, as it differs from the case-control table)*.
+
+
+
+
+
+## 3. "Breaking the Match"
+
+What happens if you ignore the matching and analyze the data as if it were an unmatched study?
+
+### Case-Control Studies
+
+* **Consequence:** Breaking the match produces a **biased estimate** (usually towards the null).
+
+* **Rule:** **Never break the match** in a pair-matched case-control study. You must use matched analysis techniques (e.g., conditional logistic regression).
+
+* *Exception:* You can convert pair matching to frequency matching (e.g., matching on age) as long as you stratify by that variable in the analysis.
+
+
+
+
+
+
+
+### Cohort Studies
+
+* **Consequence:** Breaking the match usually yields a **valid point estimate** (unbiased) because matching in cohorts removes confounding.
+
+* **Caveat:** The variance estimates (Confidence Intervals) will be incorrect (usually too wide) because the analysis ignores the correlation between pairs.
+
+* **Rule:** You generally *can* break the match to get the RR, but matched analysis is preferred for correct precision.
+
+

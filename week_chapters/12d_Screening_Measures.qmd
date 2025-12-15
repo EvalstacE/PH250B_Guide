@@ -1,0 +1,146 @@
+
+# Screening Measures
+
+
+
+## Overview: Key Measures
+
+In screening and diagnostic testing, we use several measures to evaluate the performance of a test.
+
+* **Validity Measures (Fixed properties of the test):** Sensitivity, Specificity.
+
+* **Predictive Measures (Depend on prevalence):** Positive Predictive Value (PPV), Negative Predictive Value (NPV).
+
+* **Overall Performance:** Diagnostic Accuracy, ROC Curves.
+
+* **Clinical Utility:** Likelihood Ratios.
+
+
+
+
+## 1. Sensitivity and Specificity
+
+These measures assess how well a test classifies disease status compared to a "gold standard".
+
+
+### Definitions & Formulas
+
+
+| Measure | Definition | Formula |
+| :--- | :--- | :--- |
+| **Sensitivity** | Probability of a **True Positive**. The proportion of people *with* the disease who test positive. | $a / (a + c)$ |
+| **Specificity** | Probability of a **True Negative**. The proportion of people *without* the disease who test negative. | $d / (b + d)$ |
+
+
+
+*(Where $a$=True Positives, $b$=False Positives, $c$=False Negatives, $d$=True Negatives)*
+
+
+
+
+### The Trade-off
+
+When a continuous variable (e.g., blood glucose) is used to classify disease, moving the "cut-off" point affects these measures inversely:
+
+* **Increasing Sensitivity** (lowering the cutoff to catch more cases) $\rightarrow$ **Decreases Specificity** (more false positives).
+
+* **Increasing Specificity** (raising the cutoff to be more sure) $\rightarrow$ **Decreases Sensitivity** (more false negatives).
+
+**Clinical Decision:** You might prioritize sensitivity if missing a case is dangerous (e.g., cervical cancer/Pap smear), accepting more false positives.
+
+
+
+
+## 2. Predictive Values (PPV & NPV)
+
+These measures answer the clinical question: *"Given my test result, how likely is it that I have the disease?"*.
+
+### Definitions & Formulas
+
+| Measure | Definition | Formula |
+| :--- | :--- | :--- |
+| **PPV** | Proportion of people with a **positive test** who actually have the disease. | $a / (a + b)$ |
+| **NPV** | Proportion of people with a **negative test** who are actually disease-free. | $d / (c + d)$ |
+
+### The Impact of Prevalence
+
+Unlike sensitivity and specificity, **PPV and NPV are affected by disease prevalence**.
+
+* **High Prevalence:** Increases PPV (more true positives relative to false positives).
+
+* **Low Prevalence:** Decreases PPV (a positive result is more likely to be a false positive).
+
+
+
+
+## 3. Diagnostic Accuracy
+
+This measures the overall proportion of correct results (both true positives and true negatives).
+
+$$ Accuracy = \frac{a + d}{N} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Population}} $$
+
+
+
+
+## 4. Likelihood Ratios (LR)
+
+Likelihood ratios combine sensitivity and specificity to tell us how much a test result changes the probability of disease. They connect the **Pre-test Probability** to the **Post-test Probability**.
+
+
+
+
+### Formulas
+
+* **Positive Likelihood Ratio ($LR+$):** How much more likely a positive test is in diseased vs. non-diseased.
+
+$$ LR+ = \frac{\text{Sensitivity}}{1 - \text{Specificity}} $$
+
+
+* **Negative Likelihood Ratio ($LR-$):** How much less likely a negative test is in diseased vs. non-diseased.
+
+$$ LR- = \frac{1 - \text{Sensitivity}}{\text{Specificity}} $$
+
+
+### Calculation Steps
+
+1.  **Pre-test Odds** = Probability / (1 - Probability)
+
+2.  **Post-test Odds** = Pre-test Odds $\times$ Likelihood Ratio
+
+3.  **Post-test Probability** = Post-test Odds / (1 + Post-test Odds)
+
+
+
+
+
+## 5. ROC Curves
+
+The **Receiver Operating Characteristic (ROC) Curve** plots **Sensitivity** (y-axis) against **1 - Specificity** (false positive rate, x-axis).
+
+
+
+[Image of ROC Curve]
+
+
+
+
+### Uses
+
+
+
+**Visualize Trade-offs:** See how sensitivity and specificity change as you move the cutoff value.
+
+  * *Strict cutoff:* Lower left (Low Sensitivity, High Specificity).
+  
+  * *Loose cutoff:* Upper right (High Sensitivity, Low Specificity).
+  
+  
+  
+**Compare Tests:** A "better" test has a curve closer to the **upper left corner**.
+
+
+**Area Under the Curve (AUC):** The larger the AUC, the better the test. An ideal test has AUC=1.0; a worthless test (diagonal line) has AUC=0.5.
+
+
+
+

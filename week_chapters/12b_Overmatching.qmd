@@ -1,0 +1,90 @@
+
+# Overmatching
+
+
+
+
+## Overview: What is Overmatching?
+
+Overmatching occurs when you match on a variable that is **not a confounder**. This can lead to increased cost, loss of statistical efficiency, or even the introduction of bias that cannot be fixed in the analysis.
+
+* **Goal:** Use Directed Acyclic Graphs (DAGs) in the **design phase** to identify and avoid matching on variables that will cause these problems.
+
+
+
+
+
+
+## 1. Overmatching that Harms Statistical Efficiency (Precision)
+
+This type of overmatching reduces the precision of your effect estimate (wider confidence intervals) without reducing bias.
+
+
+
+### The DAG Structure
+
+* **Scenario:** The matching variable is associated with the **Exposure** but **NOT** the **Disease** (outcome).
+
+* **Why it's bad:** By matching on this variable, you force the controls to look like the cases with regard to the exposure. This reduces the variation in exposure between cases and controls, which is necessary to estimate the effect.
+
+* **Result:** Loss of information and statistical power. The stratified analysis (required by matching) was unnecessary because the variable wasn't a confounder.
+
+
+
+**Example DAG:**
+$$ Exposure \leftrightarrow Matching Variable \quad \quad Disease $$
+*(No arrow connects the Matching Variable to Disease)*
+
+
+
+
+
+## 2. Overmatching that Harms Validity (Accuracy)
+
+This is the most dangerous form of overmatching because it introduces **bias** (selection bias) that generally **cannot be corrected** in the analysis.
+
+
+
+### Scenario A: Matching on a Collider
+
+* **Definition:** A variable that is affected by *both* the Exposure and the Disease (or sharing common causes with both).
+
+* **The DAG:** Exposure $\rightarrow$ Matching Variable $\leftarrow$ Disease.
+
+* **The Mechanism:** Matching conditions on the collider. This opens a "backdoor path" between exposure and disease, creating a spurious association (bias).
+
+
+
+### Scenario B: Matching on an Intermediate
+
+* **Definition:** A variable that lies on the causal pathway between Exposure and Disease.
+
+* **The DAG:** Exposure $\rightarrow$ Matching Variable $\rightarrow$ Disease.
+
+* **The Mechanism:** By matching on the intermediate, you are essentially holding it constant. This blocks the causal path you are trying to study, biasing the total effect estimate toward the null.
+
+
+
+
+## 3. Summary of DAG Guidelines for Matching
+
+When selecting matching variables, draw your DAG and check the following criteria:
+
+| DAG Structure | Decision | Reason |
+| :--- | :--- | :--- |
+| **Exposure $\leftarrow$ Match $\rightarrow$ Disease** | **MATCH** | This is a Confounder. Matching closes the backdoor path and reduces bias. |
+| **Exposure $\leftrightarrow$ Match (No link to Disease)** | **DO NOT MATCH** | Reduces statistical efficiency. Unnecessary stratification. |
+| **Exposure $\rightarrow$ Match $\leftarrow$ Disease** | **DO NOT MATCH** | This is a Collider. Matching opens a backdoor path and introduces selection bias. |
+| **Exposure $\rightarrow$ Match $\rightarrow$ Disease** | **DO NOT MATCH** | This is an Intermediate. Matching blocks the causal effect you are trying to measure. |
+
+
+
+
+
+### Critical:
+
+If you identify overmatching that harms *validity* (collider or intermediate) in a study design, note that this bias **cannot be fixed** in the analysis phase. It must be avoided during the design phase.
+
+
+
+
