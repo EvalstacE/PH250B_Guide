@@ -1,0 +1,48 @@
+
+# Exam Prep 2
+
+
+For bivariable analysis (looking at just two variables at a time), simple hypothesis tests are often preferred over complex regressions.
+
+
+Chi-square is the standard test for determining if there is an association between two categorical variables in a bivariable setting.
+
+
+
+
+![](images/choosing_test_table.png)
+
+
+
+Example: Investigators decide to conduct some exploratory bivariable analyses to answer the following questions. Indicate which statistical test or type of regression they should use for the following:
+
+
+#### a) Is pet ownership (number of pets) associated with a depression score (PHQ-9 score out of 27)?
+
+Variables: **Continuous outcome (depression score)**; Continuous exposure (number of pets)
+
+Test: Correlation (Pearson) or T-test (if comparing means).
+
+Regression: Linear regression.
+
+
+
+#### b) How does depression (coded binary as PHQ-9 score ≤ 4=depression or PHQ-9 > 4=no depression) vary across age (years)?
+
+
+Variables: **Binary outcome (depression status)** and Continuous exposure (age)
+
+Test: T-test.
+
+Regression: Logistic regression.
+
+
+#### c) Does depression (coded categorically...) vary across income (coded categorically as falling into four quartiles)?
+
+Variables: **Categorical outcome (depression severity)** and Categorical exposure (income)
+
+Test: **Chi-square test (categorical X, categorical Y)**
+
+
+
+

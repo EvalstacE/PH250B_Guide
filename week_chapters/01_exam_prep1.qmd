@@ -233,8 +233,113 @@ These questions focus on the logic and interpretation rather than manual calcula
 * **Interpretation:** accurately interpret power in a sentence (e.g., "The probability of rejecting the null hypothesis when the alternative is true"
 
 
+Example: 
 
 
+Researchers at UC Berkeley are interested in the effects of a prenatal support and education program on preterm birth. They plan to test the program in a pilot study to determine if they should recommend that the California Department of Public Health (CDPH) implement the program statewide. 
+
+**The current risk of preterm birth in California is 11%**. 
+
+(p of group 2 = 0.11)
+
+For CDPH to recommend implementing the program throughout the state, they have stated that 
+
+the risk of preterm birth among those receiving the intervention **needs to be 9% or lower**. 
+
+(p of group 1 = 0.09)
+
+The researchers decide to use a concurrent cohort design to investigate this relationship in the pilot study.
+
+
+Using a relative measure of association, what is the minimum total sample size needed to detect the association that would support statewide implementation of the program as described above? 
+
+Note that the exposed group are those who received the intervention. 
+
+For notation, the exposed will be called “Group 1”, and the unexposed will be called group “Group 2". 
+
+Use a **2-tailed statistical test with an alpha level of 0.05 and 80% power.**
+
+
+
+**Calculations:**
+
+#### First, we establish the Cumulative Incidence Ratio ($CIR$) or Relative Risk ($RR$)
+
+$$CIR = \frac{p_{Group1}}{p_{Group2}} = \frac{0.09}{0.11} \approx 0.8182$$
+
+
+
+#### Next, we apply the course formula for sample size per arm ($n$)
+
+
+$$n = \frac{(Z_{1-\beta} + Z_{1-\alpha/2})^2 [ (CIR + 1) - p_{Group2}(CIR^2 + 1) ]}{p_{Group2}(1 - CIR)^2}$$
+
+##### Where: 
+
+Z-score Sum: $(0.84 + 1.96)^2 = (2.8)^2 = 7.84$
+  
+Numerator Bracket:
+
+* $CIR + 1 = 1.8182$
+
+* $p_{Group2}(CIR^2 + 1) = 0.11 \times (0.8182^2 + 1) \approx 0.11 \times 1.6695 \approx 0.1836$
+
+* Bracket Total: $1.8182 - 0.1836 = 1.6346$
+
+
+Denominator:
+
+$p_{Group2}(1 - CIR)^2 = 0.11 \times (1 - 0.8182)^2 = 0.11 \times (0.1818)^2 \approx 0.11 \times 0.03305 \approx 0.003636$
+
+
+
+Solving for $n$:
+
+
+$$n = \frac{7.84 \times 1.6346}{0.003636} \approx \frac{12.815}{0.003636} \approx 3524.5$$
+
+
+
+Rounding up to the nearest whole person, we require **3,525 participants per group.**
+
+
+
+
+
+$Z_{1-\alpha/2}$: 1.96 
+
+* This corresponds to a two-sided test with an alpha ($\alpha$) of 0.05.
+  
+  
+$Z_{1-\beta}$: 0.84
+
+* This corresponds to 80% power ($\beta = 0.20$)
+
+
+$p_{Group1}$ (Risk in exposed): 0.09
+
+* This is the target risk level (9%) required for the intervention to be successful.
+
+$p_{Group2}$ (Risk in unexposed): 0.11
+
+* This is the current background risk (11%).
+
+
+
+After establishing the sample size needed from Q4.1, the researchers apply for a grant and receive enough funds to deliver the intervention to 5000 mothers, with 5000 control mothers for comparison. What will happen to the power to detect the association described above, assuming that alpha remains unchanged? 
+
+
+**The power to detect the association will increase** 
+
+Since the funded sample size (5,000 per group) is larger than the minimum required sample size calculated previously (approximately 3,525 per group), the study will have greater than 80% power to detect the specified difference.
+
+
+increasing the sample size while holding other parameters (like effect size and alpha) fixed always results in an increase in power. This occurs because a larger sample size reduces the standard error, making it easier to statistically distinguish the observed difference from the null hypothesis
+
+
+
+
+--------------------------
 
 
 

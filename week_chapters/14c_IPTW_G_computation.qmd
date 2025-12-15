@@ -7,7 +7,6 @@ Both IPTW and G-Computation are modern methods from the causal inference literat
 They both separate the step of adjusting for confounding from the step of estimating the parameter, allowing for the estimation of flexible parameters (like population intervention models)
 
 
-
 *  multivariable regression is biased when time-dependent confounding exists
 
 * Time-dependent confounders are variables that are affected by prior exposure and predict subsequent exposure. Adjusting for them in standard regression creates bias because they are on the causal pathway
@@ -27,6 +26,40 @@ They both separate the step of adjusting for confounding from the step of estima
 * **Double Robust Estimation:** Know that this method combines both. It gives an unbiased estimate if either the treatment model or the outcome model is correct
 
 * **Confidence Intervals:** There are no simple formulas for standard errors for these methods. You must use bootstrapping (resampling the data many times) to estimate confidence intervals
+
+
+
+### IPTW creates a pseudo-population
+
+  * IPTW (Inverse Probability of Treatment Weighting): We say this creates a **pseudo-population** because we are applying weights to the actual observed data. 
+  
+  
+  * If a subject has a weight of 4, it is as if there are 4 copies of that person in this new "pseudo" population. 
+  
+  
+  * The goal is to create a population where the distribution of confounders is balanced between exposed and unexposed groups, **mimicking a randomized trial.**
+
+
+
+### G-Computation creates a counterfactual population
+
+
+  * G-computation: We say this creates a **counterfactual population** because we are not just re-weighting observed people. 
+  
+  
+  * Instead, we use a regression model to predict the outcome for every individual in the study under two distinct hypothetical scenarios: 
+  
+    * one where we set everyone's exposure to "exposed" ($X=1$) and 
+    
+    * one where we set everyone to "unexposed" ($X=0$)  
+    
+    
+  * We then estimate the measure of association in this simulated, or counterfactual, population
+
+
+
+
+-----------------------
 
 
 

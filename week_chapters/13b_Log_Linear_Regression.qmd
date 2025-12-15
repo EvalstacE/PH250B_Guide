@@ -1,0 +1,199 @@
+
+# Log-Linear Regression
+
+
+Log-linear regression is a multivariable analysis method used primarily when your outcome variable is a count or a rate (though it can also be used for binary outcomes when estimating risk ratios). It is distinct from linear regression (for continuous outcomes) and logistic regression (for binary outcomes estimating odds ratios).
+
+
+
+
+
+## When to Use Log-Linear Regression
+
+You choose a log-linear model based on your outcome and desired measure of association:
+
+  * **Outcome Type:** Binary (yes/no) or Count (e.g., number of cases).
+
+  * **Measure of Association:** Risk Ratio (RR) or Rate Ratio (RR).
+
+  * **Independent Variables:** Can be continuous or binary (or categorical).
+  
+  * **Log-Link Function:** Log Link (we transform both sides of equation using log transformation).
+
+  * **Assumption:** Data are independent (no clustering or auto-correlation).
+  
+  
+$$\ln(E(Y|X=x)) = \beta_0 + \beta_1x$$  
+
+
+  * Left Side: The natural log ($\ln$) of the expected value (mean) of the outcome $Y$, given exposure $X$. This uses a log link function.
+
+  * Right Side: The linear combination of the intercept ($\beta_0$) and the exposure effect ($\beta_1x$).
+
+*Note: In this course, "log" always refers to the natural log ($\ln$)*
+
+
+
+
+
+
+
+## Interpretting the Coefficients:
+
+must translate the $\beta$ coefficient back into a meaningful epidemiological measure.
+
+
+### For a Binary Exposure ($X=0, 1$):
+
+  * $\beta_1$ represents the log risk ratio (or log rate ratio)
+  
+  * To get the Risk Ratio (RR) or Rate Ratio, you must exponentiate the coefficient:
+  
+    * $$RR = e^{\beta_1}$$
+    
+  * **Interpretation:** The relative association between the mean outcome when $X=1$ compared to when $X=0$.
+
+
+
+### For a Continuous Exposure:
+
+  * $e^{\beta_1}$ represents the relative change in the risk/rate for a one-unit increase in $X$.
+  
+  
+
+
+## Calculating Risk Ratios
+
+
+### Model for Exposed: 
+
+($X=1$): $\ln(E(Y|X=1)) = \beta_0 + \beta_1(1)$
+
+
+### Model for Unexposed 
+
+($X=0$): $\ln(E(Y|X=0)) = \beta_0 + \beta_1(0) = \beta_0$
+
+
+
+### Difference in Logs (Log Ratio):
+
+
+$$\ln(E(Y|X=1)) - \ln(E(Y|X=0)) = (\beta_0 + \beta_1) - \beta_0 = \beta_1$$
+
+
+#### Lastly, Exponentiate:
+
+
+$$\frac{E(Y|X=1)}{E(Y|X=0)} = e^{\beta_1} = \text{Risk Ratio}$$
+
+---------------------
+
+
+
+## Estimating Rates (Person-Time Offset)
+
+
+If your outcome is a count of events over time (incidence rate), you must account for the person-time at risk. This is done using an offset.
+
+
+$$\ln\left(\frac{E(Y|X=x)}{\text{Person-time}}\right) = \beta_0 + \beta_1x$$
+
+
+
+**Rewritten for Regression:**
+
+$$\ln(E(Y|X=x)) = \ln(\text{Person-time}) + \beta_0 + \beta_1x$$
+
+
+
+
+#### REMEMBER: the offset is the natural log of the person-time. It allows the model to estimate an incidence rate ratio
+
+
+
+#### Types of Log-Linear Models
+
+  * **Poisson Regression:** Assumes the variance equals the mean. Common for count data.
+  
+  * **Negative Binomial Regression:** Used when the variance is larger than the mean ("overdispersion"). Makes less strong assumptions than Poisson.
+
+
+
+
+
+## Key Take-Aways: 
+
+
+### Log-Linear Regression 
+
+  * Outcome: Binary, Count, or Rate
+
+  * Link Function: Log ($\ln$)
+
+  * Measure of Association: Risk Ratio or Rate Ratio
+
+  * Coefficient ($\beta_1$): Log(Risk Ratio) or Log(Rate Ratio)
+
+  * Conversion: Exponentiate ($e^{\beta_1}$) to get the Ratio
+
+  * Key Assumption: Independence (no clustering/auto-correlation)
+
+
+
+
+
+##### Example: investigators decide to treat depression and pet ownership as binary variables. They construct the following regression equation to assess the adjusted association between pet ownership and depression:
+
+
+
+$$\ln\left[\frac{E(Y|X=x)}{1 - E(Y|X=x)}\right]$$ = ($\beta_0$) + 
+
+
+
+Recognize that the equation uses the logit link function:
+
+  * This represents the natural log of the odds of the outcome (depression). 
+  
+  * Therefore, this is a **Logistic Regression model, which is used to estimate Odds Ratios (OR)**
+  
+  
+The variable for Pet Ownership is $X$. The regression coefficient associated with pet ownership is $B_1$
+
+
+In a logistic regression model, the coefficient $B_1$ represents the log odds ratio for the association between the exposure ($X$) and the outcome ($Y$), holding other variables ($A$ and $W$) constant
+
+
+**Calculation:**
+
+To obtain the Odds Ratio (OR) for pet ownership, the investigators must exponentiate the coefficient $B_1$.$$\text{Odds Ratio} = e^{B_1}$$
+
+
+**Interpretation:**
+
+The value $e^{B_1}$ represents the odds of depression among pet owners ($X=1$) divided by the odds of depression among non-pet owners ($X=0$), adjusted for Age and Income
+
+
+##### Imagine the investigators obtained an odds ratio of 0.9 for pet ownership from the above model. Interpret this estimate.
+
+  * The odds of depression among pet owners are 0.9 times the odds of depression among non-pet owners, adjusting for age and income
+  
+  * Alternatively, this can be interpreted as: Pet owners have 10% lower odds of depression compared to those who do not own pets, holding age and income constant ($1.0 - 0.9 = 0.10$ or $10\%$).
+  
+  
+**Key Elements of this Interpretation:**
+
+  * **Comparison:** Comparing the exposed group ($X=1$, pet owners) to the unexposed/reference group ($X=0$, non-pet owners).
+
+  * **Outcome:** The odds of the outcome ($Y$, depression).
+
+  * **Magnitude/Direction:** 0.9 indicates a protective association (less than 1).
+
+  * **Adjustment:** You must state that this estimate accounts for the other variables in the model ($A$ and $W$).
+
+
+
+
+
+
+

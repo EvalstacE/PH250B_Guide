@@ -1,0 +1,173 @@
+
+# Linear Regression
+
+
+## When to Use Linear Regression
+
+You typically choose a linear regression model based on the type of outcome (dependent) variable you have: 
+
+* **Outcome Type:** Continuous (e.g., height-for-age Z-score, blood pressure, weight).
+
+* **Measure of Association:** Mean Difference
+
+* **Identity Function:** Identity Link (we model the outcome directly, without transformation).
+
+
+**Important Note:** While it is mathematically possible to model risks or rates with linear regression, it is generally avoided because the model can predict impossible values (e.g., risk < 0 or > 1)
+
+
+## The Bivariable Linear Model:
+
+
+$$E(Y|X=x) = \beta_0 + \beta_1x$$
+
+
+  * $E(Y|X=x)$: The expected mean of the outcome $Y$ given exposure $X$
+  
+  * $\beta_0$ (Intercept): The mean of the outcome $Y$ when the exposure $X = 0$ (the unexposed/reference group)
+  
+  * $\beta_1$ (Slope): The Mean Difference in the outcome $Y$ for a one-unit change in $X$
+  
+  
+### Interpretting the Coefficients: 
+
+
+**Scenario A: Binary Exposure (e.g., Treatment vs. Control)**
+
+If $X$ is binary ($0 = \text{Unexposed}$, $1 = \text{Exposed}$):
+
+  * $\beta_0$: The mean outcome among the unexposed
+  
+  * $\beta_1$: The difference in the mean outcome between the exposed ($X=1$) and unexposed ($X=0$)
+  
+  
+**Scenario B: Continuous Exposure (e.g., Weight in kg)**
+
+If $X$ is continuous:
+
+  * $\beta_1$: The change in the mean outcome for a one-unit increase in $X$
+  
+**NOTE:** Sometimes a "one-unit increase" (e.g., 1 gram of weight) is too small to be meaningful. 
+
+  * You may need to calculate the effect of a larger shift (e.g., 10 units or 1 Standard Deviation). 
+  
+  * To do this, simply multiply the coefficient by the amount of the shift (e.g., $\beta_1 \times 10$)
+  
+  
+  
+### Calculating the Mean Difference (the "Plug-In" Method)
+
+You should be able to derive the mean difference using the coefficients. The professors emphasize "plugging in" values to prove the interpretation.
+
+#### Step-by-Step Calculation:
+
+To find the Mean Difference comparing Exposed ($X=1$) to Unexposed ($X=0$):
+
+  1. Write the Model: $E(Y|X) = \beta_0 + \beta_1 X$
+  
+  2. Calculate Mean for Exposed ($X=1$):
+  
+    * $$\beta_0 + \beta_1(1) = \beta_0 + \beta_1$$
+    
+  3. Calculate Mean for Unexposed ($X=0$)
+  
+    * $$\beta_0 + \beta_1(0) = \beta_0$$
+    
+  4. Subtract (Exposed - Unexposed):
+  
+    * $$(\beta_0 + \beta_1) - (\beta_0) = \beta_1$$
+    
+  **RESULT:** The Mean Difference is equal to $\beta_1$
+  
+  
+
+
+-------------------------
+
+
+
+## Multivariable Linear Regression (Adjusting for Confounding)
+
+When we add more variables (covariates) to adjust for confounding, the interpretation changes slightly.
+
+
+$$E(Y|X, Z) = \beta_0 + \beta_1 X + \beta_2 Z$$
+
+
+(Where $X$ is exposure and $Z$ is a confounder)
+
+
+  * $\beta_1$: The difference in the mean outcome comparing exposed vs. unexposed, holding $Z$ constant (or adjusting for $Z$)
+  
+  * $\beta_2$: The difference in the mean outcome comparing levels of $Z$, holding exposure $X$ constant
+  
+  
+  
+  
+--------------------------
+
+
+  
+## Interaction in Linear Models
+
+If we suspect interaction (effect modification), we add a **product term** (interaction term; measure of effect modification) to the model.
+
+
+
+$$E(Y|X) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 (X_1 \cdot X_2)$$
+
+
+$\beta_3$ (Interaction Term): This coefficient assesses the presence of interaction
+
+
+Interpretation: $\beta_3$ represents the difference between the observed joint effect of $X_1$ and $X_2$ and the expected joint effect (sum of individual effects)
+
+
+Scale: Linear regression models assess interaction on the **Additive Scale**
+
+
+### Assessing Interaction:
+
+  * If $\beta_3 > 0$: Positive interaction (synergy)
+  
+  * If $\beta_3 < 0$: Negative interaction (antagonism)
+  
+  * If $\beta_3 = 0$: No interaction
+  
+  
+  
+  
+---------------------------  
+  
+  
+## Key Take-Aways: 
+
+
+Independence: The model assumes data are independent. It assumes NO clustering (e.g., people within households) and NO auto-correlation (repeated measures on the same person over time).
+
+  * If clustering exists: You must use Generalized Estimating Equations (GEE) or Mixed Models
+  
+
+
+Linearity: The model assumes a straight-line relationship between the independent and dependent variables. It assumes a 1-unit increase in X has the same effect on Y regardless of the starting value of X
+
+
+Extrapolation: Be cautious when interpreting results outside the range of observed data (e.g., predicting height for a weight of 0 kg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
