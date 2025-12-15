@@ -1,0 +1,121 @@
+
+# Logistic Regression
+
+
+When we have a binary outcome (e.g., disease/no disease) and want to adjust for multiple variables (exposures and confounders), we use Logistic Regression. This model is used to estimate an Odds Ratio (OR).
+
+
+  * **Outcome**:  Binary (e.g., Yes/No, 1/0).
+
+  * **Independent Variables (Covariates)**: More than one variable (exposure + confounders). Can be continuous or binary.
+
+  * **Measure of Association:** Odds Ratio (OR).
+  
+  
+  
+$$\ln\left(\frac{E(Y|X=x)}{1 - E(Y|X=x)}\right) = \text{logit}(E(Y|X=x)) = \beta_0 + \beta_1 x$$
+
+
+
+  * Left side: The natural log (ln) of the odds of the outcome
+  
+  * Right side: A linear combination of the coefficients and variables.
+  
+  
+  
+  
+  
+## Interpretation of Coefficients: 
+
+$\beta_1$ (Coefficient on X): This is the log odds ratio comparing the odds of the outcome when $X=1$ to when $X=0$ (for a binary exposure)
+
+
+$\beta_0$ (Intercept): The log odds of the outcome when all independent variables ($X$) are 0.
+
+
+
+
+
+
+
+## Calculating the Odds Ratio: 
+
+
+For a Binary Exposure (e.g., $X=1$ vs $X=0$); you simply exponentiate the coefficient
+
+
+$$\text{OR} = e^{\beta_1} = \exp(\beta_1)$$
+
+Example: If your logistic regression output gives a coefficient for "Smoking" of 0.693:
+  
+  $$\text{OR} = e^{0.693} \approx 2.0$$
+
+Interpretation: Smokers have 2 times the odds of the outcome compared to non-smokers.
+
+
+
+
+For a Continuous Exposure (e.g., Blood Pressure):
+
+The $\beta$ represents the log odds ratio for a one-unit increase in $X$.
+
+
+$$\text{OR} = e^{\beta_1}$$
+
+  * represents the multiplicative change in odds for every 1-unit increase in the continuous variable
+  
+  
+  
+  
+  
+  
+  
+## Logistic Regression for Case-Control Studies
+
+
+Logistic regression is particularly useful for case-control studies because these studies sample based on disease status (outcome), making risk calculations impossible directly. However, the Odds Ratio calculated from logistic regression is valid
+
+
+Note: If the disease is rare, this Odds Ratio approximates the Risk Ratio
+
+
+
+
+
+## Assumptions
+
+
+Just like linear models, standard logistic regression assumes:
+
+
+Independence: No clustering or auto-correlation (e.g., no repeated measures on the same person or households).
+
+
+Linearity in the Logit: For continuous variables, the log odds of the outcome is assumed to change linearly with the variable.
+
+
+
+
+
+
+## Summary of Logistic Regression Models: 
+
+
+  * Outcome: Binary (e.g., Case/Control, Sick/Healthy)
+
+  * Link Function: Logit (Log-Odds)
+
+  * Measure of Association: Odds Ratio (OR)
+  
+  * Calculation: $\text{OR} = e^{\beta}$
+
+  * Coefficient ($\beta_1$): Log Odds Ratio for a 1-unit change in X
+
+  * Key Assumption: Independence of observations
+
+
+
+
+
+
+

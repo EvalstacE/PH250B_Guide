@@ -101,6 +101,9 @@ $$ LR+ = \frac{\text{Sensitivity}}{1 - \text{Specificity}} $$
 $$ LR- = \frac{1 - \text{Sensitivity}}{\text{Specificity}} $$
 
 
+
+
+
 ### Calculation Steps
 
 1.  **Pre-test Odds** = Probability / (1 - Probability)
