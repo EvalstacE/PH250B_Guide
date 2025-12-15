@@ -16,11 +16,15 @@ They both separate the step of adjusting for confounding from the step of estima
 * Note that this contrasts with propensity score matching, which estimates the effect on the treated population (those who were matched)
 
 
-* These methods do not fix bias from poor study design or unmeasured confounding
+* **These methods do not fix bias from poor study design or unmeasured confounding**
 
   * IPTW relies on a correct treatment model (propensity score)
   
   * G-computation relies on a correct outcome model
+  
+Misclassification and other forms of information bias are not addressed by G-computation or IPTW. 
+
+Sensitivity analyses are the only tool available for at least assessing the potential impact of information bias, though they don’t correct for it. 
 
 
 * **Double Robust Estimation:** Know that this method combines both. It gives an unbiased estimate if either the treatment model or the outcome model is correct
@@ -67,6 +71,15 @@ They both separate the step of adjusting for confounding from the step of estima
 ## Inverse Probability of Treatment Weighting (IPTW)
 
 
+The first step of implementing propensity score matching is to calculate each individual’s propensity score (typically using a regression model). This score captures an individual’s probability of **Being exposed or treated**
+
+
+propensity scores can be used to control for confounding via 
+
+**Matching**  or **weighting (inverse probability of treatment weighting).**
+
+
+
 Purpose: IPTW aims to mimic a randomized trial using observational data by creating a "pseudo-population" where the exposure is independent of confounders
 
 * conceptually related to standardization
@@ -108,6 +121,10 @@ Purpose: IPTW aims to mimic a randomized trial using observational data by creat
 Purpose: G-computation estimates the association by using a regression model to predict "counterfactual" outcomes for every individual under different treatment scenarios
 
 
+G computation enables flexible definition of parameters, such as choosing to use the additive or multiplicative scale. It also allows the researcher to determine what magnitude of change in exposure is of interest, allowing the researcher to predict the impact of different amounts of change in exposure. The estimate resulting from g computation can also be more interpretable to a broader audience than a beta coefficient from a regression model. 
+
+
+
 ### The Process (Steps):
 
 
@@ -131,9 +148,107 @@ Purpose: G-computation estimates the association by using a regression model to 
 
 
 
+--------------
+
+
+#### Practice Problems
+
+
+##### Pediatricians are interested in testing whether receiving a series of allergy shots can reduce the number of asthma attacks experienced by asthmatic children. Use counterfactual notation to write an equation for a population-level causal effect of this binary exposure.
+
+  * E[Y1-Y0] or E[Y1]/E[Y0]
+  
+  
+
+
+##### You have observational data from pediatric clinics on children receiving the allergy shots and number of asthma attacks in the following year. Clinicians were more likely to recommend their patients participate in the allergy shot program when they had experienced fewer recent asthma attacks. Assess exchangeability in this population.  
+
+
+Participants and non-participants are not exchangeable – the marginal risk of asthma
+attacks does not equal the risk in each group prior to the program, since we know that those in the program are selected partially due to lower levels of attacks.
+
+
+##### You decide to apply G computation as one method of controlling for confounding by a range of covariates and incorporating potential interaction. What are the steps required to obtain estimates of Y1 and Y0?
+
+1) Model outcome as a function of exposure and confounders
+
+2) Set exposure to 0, predict Y0, set exposure to 1, predict Y1
+
+
+##### Based on the G computation analysis, average asthma attacks per year are 13.5 if everyone is exposed and 17.8 if unexposed. Estimate the parameter specified in part A and interpret this estimate.
+
+  * Causal risk difference: 13.5 – 17.8 = -4.3 or causal risk ratio = 13.5/17.8 = 0.758
+
+  * Interpretation: A decrease in 4.3 asthma attacks per year is associated with all children receiving shots vs. no children receiving shots.
+  
+  
+  
+##### You conduct inverse probability weight analysis to compare to the analysis above. Write an equation in notation or words for the first step of this approach; include W1=number of asthma attacks in the months before exposure and use W2 to represent all other covariates.   
+
+  * Log odds (allergy shots complete) = intercept + B1 * W1 + B2 * W2
+  
+  
+##### After you have weighted the data, how do you expect the mean number of asthma attacks in the month before exposure to compare in the participant group vs in the unexposed group?
+
+
+  * **Approximately equal between exposed and unexposed.** 
+  
+  * The mean of pre-program asthma attacks should be approximately equal in the two weighted groups - the purpose of IPTW is to weight the data to distribute confounders evenly between exposed and unexposed. 
 
 
 
+  
 
 
+
+--------------------
+
+Read the below interpretation of the main finding of your study. Does the interpretation represent a marginal or conditional estimate? Write the corresponding equation (not regression model) and define the elements of the equation. 
+
+Interpretation: “The six-month incidence of STIs decreased by 4% (95% CI 0.02 – 0.06) among sex workers who participated in the empowerment intervention compared to those who did not participate, controlling for baseline demographics and risk factors.”
+
+
+Conditional (i.e., within strata of demographics and risk factors) 
+
+Estimate = E[Y | A=1, W] – E[Y |A=0, W] 
+
+where A = intervention participation and W is a vector of baseline demographics and risk factors or confounders. 
+
+The interpretation is for a risk difference, so we should subtract risk in the unexposed from risk in the exposed. 
+
+
+------------------
+
+
+
+##### In your cohort study, sex workers chose whether or not to participate in the intervention. You decide to apply inverse probability of treatment weighting (IPTW) to obtain a marginal estimate of intervention impact. What do you model in the first step of your analysis? In other words, name the variable being used as the outcome and the potential covariates. 
+
+To calculate the weights, you model the probability of the exposure of interest, participating in the intervention, using relevant confounders (probably baseline demographics and risk factors mentioned in part B) as predictors of exposure. 
+
+Therefore, in the first step the outcome is participating in the intervention and the covariates are relevant confounders. 
+
+
+
+##### Ten percent of the full cohort is male, but 25% of those participating in the intervention are male. Treating sex as a confounder, do you expect the men who participate in the intervention will be upweighted or downweighted relative to female participants using the IPTW approach? Why? 
+
+
+Men are over-represented in the exposed (participant) group relative to the full population – they are more likely to be exposed. Men who are exposed will thus be downweighted relative to women who were exposed in the analysis, because men will generally have a higher probability of exposure and thus the inverse probability weight will be smaller. 
+
+In other words, before weighting, the exposed group includes an over-selection of men; after re-weighting, the exposed and unexposed groups should have the same distribution of the confounding variable sex, so men must be downweighted to achieve this even distribution. 
+
+
+
+##### Once the IPTW analysis is complete, you identify a six-month risk difference of 5% (95% CI 0.03 – 0.07). Write the equation represented by this result and interpret it. Relate this result back to part A. 
+
+
+Risk difference = E_w[E(Y|A=1, W)] - E_w[(Y|A=0, W)] or 
+
+E(I(A=1)/g(A=1|W)*Y)-E(I(A=0)/g(A=0|W)*Y) where g(A=a|W) = P(A=a|W)
+
+
+The expected difference in STI incidence over six months if everyone in the sex worker population had participated in the intervention compared to if no one had participated in the intervention is 5% (95% CI 0.03 – 0.07). 
+
+The weights are intended to create a pseudo population that should resemble two exchangeable groups randomly assigned to treatment in a counterfactual experiment. 
+
+Confounders are evenly distributed between groups due to the re-weighting and should no longer bias the estimated association, just like a counterfactual experiment. 
 

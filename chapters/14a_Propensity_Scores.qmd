@@ -5,6 +5,30 @@ The predicted probability ("propensity") of exposure in a particular individual 
 
 In simpler terms, it is a single number that summarizes all the covariate information about a person into the likelihood that they would have received the intervention, regardless of whether they actually did.
 
+A propensity score is the predicted probability (propensity) of exposure in a particular individual based on a set of relevant characteristics. Propensity scores can be used to control for confounding in observational cohort studies. The idea is to try to mimic randomization by making the exposed and the unexposed groups as comparable as possible with respect to relevant confounding variables. These methods have the intuitive appeal of trying to emulate randomization and under certain circumstances provide a more efficient control of confounding, which makes them particularly useful for the study of rare outcomes. 
+
+
+
+1.	The exposure variable (treated or not treated) is modeled as the dependent variable in a multiple regression including as predictors covariates that are considered as possible confounders of the exposure-outcome association. 
+
+2.	The intercept and regression coefficients from this multiple regression can then be used to calculate the predictive probability of exposure as a function of this multivariate set of possible confounding variables.
+
+3.	The predicted probabilities of exposure (propensity scores) can be applied to generate a new data set of matched exposed and unexposed individuals based on propensity score. Because these two groups are similar with respect to an overall set of known covariates, this approach is analogous to randomization. 
+
+
+#### Example: Use the counterfactual framework to write and interpret a mathematical expression that represents the population effect of exposure to such an intervention on STI incidence if you were able to run the ideal experiment. 
+
+E[Y1 - Y0 ] 
+or E[Y(exposed to empowerment intervention) – Y (unexposed) ] 
+
+This equation represents the causal difference in STI incidence had the whole population of sex workers been exposed to the intervention compared to if the whole population of sex workers were not exposed to the intervention (going back in time and keeping everything else the same). 
+
+
+
+
+
+
+
 
 
 ## Why use propensity score? 

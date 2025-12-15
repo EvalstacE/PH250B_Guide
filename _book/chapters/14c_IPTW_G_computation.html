@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>19&nbsp; Inverse Probability of Treatment Weighting (IPTW) and G-Computation – Epi Methods 2 Review</title>
+<title>31&nbsp; Inverse Probability of Treatment Weighting (IPTW) and G-Computation – Epi Methods 2 Review</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,9 +110,12 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/14c_IPTW_G_computation.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/14c_IPTW_G_computation.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
@@ -125,6 +128,11 @@ window.Quarto = {
       <a href="../">Epi Methods 2 Review</a> 
     </div>
       </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -133,10 +141,58 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">PH250B</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02a_Causality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Individual vs Population Causal Effects</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02b_Exchangability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exchangeability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02c_DAG_Intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Directed Acyclic Graphs (DAGs)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03b_Risk_vs_Rate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk vs.&nbsp;Rates</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03c_Population_Types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Closed vs.&nbsp;Open Populations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03d_Incidence_Density_Rates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Incidence Rates</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03e_Cumulative_Incidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Cumulative Incidence</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03f_Relationships_MOAs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Relationships among MoAs</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Confounding</span></a>
+ <span class="menu-text">Types of Studies</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -144,14 +200,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10a_Confounding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Confounding</span></span></a>
+  <a href="../chapters/05a_Cohort_Studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Cohort Studies</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/10b_Negative_Controls.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Negative Controls</span></span></a>
+  <a href="../chapters/05c_Case_Control_Studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case-Control Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05d_CrossSectional_Ecological_Studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Cross-Sectional Studies</span></span></a>
   </div>
 </li>
       </ul>
@@ -159,7 +221,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Effect Measure Modification</span></a>
+ <span class="menu-text">Bias and Confounding</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -167,26 +229,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11a_EMM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Effect Measure Modification</span></span></a>
+  <a href="../chapters/06b_Bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bias</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11b_EMM_component_cause_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Effect Modification and the Sufficient Component Cause Model</span></span></a>
+  <a href="../chapters/10a_Confounding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Confounding</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/11c_EMM_potential_outcomes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Effect Modification, the Potential Outcomes Model, and Causal Interaction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/11d_additive_scale_interaction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Detecting Additive Scale Interaction</span></span></a>
+  <a href="../chapters/10b_Negative_Controls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Negative Controls</span></span></a>
   </div>
 </li>
       </ul>
@@ -194,7 +250,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Matching</span></a>
+ <span class="menu-text">Effect Measure Modification</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,26 +258,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12a_Matching.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Matching</span></span></a>
+  <a href="../chapters/11a_EMM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Effect Measure Modification</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12b_Overmatching.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Overmatching</span></span></a>
+  <a href="../chapters/11b_EMM_component_cause_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Effect Modification and the Sufficient Component Cause Model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12c_Matched_Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Analaysis of Matched Data</span></span></a>
+  <a href="../chapters/11c_EMM_potential_outcomes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Effect Modification, the Potential Outcomes Model, and Causal Interaction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12d_Screening_Measures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Screening Measures</span></span></a>
+  <a href="../chapters/11d_additive_scale_interaction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Detecting Additive Scale Interaction</span></span></a>
   </div>
 </li>
       </ul>
@@ -229,7 +285,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Regression</span></a>
+ <span class="menu-text">Matching</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -237,32 +293,67 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/12a_Matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introduction to Matching</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12b_Overmatching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Overmatching</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12c_Matched_Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Analaysis of Matched Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12d_Screening_Measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Screening Measures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Regression</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/13a_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13b_Log_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Log-Linear Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Log-Linear Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13c_Logistic_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13d_Survival_Data_Models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Models for Survival Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Models for Survival Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13e_Matched_Case_Control_Models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Models for Matched Case-Control Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Models for Matched Case-Control Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -270,45 +361,68 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14a_Propensity_Scores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Propensity Scores</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Propensity Scores</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14b_Sample_Size_Power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sample Size and Power</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sample Size and Power</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14c_IPTW_G_computation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15a_Meta_Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15b_Population_Intervention_Effects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Population_Intervention_Effects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Population_Intervention_Effects</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15c_Spillover_Effects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Spillover Effects</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Spillover Effects</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/15d_Replication_Transparency_Reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Replication, Transparency, and Reproducibility</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Replication, Transparency, and Reproducibility</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Exam Review</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01_exam_prep1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Exam Prep 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01b_exam_prep2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Exam Prep 2</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -320,7 +434,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></h1>
+<h1 class="title"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Inverse Probability of Treatment Weighting (IPTW) and G-Computation</span></h1>
 </div>
 
 
@@ -344,11 +458,15 @@ window.Quarto = {
 <li><p>Time-dependent confounders are variables that are affected by prior exposure and predict subsequent exposure. Adjusting for them in standard regression creates bias because they are on the causal pathway</p></li>
 <li><p>These methods estimate the effect if the entire population were treated vs.&nbsp;if the entire population were untreated</p></li>
 <li><p>Note that this contrasts with propensity score matching, which estimates the effect on the treated population (those who were matched)</p></li>
-<li><p>These methods do not fix bias from poor study design or unmeasured confounding</p>
+<li><p><strong>These methods do not fix bias from poor study design or unmeasured confounding</strong></p>
 <ul>
 <li><p>IPTW relies on a correct treatment model (propensity score)</p></li>
 <li><p>G-computation relies on a correct outcome model</p></li>
 </ul></li>
+</ul>
+<p>Misclassification and other forms of information bias are not addressed by G-computation or IPTW.</p>
+<p>Sensitivity analyses are the only tool available for at least assessing the potential impact of information bias, though they don’t correct for it.</p>
+<ul>
 <li><p><strong>Double Robust Estimation:</strong> Know that this method combines both. It gives an unbiased estimate if either the treatment model or the outcome model is correct</p></li>
 <li><p><strong>Confidence Intervals:</strong> There are no simple formulas for standard errors for these methods. You must use bootstrapping (resampling the data many times) to estimate confidence intervals</p></li>
 </ul>
@@ -375,6 +493,9 @@ window.Quarto = {
 </section>
 <section id="inverse-probability-of-treatment-weighting-iptw" class="level2">
 <h2 class="anchored" data-anchor-id="inverse-probability-of-treatment-weighting-iptw">Inverse Probability of Treatment Weighting (IPTW)</h2>
+<p>The first step of implementing propensity score matching is to calculate each individual’s propensity score (typically using a regression model). This score captures an individual’s probability of <strong>Being exposed or treated</strong></p>
+<p>propensity scores can be used to control for confounding via</p>
+<p><strong>Matching</strong> or <strong>weighting (inverse probability of treatment weighting).</strong></p>
 <p>Purpose: IPTW aims to mimic a randomized trial using observational data by creating a “pseudo-population” where the exposure is independent of confounders</p>
 <ul>
 <li><p>conceptually related to standardization</p>
@@ -404,6 +525,7 @@ window.Quarto = {
 <section id="g-computation" class="level2">
 <h2 class="anchored" data-anchor-id="g-computation">G-Computation</h2>
 <p>Purpose: G-computation estimates the association by using a regression model to predict “counterfactual” outcomes for every individual under different treatment scenarios</p>
+<p>G computation enables flexible definition of parameters, such as choosing to use the additive or multiplicative scale. It also allows the researcher to determine what magnitude of change in exposure is of interest, allowing the researcher to predict the impact of different amounts of change in exposure. The estimate resulting from g computation can also be more interpretable to a broader audience than a beta coefficient from a regression model.</p>
 <section id="the-process-steps-1" class="level3">
 <h3 class="anchored" data-anchor-id="the-process-steps-1">The Process (Steps):</h3>
 <ol type="1">
@@ -418,8 +540,75 @@ window.Quarto = {
 <li><p><strong>Calculate Measure of Association:</strong> Compare these means (e.g., divide them for a Risk Ratio or subtract for a Risk Difference)</p></li>
 </ol>
 <p><strong>Interpretation:</strong> Like IPTW, the result represents the ratio or difference in the average outcome if everyone had the treatment compared to if no one had the treatment</p>
+<hr>
+<section id="practice-problems" class="level4">
+<h4 class="anchored" data-anchor-id="practice-problems">Practice Problems</h4>
+<section id="pediatricians-are-interested-in-testing-whether-receiving-a-series-of-allergy-shots-can-reduce-the-number-of-asthma-attacks-experienced-by-asthmatic-children.-use-counterfactual-notation-to-write-an-equation-for-a-population-level-causal-effect-of-this-binary-exposure." class="level5">
+<h5 class="anchored" data-anchor-id="pediatricians-are-interested-in-testing-whether-receiving-a-series-of-allergy-shots-can-reduce-the-number-of-asthma-attacks-experienced-by-asthmatic-children.-use-counterfactual-notation-to-write-an-equation-for-a-population-level-causal-effect-of-this-binary-exposure.">Pediatricians are interested in testing whether receiving a series of allergy shots can reduce the number of asthma attacks experienced by asthmatic children. Use counterfactual notation to write an equation for a population-level causal effect of this binary exposure.</h5>
+<ul>
+<li>E[Y1-Y0] or E[Y1]/E[Y0]</li>
+</ul>
+</section>
+<section id="you-have-observational-data-from-pediatric-clinics-on-children-receiving-the-allergy-shots-and-number-of-asthma-attacks-in-the-following-year.-clinicians-were-more-likely-to-recommend-their-patients-participate-in-the-allergy-shot-program-when-they-had-experienced-fewer-recent-asthma-attacks.-assess-exchangeability-in-this-population." class="level5">
+<h5 class="anchored" data-anchor-id="you-have-observational-data-from-pediatric-clinics-on-children-receiving-the-allergy-shots-and-number-of-asthma-attacks-in-the-following-year.-clinicians-were-more-likely-to-recommend-their-patients-participate-in-the-allergy-shot-program-when-they-had-experienced-fewer-recent-asthma-attacks.-assess-exchangeability-in-this-population.">You have observational data from pediatric clinics on children receiving the allergy shots and number of asthma attacks in the following year. Clinicians were more likely to recommend their patients participate in the allergy shot program when they had experienced fewer recent asthma attacks. Assess exchangeability in this population.</h5>
+<p>Participants and non-participants are not exchangeable – the marginal risk of asthma attacks does not equal the risk in each group prior to the program, since we know that those in the program are selected partially due to lower levels of attacks.</p>
+</section>
+<section id="you-decide-to-apply-g-computation-as-one-method-of-controlling-for-confounding-by-a-range-of-covariates-and-incorporating-potential-interaction.-what-are-the-steps-required-to-obtain-estimates-of-y1-and-y0" class="level5">
+<h5 class="anchored" data-anchor-id="you-decide-to-apply-g-computation-as-one-method-of-controlling-for-confounding-by-a-range-of-covariates-and-incorporating-potential-interaction.-what-are-the-steps-required-to-obtain-estimates-of-y1-and-y0">You decide to apply G computation as one method of controlling for confounding by a range of covariates and incorporating potential interaction. What are the steps required to obtain estimates of Y1 and Y0?</h5>
+<ol type="1">
+<li><p>Model outcome as a function of exposure and confounders</p></li>
+<li><p>Set exposure to 0, predict Y0, set exposure to 1, predict Y1</p></li>
+</ol>
+</section>
+<section id="based-on-the-g-computation-analysis-average-asthma-attacks-per-year-are-13.5-if-everyone-is-exposed-and-17.8-if-unexposed.-estimate-the-parameter-specified-in-part-a-and-interpret-this-estimate." class="level5">
+<h5 class="anchored" data-anchor-id="based-on-the-g-computation-analysis-average-asthma-attacks-per-year-are-13.5-if-everyone-is-exposed-and-17.8-if-unexposed.-estimate-the-parameter-specified-in-part-a-and-interpret-this-estimate.">Based on the G computation analysis, average asthma attacks per year are 13.5 if everyone is exposed and 17.8 if unexposed. Estimate the parameter specified in part A and interpret this estimate.</h5>
+<ul>
+<li><p>Causal risk difference: 13.5 – 17.8 = -4.3 or causal risk ratio = 13.5/17.8 = 0.758</p></li>
+<li><p>Interpretation: A decrease in 4.3 asthma attacks per year is associated with all children receiving shots vs.&nbsp;no children receiving shots.</p></li>
+</ul>
+</section>
+<section id="you-conduct-inverse-probability-weight-analysis-to-compare-to-the-analysis-above.-write-an-equation-in-notation-or-words-for-the-first-step-of-this-approach-include-w1number-of-asthma-attacks-in-the-months-before-exposure-and-use-w2-to-represent-all-other-covariates." class="level5">
+<h5 class="anchored" data-anchor-id="you-conduct-inverse-probability-weight-analysis-to-compare-to-the-analysis-above.-write-an-equation-in-notation-or-words-for-the-first-step-of-this-approach-include-w1number-of-asthma-attacks-in-the-months-before-exposure-and-use-w2-to-represent-all-other-covariates.">You conduct inverse probability weight analysis to compare to the analysis above. Write an equation in notation or words for the first step of this approach; include W1=number of asthma attacks in the months before exposure and use W2 to represent all other covariates.</h5>
+<ul>
+<li>Log odds (allergy shots complete) = intercept + B1 * W1 + B2 * W2</li>
+</ul>
+</section>
+<section id="after-you-have-weighted-the-data-how-do-you-expect-the-mean-number-of-asthma-attacks-in-the-month-before-exposure-to-compare-in-the-participant-group-vs-in-the-unexposed-group" class="level5">
+<h5 class="anchored" data-anchor-id="after-you-have-weighted-the-data-how-do-you-expect-the-mean-number-of-asthma-attacks-in-the-month-before-exposure-to-compare-in-the-participant-group-vs-in-the-unexposed-group">After you have weighted the data, how do you expect the mean number of asthma attacks in the month before exposure to compare in the participant group vs in the unexposed group?</h5>
+<ul>
+<li><p><strong>Approximately equal between exposed and unexposed.</strong></p></li>
+<li><p>The mean of pre-program asthma attacks should be approximately equal in the two weighted groups - the purpose of IPTW is to weight the data to distribute confounders evenly between exposed and unexposed.</p></li>
+</ul>
+<hr>
+<p>Read the below interpretation of the main finding of your study. Does the interpretation represent a marginal or conditional estimate? Write the corresponding equation (not regression model) and define the elements of the equation.</p>
+<p>Interpretation: “The six-month incidence of STIs decreased by 4% (95% CI 0.02 – 0.06) among sex workers who participated in the empowerment intervention compared to those who did not participate, controlling for baseline demographics and risk factors.”</p>
+<p>Conditional (i.e., within strata of demographics and risk factors)</p>
+<p>Estimate = E[Y | A=1, W] – E[Y |A=0, W]</p>
+<p>where A = intervention participation and W is a vector of baseline demographics and risk factors or confounders.</p>
+<p>The interpretation is for a risk difference, so we should subtract risk in the unexposed from risk in the exposed.</p>
+<hr>
+</section>
+<section id="in-your-cohort-study-sex-workers-chose-whether-or-not-to-participate-in-the-intervention.-you-decide-to-apply-inverse-probability-of-treatment-weighting-iptw-to-obtain-a-marginal-estimate-of-intervention-impact.-what-do-you-model-in-the-first-step-of-your-analysis-in-other-words-name-the-variable-being-used-as-the-outcome-and-the-potential-covariates." class="level5">
+<h5 class="anchored" data-anchor-id="in-your-cohort-study-sex-workers-chose-whether-or-not-to-participate-in-the-intervention.-you-decide-to-apply-inverse-probability-of-treatment-weighting-iptw-to-obtain-a-marginal-estimate-of-intervention-impact.-what-do-you-model-in-the-first-step-of-your-analysis-in-other-words-name-the-variable-being-used-as-the-outcome-and-the-potential-covariates.">In your cohort study, sex workers chose whether or not to participate in the intervention. You decide to apply inverse probability of treatment weighting (IPTW) to obtain a marginal estimate of intervention impact. What do you model in the first step of your analysis? In other words, name the variable being used as the outcome and the potential covariates.</h5>
+<p>To calculate the weights, you model the probability of the exposure of interest, participating in the intervention, using relevant confounders (probably baseline demographics and risk factors mentioned in part B) as predictors of exposure.</p>
+<p>Therefore, in the first step the outcome is participating in the intervention and the covariates are relevant confounders.</p>
+</section>
+<section id="ten-percent-of-the-full-cohort-is-male-but-25-of-those-participating-in-the-intervention-are-male.-treating-sex-as-a-confounder-do-you-expect-the-men-who-participate-in-the-intervention-will-be-upweighted-or-downweighted-relative-to-female-participants-using-the-iptw-approach-why" class="level5">
+<h5 class="anchored" data-anchor-id="ten-percent-of-the-full-cohort-is-male-but-25-of-those-participating-in-the-intervention-are-male.-treating-sex-as-a-confounder-do-you-expect-the-men-who-participate-in-the-intervention-will-be-upweighted-or-downweighted-relative-to-female-participants-using-the-iptw-approach-why">Ten percent of the full cohort is male, but 25% of those participating in the intervention are male. Treating sex as a confounder, do you expect the men who participate in the intervention will be upweighted or downweighted relative to female participants using the IPTW approach? Why?</h5>
+<p>Men are over-represented in the exposed (participant) group relative to the full population – they are more likely to be exposed. Men who are exposed will thus be downweighted relative to women who were exposed in the analysis, because men will generally have a higher probability of exposure and thus the inverse probability weight will be smaller.</p>
+<p>In other words, before weighting, the exposed group includes an over-selection of men; after re-weighting, the exposed and unexposed groups should have the same distribution of the confounding variable sex, so men must be downweighted to achieve this even distribution.</p>
+</section>
+<section id="once-the-iptw-analysis-is-complete-you-identify-a-six-month-risk-difference-of-5-95-ci-0.03-0.07.-write-the-equation-represented-by-this-result-and-interpret-it.-relate-this-result-back-to-part-a." class="level5">
+<h5 class="anchored" data-anchor-id="once-the-iptw-analysis-is-complete-you-identify-a-six-month-risk-difference-of-5-95-ci-0.03-0.07.-write-the-equation-represented-by-this-result-and-interpret-it.-relate-this-result-back-to-part-a.">Once the IPTW analysis is complete, you identify a six-month risk difference of 5% (95% CI 0.03 – 0.07). Write the equation represented by this result and interpret it. Relate this result back to part A.</h5>
+<p>Risk difference = E_w[E(Y|A=1, W)] - E_w[(Y|A=0, W)] or</p>
+<p>E(I(A=1)/g(A=1|W)<em>Y)-E(I(A=0)/g(A=0|W)</em>Y) where g(A=a|W) = P(A=a|W)</p>
+<p>The expected difference in STI incidence over six months if everyone in the sex worker population had participated in the intervention compared to if no one had participated in the intervention is 5% (95% CI 0.03 – 0.07).</p>
+<p>The weights are intended to create a pseudo population that should resemble two exchangeable groups randomly assigned to treatment in a counterfactual experiment.</p>
+<p>Confounders are evenly distributed between groups due to the re-weighting and should no longer bias the estimated association, just like a counterfactual experiment.</p>
 
 
+</section>
+</section>
 </section>
 </section>
 
@@ -831,12 +1020,12 @@ window.Quarto = {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/14b_Sample_Size_Power.html" class="pagination-link" aria-label="Sample Size and Power">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Sample Size and Power</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Sample Size and Power</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/15a_Meta_Analysis.html" class="pagination-link" aria-label="Systematic Review and Meta-analysis">
-        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Systematic Review and Meta-analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
