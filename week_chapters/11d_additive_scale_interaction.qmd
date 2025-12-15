@@ -1,0 +1,132 @@
+
+# Detecting Additive Scale Interaction 
+
+
+## Overview: Why Focus on the Additive Scale?
+
+While statistical interaction can be assessed on both additive and relative scales, the **additive scale** is generally preferred for assessing **biologic or causal interaction**.
+
+* **Causal Link:** As discussed in the Potential Outcomes section, departures from additivity (heterogeneity of the Risk Difference) imply the presence of causal interactive types in the population.
+
+
+* **Public Health Impact:** Additive interaction helps identify subgroups where an intervention would have the largest absolute impact (e.g., preventing the most cases).
+
+
+
+
+
+
+## 1. Basic Assessment: Homogeneity of the Risk Difference
+
+The most straightforward way to detect additive interaction is to compare the **Observed Joint Risk Difference** to the **Expected Joint Risk Difference** (assuming additivity).
+
+
+
+
+
+### Formula for Interaction
+
+
+We can define the amount of interaction as the difference between the observed and expected effects:
+
+$$ Interaction_{additive} = RD_{observed} - RD_{expected} $$
+
+Substituting the probabilities (risks) $p_{xz}$ where $x$ is exposure A and $z$ is exposure B:
+
+* **Observed RD (Both present):** $p_{11} - p_{00}$
+
+* **Expected RD (Sum of individual):** $(p_{10} - p_{00}) + (p_{01} - p_{00})$
+
+
+
+**Interaction Formula:**
+
+$$ (p_{11} - p_{00}) - [(p_{10} - p_{00}) + (p_{01} - p_{00})] $$
+
+This simplifies to:
+
+$$ p_{11} - p_{10} - p_{01} + p_{00} $$
+
+
+
+
+
+### Interpretation (For Harmful Exposures)
+
+Assuming both exposures increase risk:
+
+* **Result > 0:** **Positive (Synergistic) Interaction.** The combined effect is greater than the sum of individual effects. Public health interventions on one factor will have a *larger* benefit in the group exposed to the other factor.
+
+* **Result = 0:** **No Interaction.** The combined effect equals the sum of individual effects.
+
+* **Result < 0:** **Negative (Antagonistic) Interaction.** The combined effect is less than the sum of individual effects.
+
+
+
+
+
+## 2. Relative Excess Risk due to Interaction (RERI)
+
+In many studies (e.g., Case-Control), we may only have ratio measures like **Risk Ratios (RR)** or **Odds Ratios (OR)**, not absolute risks. We can still assess additive interaction using **RERI**.
+
+
+
+### Derivation
+
+Start with the additive interaction formula:
+
+$$ p_{11} - p_{10} - p_{01} + p_{00} $$
+
+Divide the entire formula by the baseline risk ($p_{00}$):
+
+$$ \frac{p_{11}}{p_{00}} - \frac{p_{10}}{p_{00}} - \frac{p_{01}}{p_{00}} + \frac{p_{00}}{p_{00}} $$
+
+This converts the risks into Risk Ratios (RR):
+
+$$ RERI = RR_{11} - RR_{10} - RR_{01} + 1 $$
+
+
+
+
+
+### Interpretation of RERI (Harmful Exposures)
+
+* **RERI > 0:** Positive (Synergistic) interaction on the additive scale.
+
+* **RERI = 0:** No additive interaction.
+
+* **RERI < 0:** Negative (Antagonistic) interaction on the additive scale.
+
+*Note: For preventive exposures, the signs for interpretation are reversed (e.g., RERI < 0 implies synergy).*
+
+
+
+
+### Using Odds Ratios (Case-Control Studies)
+
+If the outcome is rare, you can substitute Odds Ratios (OR) for Risk Ratios in the formula:
+
+$$ RERI \approx OR_{11} - OR_{10} - OR_{01} + 1 $$
+
+
+
+
+
+
+
+## Summary of Key Points
+
+
+**Method:** We formalize the assessment of interaction by comparing Observed vs. Expected joint effects.
+
+
+**Advantage of RERI:** It allows you to detect **additive scale interaction** (which implies biological interaction) even when you are using **relative scale measures** (RR or OR) from regression models.
+
+
+**Significance:** Modern software can calculate confidence intervals for RERI to determine if the additive interaction is statistically significant.
+
+
+
+
+
+

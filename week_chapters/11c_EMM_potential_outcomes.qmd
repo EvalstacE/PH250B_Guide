@@ -2,7 +2,10 @@
 # Effect Modification, the Potential Outcomes Model, and Causal Interaction
 
 
+
+
 ## Overview: The "Punchline"
+
 
 Why do epidemiologists often argue that the **Additive Scale** is the appropriate scale for detecting causal (biological) interaction?
 
@@ -63,9 +66,14 @@ When we consider two exposures (X and Z), the number of potential types expands 
 
 
 
+
+
+
 ## 3. The Logic: Why Additive Interaction Implies Causal Types
 
 We can prove this by calculating the Risk Differences (RD) assuming **NO** interacting types exist in the population. If our observed data contradicts this (i.e., additivity fails), then interacting types *must* exist.
+
+
 
 
 ### Step A: Calculate Risks assuming NO Interaction Types
@@ -82,6 +90,8 @@ We sum the probabilities ($p$) of the non-interacting types (Types 1, 4, 6, 11, 
 
 
 
+
+
 ### Step B: Calculate Indvidual Risk Differences
 
 * **RD for Z alone ($RD_{01}$):** $R_{01} - R_{00} = p_4 - p_{13}$
@@ -91,9 +101,12 @@ We sum the probabilities ($p$) of the non-interacting types (Types 1, 4, 6, 11, 
 
 
 
+
+
 ### Step C: Calculate Joint Risk Difference
 
 * **RD for Both ($RD_{11}$):** $R_{11} - R_{00} = (p_4 + p_6) - (p_{11} + p_{13})$
+
 
 
 
