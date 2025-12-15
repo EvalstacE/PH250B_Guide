@@ -1,3 +1,5 @@
+# Cohort Studies
+
 ## Key Points
 
 The defining feature of all cohort studies is that they track people forward in time from exposure to outcome. 

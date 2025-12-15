@@ -1,4 +1,7 @@
 
+# Incidence Assumptions
+
+
 ## Uniformity of events and lossess within each interval 
 
 - applies to the Actuarial Method and density method
@@ -21,7 +24,7 @@
 - birth cohort and period effects can produce secular trends that bias incidence rate estimates
 - example: it would not be appropriate to estimate survival from diagnosis of all patients with insulin-dependent diabetes from 1915 through 1935 because this group would include: 
 
-  - patientss diagnosed before the introduction of insulin, who had a much lower chance of survival 
+  - patients diagnosed before the introduction of insulin, who had a much lower chance of survival 
   - patients diagnosed after the introduction of insulin, who had a much higher chance of survival
   - it would be more appropriate to calculate incidence rates separately for those time periods
   

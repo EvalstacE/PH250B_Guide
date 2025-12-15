@@ -1,4 +1,7 @@
 
+# Incidence Rates
+
+
 ## Key Points
 
 incidence rates capture the pace at which these events occur in the population at risk; 

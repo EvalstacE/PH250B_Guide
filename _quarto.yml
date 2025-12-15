@@ -1,10 +1,6 @@
 project:
   type: book
-  output-dir: docs
-  
-website:
-  site-url: https://evalstace.github.io/PH250B_Guide/
- 
+
 page-navigation: true
 lightbox: true
 
@@ -29,15 +25,30 @@ book:
   author: "Val"
   date: "2025"  
   sidebar:
-    search: false
+    search: true
     style: docked
     pinned: true
 
   chapters:
     - index.qmd
-    
-    - part: "Confounding"
+    - chapters/02a_Causality.qmd
+    - chapters/02b_Exchangability.qmd
+    - chapters/02c_DAG_Intro.qmd
+    - chapters/03b_Risk_vs_Rate.qmd
+    - chapters/03c_Population_Types.qmd
+    - chapters/03d_Incidence_Density_Rates.qmd
+    - chapters/03e_Cumulative_Incidence.qmd
+    - chapters/03f_Relationships_MOAs.qmd
+
+    - part: "Types of Studies"
       chapters: 
+        - chapters/05a_Cohort_Studies.qmd
+        - chapters/05c_Case_Control_Studies.qmd
+        - chapters/05d_CrossSectional_Ecological_Studies.qmd 
+    
+    - part: "Bias and Confounding"
+      chapters: 
+        - chapters/06b_Bias.qmd
         - chapters/10a_Confounding.qmd
         - chapters/10b_Negative_Controls.qmd 
 
@@ -64,15 +75,18 @@ book:
         - chapters/13e_Matched_Case_Control_Models.qmd             
         
         
-    - 14a_Propensity_Scores.qmd
-    - 14b_Sample_Size_Power.qmd
-    - 14c_IPTW_G_computation.qmd
-    - 15a_Meta_Analysis.qmd
-    - 15b_Population_Intervention_Effects.qmd
-    - 15c_Spillover_Effects.qmd
-    - 15d_Replication_Transparency_Reproducibility.qmd
+    - chapters/14a_Propensity_Scores.qmd
+    - chapters/14b_Sample_Size_Power.qmd
+    - chapters/14c_IPTW_G_computation.qmd
+    - chapters/15a_Meta_Analysis.qmd
+    - chapters/15b_Population_Intervention_Effects.qmd
+    - chapters/15c_Spillover_Effects.qmd
+    - chapters/15d_Replication_Transparency_Reproducibility.qmd
     
     
-    
+    - part: "Exam Review"
+      chapters: 
+        - chapters/01_exam_prep1.qmd
+        - chapters/01b_exam_prep2.qmd   
     
     

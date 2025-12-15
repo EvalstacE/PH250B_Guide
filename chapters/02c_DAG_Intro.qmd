@@ -1,5 +1,5 @@
 
-## Directed Acyclic Graphs (DAGs)
+# Directed Acyclic Graphs (DAGs)
 
 I'll be drawing heavily from a few chapters in this book, Causal Inference in Statistics. The first author of this book is Judea Pearl, pictured here on the right, and he's really the father of this set of graphical techniques for representing statistics visually.
 

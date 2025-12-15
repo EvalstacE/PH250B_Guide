@@ -1,6 +1,6 @@
 
 
-## Risk vs. Rates
+# Risk vs. Rates
 
 Risk: the probability that a disease-free individual develops a disease within a specific time period, conditional on that individual not dying from any other disease during the period
 

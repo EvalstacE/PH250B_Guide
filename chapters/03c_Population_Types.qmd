@@ -1,5 +1,5 @@
 
-## Closed vs. Open Populations
+# Closed vs. Open Populations
 
 - Depends on the time scale used to define a population 
 

@@ -1,5 +1,5 @@
 
-## Individual vs Population Causal Effects
+# Individual vs Population Causal Effects
 
 individual causal effects can't be estimated with real data, because we never know the counterfactual outcome for a single person. But at the population level, we can sometimes estimate causal effects under certain assumptions. Just one more thing to note is that, moving forward, when you
 
@@ -72,3 +72,16 @@ So to summarize, when it comes to associations, they're usually not what we're i
 
 
 
+
+## Sufficient Cause Models
+
+Each total pie = sufficient cause
+Each slice in a pie = component cause
+Slice that appears in all sufficient cause models = necessary cause
+Completion of sufficient cause = onset of disease
+Components can occur at different times
+Blocking a component prevents disease for a particular sufficient cause
+
+## Counterfactual Framework
+
+Ideal study design = going back in time with the same people

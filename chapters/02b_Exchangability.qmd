@@ -1,5 +1,5 @@
 
-## Exchangeability
+# Exchangeability
 
 key assumption required to make causal inferences.
 

@@ -1,7 +1,0 @@
-
-## Period Effects 
-
-the change in the measure of disease affecting an entire population at some point in time, irrespective of age and birth cohort
-
-Period effects can be caused by the introduction of new medications or preventive interventions or historical events, even, for example, huge things like nuclear bombs. These are big population events that cause period effects in our observation of the rates of disease.
-

@@ -1,4 +1,4 @@
-## Relationships among various measures of association
+# Relationships among MoAs
 
 So to summarize the relationships between the measures of disease, cumulative incidence and incidents are related by this formula where the cumulative incidence is equal to 1 minus e raised to the power negative incidence density times delta time. 
 
