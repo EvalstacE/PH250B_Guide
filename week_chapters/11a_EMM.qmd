@@ -70,7 +70,10 @@ Compare the stratum-specific measures of association.
 
 
 ### Method 2: Chi-Square Test for Homogeneity
+
+
 This statistical test evaluates the null hypothesis that the measure of association is homogeneous (the same) across all strata
+
 
 * **Null Hypothesis ($H_0$):** $OR_1 = OR_2 = ... = OR_k$
 
@@ -88,11 +91,14 @@ $$ \chi^2_{hom} = \sum_{i=1}^{k} w_i (ln(OR_i) - ln(OR_{adjusted}))^2 $$
 
 
 
+
+
 ### Method 3: Additive Scale Interaction (The Causal Standard)
 
 Many epidemiologists argue that **additive interaction** most closely reflects biological interaction. 
 
 We assess this by looking at **Risk Differences (RD)**.
+
 
 
 
@@ -107,6 +113,7 @@ $$ RD_{11} = RD_{10} + RD_{01} $$
 * $RD_{10}$: Risk difference when Exposure A is present, B is absent.
 
 * $RD_{01}$: Risk difference when Exposure B is present, A is absent
+
 
 
 
@@ -156,6 +163,8 @@ When using multivariable models, interaction is assessed by adding a **product t
         * **Linear Regression:** Tests Additive Interaction
         
         * **Logistic/Log-Linear Regression:** Tests Multiplicative Interaction
+
+
 
 
 

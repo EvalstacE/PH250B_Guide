@@ -1,0 +1,136 @@
+
+# Effect Modification, the Potential Outcomes Model, and Causal Interaction
+
+
+## Overview: The "Punchline"
+
+Why do epidemiologists often argue that the **Additive Scale** is the appropriate scale for detecting causal (biological) interaction?
+
+* Using the Potential Outcomes (Counterfactual) framework, we can demonstrate that **departures from additivity** (where Observed Joint Effect $\neq$ Expected Joint Effect) imply the presence of **causal interactive types** in the population.
+
+
+* Therefore, finding interaction on the additive scale suggests a true biological or causal interaction between two exposures.
+
+
+* In contrast, interaction on the relative (multiplicative) scale does **not** necessarily imply causal interaction.
+
+
+
+
+
+## 1. Counterfactual "Types" (Recap: One Exposure)
+
+Recall that for a single binary exposure, there are 4 potential "types" of individuals in a population:
+
+1.  **Doomed (Type 1):** Gets disease regardless of exposure ($Y_{a=1}=1, Y_{a=0}=1$).
+
+2.  **Causal (Type 2):** Disease caused by exposure ($Y_{a=1}=1, Y_{a=0}=0$).
+
+3.  **Preventive (Type 3):** Exposure prevents disease ($Y_{a=1}=0, Y_{a=0}=1$).
+
+4.  **Immune (Type 4):** Never gets disease ($Y_{a=1}=0, Y_{a=0}=0$).
+
+
+* **Risk Ratio (RR):** Depends on "Doomed" types ($p_1$) and "Causal" types ($p_2$).
+
+
+* **Risk Difference (RD):** Only depends on "Causal" ($p_2$) and "Preventive" ($p_3$) types (those amenable to intervention).
+
+
+
+
+
+
+
+## 2. Counterfactual Types with Two Exposures
+
+When we consider two exposures (X and Z), the number of potential types expands to **16**.
+
+* Each type represents a specific pattern of potential outcomes under the 4 possible exposure combinations ($XZ$: 11, 10, 01, 00).
+
+* **10 of these types** reflect **Causal Interaction** (the outcome depends on *both* exposures).
+
+* **6 of these types** reflect **No Causal Interaction** (at least one factor has no effect, or the effect is constant).
+
+
+
+### Examples of Interaction Types
+
+* **Type 8 (Synergism):** Gets disease *only* when both X and Z are present ($Y_{11}=1$, all others=0).
+
+* **Type 5 (Antagonism/Blocking):** Gets disease *unless* X is absent and Z is present (specific combination blocks disease).
+
+
+
+
+## 3. The Logic: Why Additive Interaction Implies Causal Types
+
+We can prove this by calculating the Risk Differences (RD) assuming **NO** interacting types exist in the population. If our observed data contradicts this (i.e., additivity fails), then interacting types *must* exist.
+
+
+### Step A: Calculate Risks assuming NO Interaction Types
+
+We sum the probabilities ($p$) of the non-interacting types (Types 1, 4, 6, 11, 13, 16) that result in disease for each exposure scenario:
+
+* **$R_{11}$ (Both present):** $p_1 + p_4 + p_6$
+
+* **$R_{01}$ (Z only):** $p_1 + p_4 + p_{11}$
+
+* **$R_{10}$ (X only):** $p_1 + p_6 + p_{13}$
+
+* **$R_{00}$ (Neither):** $p_1 + p_{11} + p_{13}$
+
+
+
+### Step B: Calculate Indvidual Risk Differences
+
+* **RD for Z alone ($RD_{01}$):** $R_{01} - R_{00} = p_4 - p_{13}$
+
+* **RD for X alone ($RD_{10}$):** $R_{10} - R_{00} = p_6 - p_{11}$
+
+
+
+
+### Step C: Calculate Joint Risk Difference
+
+* **RD for Both ($RD_{11}$):** $R_{11} - R_{00} = (p_4 + p_6) - (p_{11} + p_{13})$
+
+
+
+### Step D: The Additivity Check
+
+If we sum the individual effects ($RD_{01} + RD_{10}$):
+
+$$ (p_4 - p_{13}) + (p_6 - p_{11}) = p_4 + p_6 - p_{11} - p_{13} $$
+
+This matches the formula for the Joint RD ($RD_{11}$) exactly!
+
+$$ RD_{11} = RD_{01} + RD_{10} $$
+
+**Conclusion:** If there are **no** interacting causal types in the population, the Additive Risk Difference is **homogeneous** (additive).
+
+
+
+
+
+## Key Takeaways for the Exam
+
+
+**Departure from Additivity:** If you observe $RD_{11} \neq RD_{01} + RD_{10}$, 
+
+you can infer that **at least some causal interaction types** are present in your population (assuming no confounding/bias).
+
+
+**Relative Scale Limitation:** If you perform the same proof using Risk Ratios (RR), 
+
+you find that $RR_{11} \neq RR_{10} \times RR_{01}$ even when there are **no** interacting types.
+
+*Implication:* You cannot make strong statements about biological interaction based solely on the multiplicative scale.
+
+
+**Absence of Evidence:** The absence of additive interaction (perfect additivity) does *not* guarantee the absence of causal types; it is possible for synergistic and antagonistic types to essentially "cancel each other out" in the population averages.
+
+
+
+
+
