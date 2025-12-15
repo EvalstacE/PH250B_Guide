@@ -11,6 +11,8 @@ The Test: If you find an association where there shouldn't be one, it indicates 
 Key Requirement: The negative control must share the same sources of bias as the primary relationship you are studying. If it has different biases, it won't be a valid test
 
 
+
+
 ## Three Types of Negative Controls
 
 ### 1 - Negative Control Outcome
@@ -22,6 +24,8 @@ Example: In a study of water/sanitation interventions (Exposure) on Diarrhea (Ou
 Reasoning: Improved sanitation shouldn't prevent bruises. If you see an association between the intervention and bruises, it suggests reporter bias (e.g., people in the intervention group generally reporting better health) or selection bias.
 
 
+
+
 ### 2 - Negative Control Exposure
 
 Definition: An exposure that does NOT cause the outcome of interest but shares similar characteristics or biases with the real exposure.
@@ -29,6 +33,8 @@ Definition: An exposure that does NOT cause the outcome of interest but shares s
 Example: In a study of Corticosteroids (Exposure) on Asthma symptoms (Outcome), a negative control exposure could be a very low dose of the drug.
 
 Reasoning: The low dose is biologically too weak to help asthma. If symptoms improve on the low dose, it suggests recall bias or a placebo effect.
+
+
 
 
 ### 3 - Negative Control Time Period
@@ -40,7 +46,11 @@ Example: In a study of Influenza Vaccination (Exposure) on Mortality (Outcome), 
 Reasoning: The vaccine can't prevent flu death before the flu virus is circulating. If mortality drops in the vaccinated group during this "pre-season," it suggests the vaccinated group is just healthier overall (healthy worker/vaccinee bias).
 
 
+
+
 ----------------------
+
+
 
 
 
@@ -62,6 +72,8 @@ Crucial Missing Link: $A \rightarrow N$ does not exist.
 
 
 
+
+
 ## Calculations: Interpreting the Result
 
 The "calculation" here is often just running the same regression analysis you planned for your main study, but swapping variables
@@ -73,6 +85,8 @@ Interpretation:
 Null Result (e.g., RR $\approx$ 1.0): Good news. It supports the validity of your main study (no obvious bias detected).
 
 Non-Null Result (e.g., RR $\ne$ 1.0): Bad news. It suggests bias or confounding is present in your study design1.
+
+
 
 
 ### Limitations

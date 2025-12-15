@@ -1,0 +1,186 @@
+
+# Effect Measure Modification
+
+
+
+##  What is Effect Measure Modification?
+
+In this course, we distinguish between three related but distinct concepts often grouped under the term "interaction" It is crucial to use the precise terminology for the exam.
+
+1.  **Statistical Interaction:** A departure from the underlying form of a statistical model (e.g., deviation from linearity or log-linearity). It depends entirely on the scale (additive vs. multiplicative) used in the model.
+
+2.  **Effect Measure Modification (EMM):** Heterogeneity of the effect measure across strata of a third variable. This is the term we use when we observe different estimates of association (e.g., different Odds Ratios) between subgroups.
+
+
+3.  **Biologic/Causal Interaction:** The interdependence of two causal factors in bringing about an outcome. We often assess this using the **Additive Scale**, as it aligns with the Sufficient Component Cause model and Counterfactual frameworks.
+
+**Key Exam Concept:**
+
+* **Confounding** is a bias we want to adjust for (remove).
+
+* **Effect Modification** is a finding we want to report (describe). It means the biological or public health relationship works differently in different groups. **Do not adjust for an effect modifier; stratify and report it.** 
+
+
+
+
+## Types of Interaction
+
+
+
+### 1. Synergism (Positive Interaction)
+The joint effect of two exposures is **greater** than the sum (or product) of their independent effects.
+
+* **Interpretation:** The presence of both factors amplifies the risk beyond what we expect from adding them up
+
+
+
+### 2. Antagonism (Negative Interaction)
+The joint effect of two exposures is **less** than the sum (or product) of their independent effects.
+
+* **Interpretation:** One factor potentially dampens the effect of the other
+
+
+
+
+### 3. Qualitative (Extreme) Interaction
+
+The direction of the association changes across strata.
+
+* **Example:** An exposure is a risk factor in one group ($RR > 1$) but protective in another ($RR < 1$)
+
+* *Note:* This is distinct from simple quantitative interaction where the magnitude changes but the direction remains the same.
+
+
+
+
+## Calculations and Assessment Methods
+
+We assess EMM by comparing the **Observed Joint Effect** to the **Expected Joint Effect** under the assumption of no interaction (homogeneity)
+
+
+
+### Method 1: Visual Inspection (Stratification)
+
+Compare the stratum-specific measures of association.
+
+* If $OR_{stratum 1} \approx OR_{stratum 2}$, EMM is likely absent (Homogeneity).
+
+* If $OR_{stratum 1} \neq OR_{stratum 2}$, EMM is likely present (Heterogeneity)
+
+
+
+### Method 2: Chi-Square Test for Homogeneity
+This statistical test evaluates the null hypothesis that the measure of association is homogeneous (the same) across all strata
+
+* **Null Hypothesis ($H_0$):** $OR_1 = OR_2 = ... = OR_k$
+
+* **Alternative Hypothesis ($H_a$):** At least one stratum-specific OR is different.
+
+* **Test Statistic Formula ($X^2_{hom}$):**
+
+$$ \chi^2_{hom} = \sum_{i=1}^{k} w_i (ln(OR_i) - ln(OR_{adjusted}))^2 $$
+    
+  * Where $w_i$ is the weight (inverse variance) for stratum $i$.
+    
+  * Degrees of Freedom ($df$) = $k - 1$ (where $k$ is the number of strata).
+    
+* **Interpretation:** If $p < 0.05$ (or typically $p < 0.20$ for interaction tests due to low power), we reject the null and conclude EMM is present
+
+
+
+### Method 3: Additive Scale Interaction (The Causal Standard)
+
+Many epidemiologists argue that **additive interaction** most closely reflects biological interaction. 
+
+We assess this by looking at **Risk Differences (RD)**.
+
+
+
+#### General Rule for Additivity
+
+Interaction is absent if the joint risk difference equals the sum of the individual risk differences:
+
+$$ RD_{11} = RD_{10} + RD_{01} $$
+
+* $RD_{11}$: Risk difference when both exposures are present.
+
+* $RD_{10}$: Risk difference when Exposure A is present, B is absent.
+
+* $RD_{01}$: Risk difference when Exposure B is present, A is absent
+
+
+
+#### RERI (Relative Excess Risk due to Interaction)
+
+If you have relative measures (RR or OR) from a regression model but want to assess additive interaction, you calculate RERI.
+
+**Formula:**
+$$ RERI = RR_{11} - RR_{10} - RR_{01} + 1 $$
+
+**Interpretation:**
+
+* **RERI > 0:** Positive Interaction (Synergy) on the additive scale.
+
+* **RERI < 0:** Negative Interaction (Antagonism) on the additive scale.
+
+* **RERI = 0:** No Interaction (Additivity holds)
+
+
+
+
+### Method 4: Multiplicative Scale Interaction
+
+This is the default for logistic and log-linear regression models. We assess this by looking at **Ratio Measures (RR, OR)**.
+
+* **No Interaction Rule:** The joint relative risk equals the product of the individual relative risks.
+    $$ RR_{11} = RR_{10} \times RR_{01} $$
+    
+* **Interpretation:** If the observed joint RR differs from the product of the individual RRs, there is multiplicative interaction.
+
+
+
+
+
+## Assessment in Regression Models
+
+When using multivariable models, interaction is assessed by adding a **product term** ($X_1 \times X_2$).
+
+* **Model:** $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 (X_1 \cdot X_2)$
+
+* **Coefficient $\beta_3$:** Estimates the interaction effect.
+
+    * If $\beta_3 \neq 0$: Interaction is present.
+    
+    * The scale of interaction depends on the model:
+    
+        * **Linear Regression:** Tests Additive Interaction
+        
+        * **Logistic/Log-Linear Regression:** Tests Multiplicative Interaction
+
+
+
+
+## Exam Prep Checklist
+
+**Distinguish concepts:** Can you define the difference between statistical interaction (model-dependent) and biological interaction (additive)?
+
+
+**Identify the scale:** Are you looking at Risk Differences (Additive) or Risk Ratios (Multiplicative)?
+
+
+**Calculate RERI:** Be prepared to calculate RERI given a table of RRs or ORs to test for biological interaction.
+
+
+**Interpret the Chi-Square:** Know that a significant $p$-value in a homogeneity test means the strata are different (EMM exists).
+
+
+**Identify Confounding vs. EMM:**
+
+* If stratum-specific estimates are similar to each other but different from the crude $\rightarrow$
+
+
+**Confounding**.
+
+* If stratum-specific estimates are different from each other $\rightarrow$ **Effect Measure Modification**
+    
+    
