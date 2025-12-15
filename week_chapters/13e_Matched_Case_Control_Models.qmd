@@ -1,0 +1,132 @@
+
+# Models for Matched Case-Control Data
+
+
+the intuition for analyzing matched case-control data is fundamentally different from matched cohort data
+
+while matching in a cohort study removes confounding, matching in a case-control study actually introduces selection bias that must be controlled for in the analysis. 
+
+If you "break the match" in a case-control study, you will get a biased estimate.
+
+
+
+
+## The Core Concept: Why We Need Special Models
+
+You cannot analyze individually matched case-control data using standard logistic regression (unconditional) or simple $2 \times 2$ tables that ignore the pairing.
+
+
+The Problem: In individual matching (e.g., matching a case to a control by age and neighborhood), each pair represents a unique stratum. If you have 100 pairs, you essentially have 100 strata.
+
+
+The Solution: We use **Conditional Logistic Regression.** This model is analogous to standard logistic regression but "conditions" on the matching stratum (the pair)
+
+
+
+
+
+## Calculations: The "Matched Pairs" Odds Ratio
+
+understand the manual calculation for a matched pair analysis (bivariable). This is often tested to ensure you understand where the information comes from.
+
+
+$$\text{Matched Odds Ratio} = \frac{B}{C}$$
+
+
+  * B: Pairs where **Case is Exposed and Control is Unexposed.**
+  
+  * C: Pairs where **Case is Unexposed and Control is Exposed.**
+
+
+
+$$\text{Matched Odds Ratio} = \frac{\text{Pairs where Case is Exposed and Control is Unexposed}}{\text{Pairs where Case is Unexposed and Control is Exposed}}$$
+
+
+
+
+
+
+![](images/matched_2x2_table.png)
+
+
+
+* **Concordant Pairs (A & D):** Both case and control have the same exposure status. These provide no information about the relationship between exposure and disease.
+
+
+* **Discordant Pairs (B & C):** The case and control have different exposure statuses. **This is where the information lies.**
+
+
+
+
+------------------
+
+
+## Conditional Logistic Regression (The Multivariable Approach)
+
+When we move to multivariable analysis, we use **Conditional Logistic Regression**. 
+
+You need this when you want to **adjust for additional confounders** that you did *not* match on.
+
+
+
+### When to use it:
+
+
+  * Individually matched case-control studies.
+  
+  * Density sampling designs (matching on person-time).
+  
+
+* **Frequency Matching Exception**: If you used *frequency matching* (e.g., ensuring 20% of cases and 20% of controls are female), **you can actually use standard logistic regression** as long as you include the matching variables in the model.
+
+
+## Interpretation of Coefficients:
+
+The model output looks very similar to standard logistic regression.
+
+
+$\beta_1$ (for a binary exposure $X$) = The difference in the log odds of the outcome when $X=1$ versus $X=0$
+
+Odds Ratio: To get the OR, you simply exponentiate the coefficient
+
+$$\text{OR} = e^{\beta_1}$$
+
+
+This estimates the odds ratio adjusting for the matching factors (automatically handled by the design/model) AND any other confounders included in the model.
+
+
+
+
+
+## Critical Pitfalls to Avoid
+
+
+### Do NOT Break the Match
+
+Never analyze matched case-control data as if it were unmatched (unless the population OR is 1.0, which you rarely know). Doing so biases your result toward the null.
+
+### Assumption of Independence
+
+Like the other models we have discussed (Linear, Logistic, Poisson), Conditional Logistic Regression generally assumes no clustering or auto-correlation (other than the matching itself).
+
+### Efficiency vs. Validity
+
+While matching can improve statistical efficiency (precision) by ensuring balanced strata, improperly analyzing it harms validity.
+
+
+
+
+
+
+
+## Summary of Matched Case Control Model
+
+Calculation: $OR = \frac{\text{Pairs(Case+, Control-)}}{\text{Pairs(Case-, Control+)}}$.
+
+Model: *Conditional* Logistic Regression
+
+Why Model?: 
+
+To adjust for non-matched confounders (e.g., matching on age/sex, but modeling to adjust for smoking)
+
+

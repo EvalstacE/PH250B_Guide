@@ -1,0 +1,149 @@
+
+# Models for Survival Data
+
+
+## Identifying Survival Data and The Hazard Function
+
+
+What is Survival Data? 
+
+It includes measurements of the time that passed before a person developed a certain disease or condition (the event).
+
+Examples: Time until death among cancer patients, time until a car accident while using a mobile phone, or time to recovery after surgery.
+
+
+
+The Concept of "Hazard" ($h(t)$):
+
+We don't just look at "risk" in the traditional sense here. We look at Hazard, which is the instantaneous potential for a change in disease status per unit of time at time $t$, relative to the size of the candidate (disease-free) population at that specific time $t$
+
+
+
+
+
+## The Cox Proportional Hazards Model
+
+When you have time-to-event data and want to perform a multivariable analysis (adjusting for potential confounders), the standard method is the Cox Proportional Hazards Model
+
+
+$$\ln(h(t|X=x)) = \ln(h_0(t)) + cx$$
+
+
+  * $\ln(h(t|X=x))$: The log of the hazard at time $t$ given exposure $x$
+  
+  * $\ln(h_0(t))$: The log of the baseline hazard (the hazard when the exposure $X=0$)
+  
+  * $c$: The regression coefficient
+  
+  
+*Note: This model is unique because the hazard is indexed by time ($t$), meaning it varies over time* 
+
+
+
+
+
+
+## Calculations: Obtaining the Hazard Ratio (HR)
+
+
+For a Binary Exposure ($X$):
+
+
+The Coefficient ($c$): This represents the log hazard ratio comparing the hazard when $X=1$ to when $X=0$
+
+
+The Hazard Ratio ($HR$): To get the actual measure of association, you must exponentiate the coefficient.
+
+
+$$HR = e^c$$
+
+
+This compares the hazard of the event in the exposed group ($X=1$) to the unexposed group ($X=0$)
+
+
+
+
+Derivation (How we get there): Using log rules, the difference in log hazards is the log of the ratio:
+
+
+$$\ln(HR) = \ln\left(\frac{h(t|X=1)}{h(t|X=0)}\right) = (\ln(h_0(t)) + c(1)) - (\ln(h_0(t)) + c(0)) = c$$
+
+Therefore:
+
+
+$$\frac{h(t|X=1)}{h(t|X=0)} = e^c$$
+
+
+
+
+
+
+## Example Calculation
+
+
+If a Cox model gives a coefficient ($c$) for Gender (Males vs. Females) of 1.2569:
+
+
+Calculate HR: $e^{1.2569} = 3.52$ 
+
+  * Interpretation: The hazard of the outcome (e.g., coronary heart disease) for males is 3.52 times the hazard for females.
+  
+  
+  
+If a coefficient for Systolic Blood Pressure is 0.0152 (continuous variable):
+
+Calculate HR: $e^{0.0152} = 1.015$
+
+  * Interpretation: For every 1 mmHg increase in blood pressure, the hazard of the outcome increases by a factor of 1.015.
+  
+  
+
+
+
+
+## The "Proportional Hazards" Assumption
+
+
+This is the most critical theoretical concept for this model. The model is called "Proportional Hazards" because it assumes the ratio of the hazards is constant across the entire time interval
+
+
+**Visual Check:** If you plot the hazard over time for the exposed and unexposed groups, the curves should have the same shape—essentially parallel, with one shifted higher or lower than the other
+
+
+**Violation:** If the curves cross or have different shapes, the assumption is not valid. This means the relative hazard changes over time
+
+
+**Implication:** The model estimates one single Hazard Ratio for the entire follow-up period. If the assumption is violated, you may need to stratify by time periods to validly estimate the HR
+
+
+
+
+
+
+
+## Cox Proportional Hazards Model: 
+
+
+  * Outcome: Time-to-event (Survival) data
+
+  * Measure of Association: Hazard Ratio (HR)
+  
+  * Calculation: $\text{OR} = e^{\beta}$
+
+  * Interpretation: $e^c$ (exponentiated coefficient) is the HR. It approximates the Relative Risk (RR) or Odds Ratio (OR) when cumulative risk is small
+
+  * Key Assumption: **Proportionality:** The ratio of hazards is constant over time (curves do not cross). Also assumes no clustering or auto-correlation
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  

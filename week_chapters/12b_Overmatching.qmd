@@ -8,16 +8,77 @@
 
 Overmatching occurs when you match on a variable that is **not a confounder**. This can lead to increased cost, loss of statistical efficiency, or even the introduction of bias that cannot be fixed in the analysis.
 
-* **Goal:** Use Directed Acyclic Graphs (DAGs) in the **design phase** to identify and avoid matching on variables that will cause these problems.
+**Goal:** Use Directed Acyclic Graphs (DAGs) in the **design phase** to identify and avoid matching on variables that will cause these problems.
 
 
 
+Issue with overmatching: 
+
+
+#### When you match on a variable that’s strongly predictive of exposure (but not a confounder):
+
+**you’re making the exposure almost deterministic within your matched sets**. 
+
+That means:
+
+  * There’s less variation in exposure among your matched subjects,
+  
+  * Which means less ability to detect a difference in outcomes by exposure status,
+  
+  * Even if the exposure truly causes the outcome!
+  
+  
+  
+##### When you match on a mediator:
+
+**you're conditioning on a variable on the causal path from exposure to outcome** 
+  
+That means:
+
+  * you’re **blocking part of the causal effect** of the exposure
+  
+  * you make the exposure and outcome look artificially unassociated
+  
+  * not because there’s no effect, but *because you've matched away the pathway through which the effect operates*
+  
+  
+  
+**Matching on a predictor of exposure (that isn't a confounder) reduces exposure variation** and hurts identification. 
+
+**Matching on a mediator blocks the effect pathway**, and also hurts identification.
+
+
+**Both lead to underestimating or even missing the true causal effect**
 
 
 
 ## 1. Overmatching that Harms Statistical Efficiency (Precision)
 
 This type of overmatching reduces the precision of your effect estimate (wider confidence intervals) without reducing bias.
+
+The Theory: In a matched analysis, we only learn from discordant pairs (pairs where Case and Control have different exposures)
+
+
+Recall the formula: $\text{Matched OR} = b/c$ (discordant pairs).
+
+If you match on a variable that is strongly correlated with the Exposure (but isn't a confounder), you force the Control to have the same Exposure status as the Case.
+
+This minimizes the number of discordant pairs. If $b$ and $c$ drop to near zero, your statistical power vanishes.
+
+
+
+### the "Coffee" example: 
+
+  * **Exposure:** Coffee Drinking. Outcome: Bladder Cancer.
+
+  * **Matching Variable:** Consumption of Cream Substitutes (strongly correlated with coffee, but doesn't cause cancer).
+
+If you match a Coffee-Drinking Case to a Control who uses Cream Substitutes, that Control is also almost certainly a Coffee Drinker.
+
+* **Result:** You have a Concordant Pair (Both Exposed). You toss it out. You lose data. You wasted time and money finding a control that provided zero statistical information.
+
+
+
 
 
 
@@ -30,10 +91,15 @@ This type of overmatching reduces the precision of your effect estimate (wider c
 * **Result:** Loss of information and statistical power. The stratified analysis (required by matching) was unnecessary because the variable wasn't a confounder.
 
 
-
 **Example DAG:**
-$$ Exposure \leftrightarrow Matching Variable \quad \quad Disease $$
 *(No arrow connects the Matching Variable to Disease)*
+
+
+![](images/overmatching1.png)
+
+
+
+
 
 
 
@@ -54,6 +120,11 @@ This is the most dangerous form of overmatching because it introduces **bias** (
 * **The Mechanism:** Matching conditions on the collider. This opens a "backdoor path" between exposure and disease, creating a spurious association (bias).
 
 
+![](images/overmatching2.png)
+
+
+
+
 
 ### Scenario B: Matching on an Intermediate
 
@@ -65,8 +136,15 @@ This is the most dangerous form of overmatching because it introduces **bias** (
 
 
 
+![](images/overmatching3.png)
 
-## 3. Summary of DAG Guidelines for Matching
+
+
+
+
+
+
+## Summary of DAG Guidelines for Matching
 
 When selecting matching variables, draw your DAG and check the following criteria:
 
