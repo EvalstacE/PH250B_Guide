@@ -1,0 +1,78 @@
+project:
+  type: book
+  output-dir: docs
+  
+website:
+  site-url: https://evalstace.github.io/PH250B_Guide/
+ 
+page-navigation: true
+lightbox: true
+
+format: 
+  html:
+    theme: cosmo
+    code-fold: true
+    code-copy: true
+    code-overflow: wrap
+    toc: false
+    number-depth: 1
+    link-external-newwindow: true
+    
+execute:
+  message: false
+  warning: false  
+  
+
+book:
+  reader-mode: false
+  title: "Epi Methods 2 Review"
+  author: "Val"
+  date: "2025"  
+  sidebar:
+    search: false
+    style: docked
+    pinned: true
+
+  chapters:
+    - index.qmd
+    
+    - part: "Confounding"
+      chapters: 
+        - chapters/10a_Confounding.qmd
+        - chapters/10b_Negative_Controls.qmd 
+
+    - part: "Effect Measure Modification"
+      chapters: 
+        - chapters/11a_EMM.qmd
+        - chapters/11b_EMM_component_cause_model.qmd
+        - chapters/11c_EMM_potential_outcomes.qmd
+        - chapters/11d_additive_scale_interaction.qmd
+
+    - part: "Matching"
+      chapters: 
+        - chapters/12a_Matching.qmd
+        - chapters/12b_Overmatching.qmd
+        - chapters/12c_Matched_Analysis.qmd
+        - chapters/12d_Screening_Measures.qmd
+        
+    - part: "Regression"
+      chapters: 
+        - chapters/13a_Linear_Regression.qmd
+        - chapters/13b_Log_Linear_Regression.qmd
+        - chapters/13c_Logistic_Regression.qmd
+        - chapters/13d_Survival_Data_Models.qmd
+        - chapters/13e_Matched_Case_Control_Models.qmd             
+        
+        
+    - 14a_Propensity_Scores.qmd
+    - 14b_Sample_Size_Power.qmd
+    - 14c_IPTW_G_computation.qmd
+    - 15a_Meta_Analysis.qmd
+    - 15b_Population_Intervention_Effects.qmd
+    - 15c_Spillover_Effects.qmd
+    - 15d_Replication_Transparency_Reproducibility.qmd
+    
+    
+    
+    
+    
