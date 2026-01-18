@@ -19,7 +19,8 @@
 cache/
 docs/
 *_book/
-
+_book/
+_book/site_libs
 
 # RStudio Connect
 rsconnect/
