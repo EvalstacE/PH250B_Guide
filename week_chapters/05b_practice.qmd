@@ -1,0 +1,89 @@
+Name the type of generalized linear model (discussed in this course) that gives rise to each of the following measures of association: 
+
+a.	Hazard ratio 
+Cox regression 
+
+b.	Incidence rate ratio 
+Poisson regression (log linear regression) 
+
+c.	Cumulative incidence ratio 
+Log linear regression 
+
+d.	Odds ratio 
+Logistic regression 
+
+
+
+
+
+
+
+
+
+
+Consider the following equation:
+E(Y) = 𝛂+ 𝛃1X1 + 𝛃2X2 + 𝛃3X1* X2
+
+Variable definitions:
+Y= cholesterol [continuous]
+X1= body mass index (BMI) [continuous]
+X2= current smoking status [dichotomous; 1=yes, 0=no]
+
+
+a)	Interpret 𝛃1. 
+
+Increase in mean cholesterol per unit increase in BMI among non-smokers.
+
+b)	The p-value for the 𝛃3 coefficient is 0.104. Do you conclude that effect modification between body mass index and current smoking status is present? State your rationale. 
+
+Yes - there is evidence of effect modification. The p-value on the interaction term is analogous to the p-value on the test for homogeneity – when p<0.2 we reject the null hypothesis of homogeneity.
+
+
+c)	Assuming the result in (b) is not due to bias or random error and that the 𝛃3 coefficient ≠ 0, what, if anything, does the finding tell you about causal interaction between body mass index and current smoking status? (2 points)
+
+The presence of additive interaction indicates there are interacting causal types – you are detecting the net effect of interaction (i.e., there may be some interacting causal types that cancel and those you cannot detect) (Second point not required for full credit).
+
+
+d)	The authors decide that they would like to change their model and examine BMI as a categorical variable, with the following three categories: 18.5 to 24.9 (normal weight), 25.0 to 29.9 (overweight), and 30.0 or greater (obese). Clearly define each variable in this new model, similar to what was done above (e.g., X1= …. ). Write a new regression equation that includes BMI using dummy variables (with normal weight as the reference category), as well as current smoking status and the interaction between BMI and current smoking status as in the model above. (3 points)
+
+
+E(Y|X1=x1,X2=x2,X3=x3) = 𝛂 + 𝛃1 (current smoker) + 𝛃2 (overweight) + 𝛃3 (obese) + 𝛃4 (current smoker * overweight) + 𝛃5 (current smoker * obese)
+
+X1 = current smoker
+X2 = dummy variable for being overweight
+X3 = dummy variable for being obese
+
+
+e)	Using your new equation from (d), write the equation for the mean cholesterol for current smokers of normal weight. (3 points)
+
+E(Y) = 𝛂 + 𝛃1 (current smoker)
+
+
+
+
+
+I.	Write the equation for the logistic regression. (2 points)
+ln{E(Y|X=x)/[1-E(Y|X=x)]} = α + β1(weight gain > 1.0 lbs/week) + β2(age) + β3 (married) + β4(smoking)
+or
+ln(p/(1-p)) = α + β1(weight gain > 1.0 lbs/week) + β2(age) + β3 (married) + β4(smoking)
+
+
+
+II.	The β coefficient (from the above analysis) for weight gain >1.0 lbs/week was 0.5766. Calculate and interpret the OR. (2 points)
+OR =exp(β1) = exp(0.5766) = 1.780
+Women gaining >1.0 lbs/week in the second and third trimesters had 1.780 times the odds of having a preterm birth compared to women gaining ≤ 1.0 lbs/week, adjusting for age, marital status, and smoking during pregnancy.
+
+
+
+III.	The standard error for the β coefficient for weight gain >1.0 lbs/week was 0.0916. Calculate and interpret the 95% confidence interval. (2 points)
+95% CI = ln(OR) + 1.96(SE(ln(OR))
+Upper limit = 0.5766 + 1.96*(0.0916) = 0.756
+exp(0.756) = 2.13
+Lower limit = 0.5766 - 1.96*(0.0916) = 0.397
+exp(0.397) = 1.49 95% CI = 1.49, 2.13
+Interpretation: Over unlimited repetitions of an unbiased study, in 95% of samples drawn from the source population, the 95% confidence interval will contain the true population odds ratio. The 95% confidence interval from this study is 1.49 to 2.13.
+
+
+
+
+
